@@ -5,7 +5,6 @@ import { useEffect, useState } from "react";
 type Language = "zh" | "en";
 
 const github = "https://github.com/AetherKiri/AetherKiri";
-const discussions = `${github}/discussions`;
 const issues = `${github}/issues`;
 
 const copy = {
@@ -33,10 +32,8 @@ const copy = {
       title: "我们可以在哪里找到您？",
       repositoryBefore: "想了解开发进展、源代码和发布版本，可以前往我们的",
       repository: "GitHub 仓库",
-      discussionsBefore: "如果你想分享想法、提出问题或参与项目方向讨论，欢迎来到",
-      discussions: "社区讨论",
-      issuesBefore: "发现缺陷或游戏兼容性问题，请通过",
-      issues: "Issues 告诉我们",
+      issuesBefore: "如果你想分享想法、提出问题、参与项目方向讨论，或反馈缺陷与游戏兼容性问题，欢迎来到",
+      issues: "GitHub Issues",
     },
     panel: {
       eyebrow: "WHAT'S NEW",
@@ -99,9 +96,7 @@ const copy = {
       title: "Where can we find you?",
       repositoryBefore: "For development progress, source code, and releases, visit our",
       repository: "GitHub repository",
-      discussionsBefore: "To share ideas, ask questions, or help shape the project, join our",
-      discussions: "community discussions",
-      issuesBefore: "For bugs and game compatibility findings, please tell us through",
+      issuesBefore: "To share ideas, ask questions, shape the project, or report bugs and game compatibility findings, visit",
       issues: "GitHub Issues",
     },
     panel: {
@@ -235,7 +230,6 @@ export function AetherSite() {
             <article className="info-column" id="contact">
               <h2>{t.contact.title}</h2>
               <p>{t.contact.repositoryBefore} <a href={github} target="_blank" rel="noreferrer">{t.contact.repository}</a>{language === "zh" ? "。" : "."}</p>
-              <p>{t.contact.discussionsBefore} <a href={discussions} target="_blank" rel="noreferrer">{t.contact.discussions}</a>{language === "zh" ? "。" : "."}</p>
               <p>{t.contact.issuesBefore} <a href={issues} target="_blank" rel="noreferrer">{t.contact.issues}</a>{language === "zh" ? "。" : "."}</p>
             </article>
           </div>
