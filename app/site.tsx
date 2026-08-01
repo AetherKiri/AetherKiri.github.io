@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 type Language = "zh" | "en";
 
@@ -142,7 +142,6 @@ export function AetherSite() {
   const [language, setLanguage] = useState<Language>("zh");
   const [menuOpen, setMenuOpen] = useState(false);
   const [previewOpen, setPreviewOpen] = useState(false);
-  const heroRef = useRef<HTMLElement>(null);
   const t = copy[language];
 
   useEffect(() => {
@@ -161,43 +160,6 @@ export function AetherSite() {
       window.removeEventListener("keydown", onKeyDown);
     };
   }, [previewOpen]);
-
-  useEffect(() => {
-    const hero = heroRef.current;
-    if (!hero || !window.matchMedia("(pointer: fine)").matches || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-
-    let animationFrame = 0;
-    const resetMotion = () => {
-      hero.style.setProperty("--scene-x", "0px");
-      hero.style.setProperty("--scene-y", "0px");
-      hero.style.setProperty("--character-x", "0px");
-      hero.style.setProperty("--character-y", "0px");
-      hero.style.setProperty("--light-x", "74%");
-      hero.style.setProperty("--light-y", "42%");
-    };
-    const trackPointer = (event: PointerEvent) => {
-      const bounds = hero.getBoundingClientRect();
-      const x = (event.clientX - bounds.left) / bounds.width - 0.5;
-      const y = (event.clientY - bounds.top) / bounds.height - 0.5;
-      cancelAnimationFrame(animationFrame);
-      animationFrame = requestAnimationFrame(() => {
-        hero.style.setProperty("--scene-x", `${x * -9}px`);
-        hero.style.setProperty("--scene-y", `${y * -6}px`);
-        hero.style.setProperty("--character-x", `${x * 14}px`);
-        hero.style.setProperty("--character-y", `${y * 9}px`);
-        hero.style.setProperty("--light-x", `${74 + x * 10}%`);
-        hero.style.setProperty("--light-y", `${42 + y * 8}%`);
-      });
-    };
-
-    hero.addEventListener("pointermove", trackPointer);
-    hero.addEventListener("pointerleave", resetMotion);
-    return () => {
-      cancelAnimationFrame(animationFrame);
-      hero.removeEventListener("pointermove", trackPointer);
-      hero.removeEventListener("pointerleave", resetMotion);
-    };
-  }, []);
 
   const closeMenu = () => setMenuOpen(false);
   const openPreview = () => {
@@ -238,20 +200,10 @@ export function AetherSite() {
       </header>
 
       <main id="content">
-        <section className="hero" id="top" ref={heroRef}>
-          <div className="hero-scene">
-            <img className="hero-art" src="/aetherkiri-muse.png" alt="Blue-haired anime astronomer in a moonlit observatory" />
-          </div>
-          <div className="hero-character" aria-hidden="true">
-            <img className="hero-art" src="/aetherkiri-muse.png" alt="" />
-          </div>
-          <div className="hero-aurora" aria-hidden="true" />
+        <section className="hero" id="top">
+          <img className="hero-art" src="/aetherkiri-muse.png" alt="Blue-haired anime astronomer in a moonlit observatory" />
           <div className="hero-shade" />
           <div className="hero-stars" aria-hidden="true" />
-          <div className="hero-cursor-glow" aria-hidden="true" />
-          <div className="hero-particles" aria-hidden="true">
-            {Array.from({ length: 10 }, (_, index) => <i key={index} />)}
-          </div>
           <div className="hero-copy">
             <p className="eyebrow light"><i />{t.hero.eyebrow}</p>
             <h1><span>{t.hero.titleA}</span><em>{t.hero.titleB}</em></h1>

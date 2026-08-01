@@ -35,8 +35,6 @@ test("server-renders the Aether organization website", async () => {
   assert.match(html, /0\.1\.0-alpha\.3/);
   assert.match(html, /新功能预览/);
   assert.match(html, /GitHub Issues/);
-  assert.match(html, /hero-character/);
-  assert.match(html, /hero-particles/);
   assert.match(html, /GitHub/);
   assert.doesNotMatch(html, /LATEST UPDATE|codex-preview|Your site is taking shape/);
 });
