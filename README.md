@@ -1,7 +1,7 @@
-# AetherKiri Organization Website
+# Aether Organization Website
 
-The official static website for the [AetherKiri](https://github.com/AetherKiri)
-GitHub organization.
+The official static website for Aether, maintained by the
+[AetherKiri](https://github.com/AetherKiri) GitHub organization.
 
 ## Development
 
@@ -37,7 +37,7 @@ organization website is published at
 
 Product claims, platform requirements, architecture, and compatibility numbers
 are based on the public
-[AetherKiri runtime repository](https://github.com/AetherKiri/AetherKiri).
+[Aether runtime repository](https://github.com/AetherKiri/AetherKiri).
 
 The app icon is reused from the main project. The rest of the site design and
 visual system are purpose-built for the organization website.

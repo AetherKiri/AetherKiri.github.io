@@ -14,11 +14,11 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://aetherkiri.github.io"),
-  title: "AetherKiri — Godot 驱动的 KiriKiri2 跨平台运行时",
+  title: "Aether — 让故事，再次抵达你",
   description:
-    "AetherKiri 是一个由 Godot 4.7 承载、以 C++17 引擎核心驱动的跨平台 KiriKiri2 运行时。",
-  applicationName: "AetherKiri",
-  keywords: ["AetherKiri", "KiriKiri2", "Godot", "visual novel", "open source"],
+    "Aether 是一个由 Godot 4.7 承载、以 C++17 引擎核心驱动的跨平台 KiriKiri2 运行时。",
+  applicationName: "Aether",
+  keywords: ["Aether", "AetherKiri", "KiriKiri2", "Godot", "visual novel", "open source"],
   icons: {
     icon: "/app-icon.png",
     apple: "/app-icon.png",
@@ -26,24 +26,24 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/",
-    siteName: "AetherKiri",
-    title: "AetherKiri — 让每一段故事，跨越屏幕，再次相遇",
+    siteName: "Aether",
+    title: "Aether — 让故事，再次抵达你",
     description: "Godot 驱动的 KiriKiri2 跨平台运行时。",
     locale: "zh_CN",
     images: [
       {
-        url: "/og.png",
-        width: 1728,
-        height: 910,
-        alt: "AetherKiri — 让每一段故事，跨越屏幕，再次相遇",
+        url: "/og-aether.png",
+        width: 1672,
+        height: 941,
+        alt: "Aether — 让故事，再次抵达你",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "AetherKiri — 让每一段故事，跨越屏幕，再次相遇",
+    title: "Aether — 让故事，再次抵达你",
     description: "Godot 驱动的 KiriKiri2 跨平台运行时。",
-    images: ["/og.png"],
+    images: ["/og-aether.png"],
   },
 };
 

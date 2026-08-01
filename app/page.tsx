@@ -1,5 +1,5 @@
-import { AetherKiriSite } from "./site";
+import { AetherSite } from "./site";
 
 export default function Home() {
-  return <AetherKiriSite />;
+  return <AetherSite />;
 }

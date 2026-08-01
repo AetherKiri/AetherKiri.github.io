@@ -23,16 +23,16 @@ async function render() {
   );
 }
 
-test("server-renders the AetherKiri organization website", async () => {
+test("server-renders the Aether organization website", async () => {
   const response = await render();
   assert.equal(response.status, 200);
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
 
   const html = await response.text();
-  assert.match(html, /<title>AetherKiri/);
+  assert.match(html, /<title>Aether/);
   assert.match(html, /Godot/);
   assert.match(html, /KiriKiri2/);
-  assert.match(html, /AetherKiri KAG3 Demo/);
+  assert.match(html, /KAG3 Demo/);
   assert.match(html, /GitHub/);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape/);
 });
@@ -42,10 +42,11 @@ test("contains static hosting and social preview assets", async () => {
     readFile(new URL("../github-pages/index.html", import.meta.url), "utf8"),
     readFile(new URL("../package.json", import.meta.url), "utf8"),
     access(new URL("../public/app-icon.png", import.meta.url)),
-    access(new URL("../public/og.png", import.meta.url)),
+    access(new URL("../public/aetherkiri-muse.png", import.meta.url)),
+    access(new URL("../public/og-aether.png", import.meta.url)),
   ]);
 
   assert.match(pagesHtml, /https:\/\/aetherkiri\.github\.io\//);
-  assert.match(pagesHtml, /og\.png/);
+  assert.match(pagesHtml, /og-aether\.png/);
   assert.match(packageJson, /"build:pages"/);
 });
