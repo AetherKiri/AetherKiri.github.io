@@ -33,8 +33,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/og-aether.png",
-        width: 1672,
-        height: 941,
+        width: 1200,
+        height: 675,
         alt: "Aether — 让故事，再次抵达你",
       },
     ],

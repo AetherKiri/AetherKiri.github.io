@@ -44,7 +44,9 @@ test("contains static hosting and social preview assets", async () => {
     readFile(new URL("../github-pages/index.html", import.meta.url), "utf8"),
     readFile(new URL("../package.json", import.meta.url), "utf8"),
     access(new URL("../public/app-icon.png", import.meta.url)),
-    access(new URL("../public/aetherkiri-muse.png", import.meta.url)),
+    access(new URL("../public/hero-background-v2.webp", import.meta.url)),
+    access(new URL("../public/hero-character-v2.webp", import.meta.url)),
+    access(new URL("../public/hero-orrery-v2.webp", import.meta.url)),
     access(new URL("../public/og-aether.png", import.meta.url)),
   ]);
 

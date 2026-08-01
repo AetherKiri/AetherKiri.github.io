@@ -232,18 +232,18 @@ export function AetherSite() {
         >
           <div className="hero-scene" aria-hidden="true">
             <div className="hero-layer hero-background-layer">
-              <img className="hero-background-image" src="/hero-background-v2.png" alt="" />
+              <img className="hero-background-image" src="/hero-background-v2.webp" alt="" />
             </div>
             <div className="hero-nebula" />
             <div className="hero-constellation">
               <i /><i /><i />
             </div>
             <div className="hero-layer hero-character-layer">
-              <img className="hero-character-image" src="/hero-character-v2.png" alt="" />
+              <img className="hero-character-image" src="/hero-character-v2.webp" alt="" />
             </div>
             <div className="hero-layer hero-orrery-layer">
               <div className="hero-orrery-motion">
-                <img className="hero-orrery-image" src="/hero-orrery-v2.png" alt="" />
+                <img className="hero-orrery-image" src="/hero-orrery-v2.webp" alt="" />
                 <i className="hero-orrery-ring ring-one" />
                 <i className="hero-orrery-ring ring-two" />
               </div>
