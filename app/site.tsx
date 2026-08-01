@@ -28,15 +28,15 @@ const copy = {
     about: {
       title: "什么是 Aether？",
       text: "Aether 是一个由 Godot 承载、以 C++17 核心驱动的跨平台 KiriKiri2 运行时。熟悉的脚本、图层、声音、存档与插件仍然保留，并以现代渲染和多平台体验与你重新相遇。",
-      traits: ["原生 GPU 渲染", "KiriKiri2 兼容", "跨平台体验"],
     },
     contact: {
-      eyebrow: "WHERE CAN WE FIND YOU?",
-      title: "一起让故事，\n走得更远。",
-      text: "无论你想参与开发、反馈游戏兼容性，还是只是想了解项目进展，都可以在 GitHub 找到我们。",
-      repository: ["GitHub 仓库", "浏览代码、文档与发布版本"],
-      discussions: ["社区讨论", "分享想法、提问或参与方向讨论"],
-      issues: ["问题反馈", "提交缺陷与游戏兼容性记录"],
+      title: "我们可以在哪里找到您？",
+      repositoryBefore: "想了解开发进展、源代码和发布版本，可以前往我们的",
+      repository: "GitHub 仓库",
+      discussionsBefore: "如果你想分享想法、提出问题或参与项目方向讨论，欢迎来到",
+      discussions: "社区讨论",
+      issuesBefore: "发现缺陷或游戏兼容性问题，请通过",
+      issues: "Issues 告诉我们",
     },
     panel: {
       eyebrow: "WHAT'S NEW",
@@ -94,15 +94,15 @@ const copy = {
     about: {
       title: "What is Aether?",
       text: "Aether is a cross-platform KiriKiri2 runtime hosted by Godot and driven by a C++17 core. Familiar scripts, layers, sound, saves, and plugins remain—meeting you again through modern rendering and a multi-platform experience.",
-      traits: ["Native GPU rendering", "KiriKiri2 compatibility", "Cross-platform play"],
     },
     contact: {
-      eyebrow: "WHERE CAN WE FIND YOU?",
-      title: "Help stories\ntravel further.",
-      text: "Whether you want to contribute, report game compatibility, or simply follow the project, you’ll find us on GitHub.",
-      repository: ["GitHub repository", "Browse code, documentation, and releases"],
-      discussions: ["Community discussions", "Share ideas, ask questions, and shape direction"],
-      issues: ["Issue tracker", "Report bugs and game compatibility findings"],
+      title: "Where can we find you?",
+      repositoryBefore: "For development progress, source code, and releases, visit our",
+      repository: "GitHub repository",
+      discussionsBefore: "To share ideas, ask questions, or help shape the project, join our",
+      discussions: "community discussions",
+      issuesBefore: "For bugs and game compatibility findings, please tell us through",
+      issues: "GitHub Issues",
     },
     panel: {
       eyebrow: "WHAT'S NEW",
@@ -142,10 +142,6 @@ const copy = {
     },
   },
 } as const;
-
-function Lines({ children }: { children: string }) {
-  return <>{children.split("\n").map((line, index) => <span key={`${line}-${index}`}>{line}</span>)}</>;
-}
 
 export function AetherSite() {
   const [language, setLanguage] = useState<Language>("zh");
@@ -228,30 +224,20 @@ export function AetherSite() {
           <a className="scroll-note" href="#about"><span>SCROLL</span><i /></a>
         </section>
 
-        <section className="about" id="about">
+        <section className="info-section" id="about">
           <div className="paper-orbit orbit-one" aria-hidden="true">✦</div>
           <div className="paper-orbit orbit-two" aria-hidden="true">A</div>
-          <div className="section-inner about-content">
-            <h2><Lines>{t.about.title}</Lines></h2>
-            <p>{t.about.text}</p>
-            <div className="trait-list">
-              {t.about.traits.map((trait, index) => <span key={trait}><i>0{index + 1}</i>{trait}</span>)}
-            </div>
-          </div>
-        </section>
-
-        <section className="contact" id="contact">
-          <div className="section-inner contact-grid">
-            <div className="contact-heading">
-              <p className="eyebrow">{t.contact.eyebrow}</p>
-              <h2><Lines>{t.contact.title}</Lines></h2>
-              <p>{t.contact.text}</p>
-            </div>
-            <div className="contact-links">
-              <a href={github} target="_blank" rel="noreferrer"><span><strong>{t.contact.repository[0]}</strong><small>{t.contact.repository[1]}</small></span><i>↗</i></a>
-              <a href={discussions} target="_blank" rel="noreferrer"><span><strong>{t.contact.discussions[0]}</strong><small>{t.contact.discussions[1]}</small></span><i>↗</i></a>
-              <a href={issues} target="_blank" rel="noreferrer"><span><strong>{t.contact.issues[0]}</strong><small>{t.contact.issues[1]}</small></span><i>↗</i></a>
-            </div>
+          <div className="section-inner info-grid">
+            <article className="info-column">
+              <h2>{t.about.title}</h2>
+              <p>{t.about.text}</p>
+            </article>
+            <article className="info-column" id="contact">
+              <h2>{t.contact.title}</h2>
+              <p>{t.contact.repositoryBefore} <a href={github} target="_blank" rel="noreferrer">{t.contact.repository}</a>{language === "zh" ? "。" : "."}</p>
+              <p>{t.contact.discussionsBefore} <a href={discussions} target="_blank" rel="noreferrer">{t.contact.discussions}</a>{language === "zh" ? "。" : "."}</p>
+              <p>{t.contact.issuesBefore} <a href={issues} target="_blank" rel="noreferrer">{t.contact.issues}</a>{language === "zh" ? "。" : "."}</p>
+            </article>
           </div>
         </section>
       </main>
