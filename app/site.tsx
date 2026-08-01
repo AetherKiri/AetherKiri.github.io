@@ -231,15 +231,11 @@ export function AetherSite() {
         <section className="about" id="about">
           <div className="paper-orbit orbit-one" aria-hidden="true">✦</div>
           <div className="paper-orbit orbit-two" aria-hidden="true">A</div>
-          <div className="section-inner about-grid">
-            <div>
-              <h2><Lines>{t.about.title}</Lines></h2>
-            </div>
-            <div className="about-copy">
-              <p>{t.about.text}</p>
-              <div className="trait-list">
-                {t.about.traits.map((trait, index) => <span key={trait}><i>0{index + 1}</i>{trait}</span>)}
-              </div>
+          <div className="section-inner about-content">
+            <h2><Lines>{t.about.title}</Lines></h2>
+            <p>{t.about.text}</p>
+            <div className="trait-list">
+              {t.about.traits.map((trait, index) => <span key={trait}><i>0{index + 1}</i>{trait}</span>)}
             </div>
           </div>
         </section>
