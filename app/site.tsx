@@ -14,7 +14,6 @@ const copy = {
     announcementAction: "看看更新了什么",
     nav: [
       ["#about", "关于"],
-      ["#updates", "更新"],
       ["#contact", "联系"],
     ],
     hero: {
@@ -27,19 +26,9 @@ const copy = {
       platforms: ["macOS", "iOS / iPadOS", "Android", "Web"],
     },
     about: {
-      eyebrow: "WHAT IS AETHER?",
-      title: "熟悉的故事，\n新的相遇方式。",
-      text: "Aether 是一个由 Godot 承载、以 C++17 核心驱动的跨平台 KiriKiri2 运行时。它保留脚本、图层、声音、存档与插件所熟悉的表达方式，同时带来现代渲染与多平台体验。",
+      title: "什么是 Aether？",
+      text: "Aether 是一个由 Godot 承载、以 C++17 核心驱动的跨平台 KiriKiri2 运行时。熟悉的脚本、图层、声音、存档与插件仍然保留，并以现代渲染和多平台体验与你重新相遇。",
       traits: ["原生 GPU 渲染", "KiriKiri2 兼容", "跨平台体验"],
-    },
-    updates: {
-      eyebrow: "LATEST UPDATE",
-      version: "0.1.0-alpha.3",
-      badge: "最新预发布版",
-      title: "角色图层更稳定，\n重场景转场更流畅。",
-      text: "这个版本恢复了更多角色图层的兼容表现，并修复重型转场中偶发的黑帧问题。",
-      action: "浏览全部版本能力",
-      release: "前往 GitHub Release",
     },
     contact: {
       eyebrow: "WHERE CAN WE FIND YOU?",
@@ -91,7 +80,6 @@ const copy = {
     announcementAction: "See what changed",
     nav: [
       ["#about", "About"],
-      ["#updates", "Updates"],
       ["#contact", "Contact"],
     ],
     hero: {
@@ -104,19 +92,9 @@ const copy = {
       platforms: ["macOS", "iOS / iPadOS", "Android", "Web"],
     },
     about: {
-      eyebrow: "WHAT IS AETHER?",
-      title: "Stories remembered,\nencounters renewed.",
-      text: "Aether is a cross-platform KiriKiri2 runtime hosted by Godot and driven by a C++17 core. Familiar scripts, layers, sound, saves, and plugins remain—now with modern rendering and a multi-platform experience.",
+      title: "What is Aether?",
+      text: "Aether is a cross-platform KiriKiri2 runtime hosted by Godot and driven by a C++17 core. Familiar scripts, layers, sound, saves, and plugins remain—meeting you again through modern rendering and a multi-platform experience.",
       traits: ["Native GPU rendering", "KiriKiri2 compatibility", "Cross-platform play"],
-    },
-    updates: {
-      eyebrow: "LATEST UPDATE",
-      version: "0.1.0-alpha.3",
-      badge: "Latest pre-release",
-      title: "Steadier character layers.\nSmoother heavy transitions.",
-      text: "This release restores compatible character-layer behavior and prevents occasional black frames during demanding transitions.",
-      action: "Explore every version",
-      release: "Open GitHub Release",
     },
     contact: {
       eyebrow: "WHERE CAN WE FIND YOU?",
@@ -255,33 +233,12 @@ export function AetherSite() {
           <div className="paper-orbit orbit-two" aria-hidden="true">A</div>
           <div className="section-inner about-grid">
             <div>
-              <p className="eyebrow">{t.about.eyebrow}</p>
               <h2><Lines>{t.about.title}</Lines></h2>
             </div>
             <div className="about-copy">
               <p>{t.about.text}</p>
               <div className="trait-list">
                 {t.about.traits.map((trait, index) => <span key={trait}><i>0{index + 1}</i>{trait}</span>)}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="updates" id="updates">
-          <div className="update-glow" aria-hidden="true" />
-          <div className="section-inner update-grid">
-            <div className="release-stamp">
-              <span>{t.updates.badge}</span>
-              <strong>{t.updates.version}</strong>
-              <i>✦</i>
-            </div>
-            <div className="update-copy">
-              <p className="eyebrow light">{t.updates.eyebrow}</p>
-              <h2><Lines>{t.updates.title}</Lines></h2>
-              <p>{t.updates.text}</p>
-              <div className="update-actions">
-                <button className="text-link" onClick={openPreview}>{t.updates.action}<span>＋</span></button>
-                <a className="text-link quiet" href={`${github}/releases/tag/0.1.0-alpha.3`} target="_blank" rel="noreferrer">{t.updates.release}<span>↗</span></a>
               </div>
             </div>
           </div>

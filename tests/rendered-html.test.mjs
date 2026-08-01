@@ -36,7 +36,7 @@ test("server-renders the Aether organization website", async () => {
   assert.match(html, /新功能预览/);
   assert.match(html, /社区讨论/);
   assert.match(html, /GitHub/);
-  assert.doesNotMatch(html, /codex-preview|Your site is taking shape/);
+  assert.doesNotMatch(html, /LATEST UPDATE|codex-preview|Your site is taking shape/);
 });
 
 test("contains static hosting and social preview assets", async () => {
