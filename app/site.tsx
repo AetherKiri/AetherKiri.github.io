@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import type { PointerEvent as ReactPointerEvent } from "react";
 
 type Language = "zh" | "en";
 
@@ -139,6 +140,7 @@ const copy = {
 } as const;
 
 export function AetherSite() {
+  const heroRef = useRef<HTMLElement>(null);
   const [language, setLanguage] = useState<Language>("zh");
   const [menuOpen, setMenuOpen] = useState(false);
   const [previewOpen, setPreviewOpen] = useState(false);
@@ -165,6 +167,27 @@ export function AetherSite() {
   const openPreview = () => {
     setMenuOpen(false);
     setPreviewOpen(true);
+  };
+
+  const setHeroMotion = (x: number, y: number) => {
+    const hero = heroRef.current;
+    if (!hero) return;
+    hero.style.setProperty("--bg-x", `${x * -7}px`);
+    hero.style.setProperty("--bg-y", `${y * -4}px`);
+    hero.style.setProperty("--character-x", `${x * 14}px`);
+    hero.style.setProperty("--character-y", `${y * 9}px`);
+    hero.style.setProperty("--orrery-x", `${x * 26}px`);
+    hero.style.setProperty("--orrery-y", `${y * 17}px`);
+    hero.style.setProperty("--dust-x", `${x * 34}px`);
+    hero.style.setProperty("--dust-y", `${y * 22}px`);
+  };
+
+  const moveHero = (event: ReactPointerEvent<HTMLElement>) => {
+    if (event.pointerType === "touch" || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const bounds = event.currentTarget.getBoundingClientRect();
+    const x = ((event.clientX - bounds.left) / bounds.width - 0.5) * 2;
+    const y = ((event.clientY - bounds.top) / bounds.height - 0.5) * 2;
+    setHeroMotion(x, y);
   };
 
   return (
@@ -200,8 +223,35 @@ export function AetherSite() {
       </header>
 
       <main id="content">
-        <section className="hero" id="top">
-          <img className="hero-art" src="/aetherkiri-muse.png" alt="Blue-haired anime astronomer in a moonlit observatory" />
+        <section
+          className="hero"
+          id="top"
+          ref={heroRef}
+          onPointerMove={moveHero}
+          onPointerLeave={() => setHeroMotion(0, 0)}
+        >
+          <div className="hero-scene" aria-hidden="true">
+            <div className="hero-layer hero-background-layer">
+              <img className="hero-background-image" src="/hero-background-v2.png" alt="" />
+            </div>
+            <div className="hero-nebula" />
+            <div className="hero-constellation">
+              <i /><i /><i />
+            </div>
+            <div className="hero-layer hero-character-layer">
+              <img className="hero-character-image" src="/hero-character-v2.png" alt="" />
+            </div>
+            <div className="hero-layer hero-orrery-layer">
+              <div className="hero-orrery-motion">
+                <img className="hero-orrery-image" src="/hero-orrery-v2.png" alt="" />
+                <i className="hero-orrery-ring ring-one" />
+                <i className="hero-orrery-ring ring-two" />
+              </div>
+            </div>
+            <div className="hero-dust">
+              {Array.from({ length: 12 }, (_, index) => <i key={index} />)}
+            </div>
+          </div>
           <div className="hero-shade" />
           <div className="hero-stars" aria-hidden="true" />
           <div className="hero-copy">
