@@ -32,7 +32,9 @@ test("server-renders the Aether organization website", async () => {
   assert.match(html, /<title>Aether/);
   assert.match(html, /Godot/);
   assert.match(html, /KiriKiri2/);
-  assert.match(html, /KAG3 Demo/);
+  assert.match(html, /0\.1\.0-alpha\.3/);
+  assert.match(html, /新功能预览/);
+  assert.match(html, /社区讨论/);
   assert.match(html, /GitHub/);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape/);
 });

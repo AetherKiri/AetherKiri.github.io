@@ -1,173 +1,165 @@
 "use client";
 
-import { useEffect, useState, type CSSProperties } from "react";
+import { useEffect, useState } from "react";
 
 type Language = "zh" | "en";
 
 const github = "https://github.com/AetherKiri/AetherKiri";
+const discussions = `${github}/discussions`;
+const issues = `${github}/issues`;
 
 const copy = {
   zh: {
+    announcement: "Aether 0.1.0-alpha.3 已发布",
+    announcementAction: "看看更新了什么",
     nav: [
       ["#about", "关于"],
-      ["#magic", "能力"],
-      ["#journey", "旅程"],
-      ["#compatibility", "兼容"],
+      ["#updates", "更新"],
+      ["#contact", "联系"],
     ],
     hero: {
-      overline: "A KIRIKIRI2 STORY ENGINE, REIMAGINED",
+      eyebrow: "OPEN-SOURCE KIRIKIRI2 RUNTIME",
       titleA: "让故事",
       titleB: "再次抵达你",
-      text: "Aether 以 C++17 重构 KiriKiri2 运行时，并由 Godot 4.7 将熟悉的视觉小说带到今天的屏幕。",
-      primary: "开启这段旅程",
-      secondary: "查看源代码",
-      side: "Stories, across every screen",
+      text: "Aether 用 Godot 与 C++ 重构 KiriKiri2 运行时，让熟悉的视觉小说自然抵达今天的每一块屏幕。",
+      contact: "在 GitHub 联系我们",
+      preview: "新功能预览",
       platforms: ["macOS", "iOS / iPadOS", "Android", "Web"],
     },
     about: {
       eyebrow: "WHAT IS AETHER?",
-      title: "旧日的故事，\n新的相遇方式。",
-      text: "它是一套由 Godot 承载、以 C++ 引擎核心驱动的 KiriKiri2 运行时。脚本、图层、声音、存档与插件仍然熟悉，而运行它们的舞台已经焕然一新。",
-      note: "为视觉小说的保存、研究与跨平台体验而生",
+      title: "熟悉的故事，\n新的相遇方式。",
+      text: "Aether 是一个由 Godot 承载、以 C++17 核心驱动的跨平台 KiriKiri2 运行时。它保留脚本、图层、声音、存档与插件所熟悉的表达方式，同时带来现代渲染与多平台体验。",
+      traits: ["原生 GPU 渲染", "KiriKiri2 兼容", "跨平台体验"],
     },
-    magic: {
-      eyebrow: "A LITTLE RUNTIME MAGIC",
-      title: "每一层技术，\n都为了不打断沉浸。",
-      items: [
-        ["✦", "原生 GPU 渲染", "默认使用 Godot Native 路径，让画面直接进入 Godot 持有的 RenderingDevice 资源。"],
-        ["◇", "完整运行时核心", "视觉、音频、存储、VM 与插件支持，由一套 C++17 核心统一驱动。"],
-        ["⌁", "跨平台交付", "macOS、iOS / iPadOS、Android 与 Web 已接入正式导出链路。"],
-        ["◌", "从第一次启动就能玩", "内置多语言 KAG3 Demo，与导入游戏共享游戏库、游玩时长和存档流程。"],
+    updates: {
+      eyebrow: "LATEST UPDATE",
+      version: "0.1.0-alpha.3",
+      badge: "最新预发布版",
+      title: "角色图层更稳定，\n重场景转场更流畅。",
+      text: "这个版本恢复了更多角色图层的兼容表现，并修复重型转场中偶发的黑帧问题。",
+      action: "浏览全部版本能力",
+      release: "前往 GitHub Release",
+    },
+    contact: {
+      eyebrow: "WHERE CAN WE FIND YOU?",
+      title: "一起让故事，\n走得更远。",
+      text: "无论你想参与开发、反馈游戏兼容性，还是只是想了解项目进展，都可以在 GitHub 找到我们。",
+      repository: ["GitHub 仓库", "浏览代码、文档与发布版本"],
+      discussions: ["社区讨论", "分享想法、提问或参与方向讨论"],
+      issues: ["问题反馈", "提交缺陷与游戏兼容性记录"],
+    },
+    panel: {
+      eyebrow: "WHAT'S NEW",
+      title: "版本能力预览",
+      intro: "从最新修复到跨平台基础，看看每个公开版本带来了什么。",
+      close: "关闭版本预览",
+      openRelease: "查看完整发布说明",
+      latest: "LATEST",
+      foundation: "FOUNDATION",
+      versions: [
+        {
+          tag: "0.1.0-alpha.3",
+          date: "2026.08.01",
+          label: "LATEST",
+          title: "渲染与角色图层兼容",
+          items: ["恢复兼容的角色图层显示", "避免重型转场过程出现黑帧"],
+        },
+        {
+          tag: "0.1.0-alpha.2",
+          date: "2026.07.31",
+          label: "FOUNDATION",
+          title: "跨平台运行基础",
+          items: [
+            "升级 Godot 4.7 与原生渲染链路",
+            "接入 Web、Linux、Android 与 iOS 支持",
+            "加入内置多语言 KAG3 Demo",
+            "改善存储、字体、视频与插件兼容能力",
+          ],
+        },
       ],
-    },
-    journey: {
-      eyebrow: "HOW STORIES TRAVEL",
-      title: "从一份游戏，\n到每一块屏幕。",
-      text: "清晰的产品边界，让平台体验和兼容能力可以一起生长。",
-      steps: [
-        ["01", "导入", "选择本地游戏目录或 XP3 内容"],
-        ["02", "运行", "KiriKiri Runtime 与插件解析故事"],
-        ["03", "呈现", "Godot Native 接管图形资源与界面"],
-        ["04", "延续", "设置和存档在设备上持续保留"],
-      ],
-      web: "Web 版支持按需读取大型内容，存档保留在当前站点的 IndexedDB 中。",
-    },
-    compatibility: {
-      eyebrow: "COMPATIBILITY, WITH EVIDENCE",
-      title: "不是“应该能玩”，\n而是认真玩过。",
-      number: "34",
-      label: "款游戏已手动验证",
-      updated: "兼容清单更新于 2026.08.01",
-      text: "每一条记录都注明平台、构建类型、验证范围与测试者，并明确区分冒烟验证和完整流程验证。",
-      action: "翻开完整兼容清单",
-      games: ["RIDDLE JOKER", "9-nine-", "NEKOPARA Vol. 1", "千恋＊万花", "GINKA", "まいてつ"],
-    },
-    architecture: {
-      eyebrow: "BEHIND THE CURTAIN",
-      title: "幕后魔法的\n五层结构。",
-      text: "从产品外壳到脚本运行时，每一层都有清楚的职责，也留下可调试、可复现的路径。",
-      layers: [
-        ["Godot App Shell", "产品 UI、设置与多平台打包"],
-        ["GDExtension Host", "原生宿主与渲染资源管理"],
-        ["C ABI Engine API", "稳定的宿主驱动接口"],
-        ["C++ Engine Core", "视觉、音频、存储、VM 与输入"],
-        ["KiriKiri Runtime / Plugins", "脚本运行时与插件兼容层"],
-      ],
-    },
-    open: {
-      eyebrow: "OPEN SOURCE · GPL-3.0-OR-LATER",
-      title: "故事属于每一个\n愿意守护它的人。",
-      text: "公开版本无需私有组件即可构建。代码、测试、诊断工具、兼容记录与开发文档都留在阳光下。",
-      source: "在 GitHub 上相遇",
-      issues: "参与讨论",
     },
     footer: {
       line: "A Godot-hosted KiriKiri2 runtime.",
-      source: "源代码",
-      docs: "开发文档",
-      issues: "Issues",
+      source: "Source",
+      releases: "Releases",
       license: "GPL-3.0-or-later",
     },
   },
   en: {
+    announcement: "Aether 0.1.0-alpha.3 is live",
+    announcementAction: "See what changed",
     nav: [
       ["#about", "About"],
-      ["#magic", "Features"],
-      ["#journey", "Journey"],
-      ["#compatibility", "Compatibility"],
+      ["#updates", "Updates"],
+      ["#contact", "Contact"],
     ],
     hero: {
-      overline: "A KIRIKIRI2 STORY ENGINE, REIMAGINED",
+      eyebrow: "OPEN-SOURCE KIRIKIRI2 RUNTIME",
       titleA: "Let stories",
       titleB: "find you again",
-      text: "Aether rebuilds the KiriKiri2 runtime in C++17, with Godot 4.7 bringing familiar visual novels to today’s screens.",
-      primary: "Begin the journey",
-      secondary: "Explore the source",
-      side: "Stories, across every screen",
+      text: "Aether rebuilds the KiriKiri2 runtime with Godot and C++, bringing familiar visual novels naturally to today’s screens.",
+      contact: "Find us on GitHub",
+      preview: "Preview what’s new",
       platforms: ["macOS", "iOS / iPadOS", "Android", "Web"],
     },
     about: {
       eyebrow: "WHAT IS AETHER?",
       title: "Stories remembered,\nencounters renewed.",
-      text: "A Godot-hosted KiriKiri2 runtime driven by a native C++ engine core. Scripts, layers, sound, saves, and plugins remain familiar—only their stage has been renewed.",
-      note: "Made for visual novel preservation, research, and cross-platform play",
+      text: "Aether is a cross-platform KiriKiri2 runtime hosted by Godot and driven by a C++17 core. Familiar scripts, layers, sound, saves, and plugins remain—now with modern rendering and a multi-platform experience.",
+      traits: ["Native GPU rendering", "KiriKiri2 compatibility", "Cross-platform play"],
     },
-    magic: {
-      eyebrow: "A LITTLE RUNTIME MAGIC",
-      title: "Every technical layer\nprotects the immersion.",
-      items: [
-        ["✦", "Native GPU rendering", "Godot Native is the default path, moving frames into Godot-owned RenderingDevice resources."],
-        ["◇", "A complete runtime core", "Visuals, audio, storage, VM, and plugin support are driven by one C++17 core."],
-        ["⌁", "Cross-platform delivery", "Export paths are wired for macOS, iOS / iPadOS, Android, and Web."],
-        ["◌", "Playable from first launch", "A multilingual KAG3 demo joins the library with the same play-time and save flow."],
+    updates: {
+      eyebrow: "LATEST UPDATE",
+      version: "0.1.0-alpha.3",
+      badge: "Latest pre-release",
+      title: "Steadier character layers.\nSmoother heavy transitions.",
+      text: "This release restores compatible character-layer behavior and prevents occasional black frames during demanding transitions.",
+      action: "Explore every version",
+      release: "Open GitHub Release",
+    },
+    contact: {
+      eyebrow: "WHERE CAN WE FIND YOU?",
+      title: "Help stories\ntravel further.",
+      text: "Whether you want to contribute, report game compatibility, or simply follow the project, you’ll find us on GitHub.",
+      repository: ["GitHub repository", "Browse code, documentation, and releases"],
+      discussions: ["Community discussions", "Share ideas, ask questions, and shape direction"],
+      issues: ["Issue tracker", "Report bugs and game compatibility findings"],
+    },
+    panel: {
+      eyebrow: "WHAT'S NEW",
+      title: "Version capability preview",
+      intro: "From the latest fixes to the cross-platform foundation, see what each public release added.",
+      close: "Close version preview",
+      openRelease: "Read the full release notes",
+      latest: "LATEST",
+      foundation: "FOUNDATION",
+      versions: [
+        {
+          tag: "0.1.0-alpha.3",
+          date: "AUG 01, 2026",
+          label: "LATEST",
+          title: "Rendering and character layers",
+          items: ["Restored compatible character-layer rendering", "Prevented black frames during heavy transitions"],
+        },
+        {
+          tag: "0.1.0-alpha.2",
+          date: "JUL 31, 2026",
+          label: "FOUNDATION",
+          title: "Cross-platform runtime foundation",
+          items: [
+            "Upgraded to Godot 4.7 and native rendering",
+            "Added Web, Linux, Android, and iOS support",
+            "Bundled a multilingual KAG3 demo",
+            "Improved storage, fonts, video, and plugin compatibility",
+          ],
+        },
       ],
-    },
-    journey: {
-      eyebrow: "HOW STORIES TRAVEL",
-      title: "From one game\nto every screen.",
-      text: "Clear product boundaries let platform experience and compatibility grow together.",
-      steps: [
-        ["01", "Import", "Choose a local directory or XP3 content"],
-        ["02", "Run", "KiriKiri Runtime and plugins interpret the story"],
-        ["03", "Render", "Godot Native owns graphics resources and UI"],
-        ["04", "Continue", "Settings and saves persist on the device"],
-      ],
-      web: "On the Web, large files stream on demand while saves persist in IndexedDB for the current site.",
-    },
-    compatibility: {
-      eyebrow: "COMPATIBILITY, WITH EVIDENCE",
-      title: "Not “it should run.”\nActually played.",
-      number: "34",
-      label: "titles manually verified",
-      updated: "Compatibility list updated 2026.08.01",
-      text: "Every record names the platform, build, verification scope, and tester—and distinguishes smoke checks from full flow tests.",
-      action: "Open the compatibility log",
-      games: ["RIDDLE JOKER", "9-nine-", "NEKOPARA Vol. 1", "Senren＊Banka", "GINKA", "Maitetsu"],
-    },
-    architecture: {
-      eyebrow: "BEHIND THE CURTAIN",
-      title: "Five layers\nbehind the magic.",
-      text: "From product shell to script runtime, every layer has a clear role and leaves a path that can be debugged and reproduced.",
-      layers: [
-        ["Godot App Shell", "Product UI, settings, and platform packaging"],
-        ["GDExtension Host", "Native hosting and render resources"],
-        ["C ABI Engine API", "A stable host-to-engine interface"],
-        ["C++ Engine Core", "Visuals, audio, storage, VM, and input"],
-        ["KiriKiri Runtime / Plugins", "Script runtime and plugin compatibility"],
-      ],
-    },
-    open: {
-      eyebrow: "OPEN SOURCE · GPL-3.0-OR-LATER",
-      title: "Stories belong to everyone\nwho chooses to preserve them.",
-      text: "The public build needs no private packages. Code, tests, diagnostics, compatibility notes, and developer guides all live in the open.",
-      source: "Meet us on GitHub",
-      issues: "Join the discussion",
     },
     footer: {
       line: "A Godot-hosted KiriKiri2 runtime.",
       source: "Source",
-      docs: "Developer guide",
-      issues: "Issues",
+      releases: "Releases",
       license: "GPL-3.0-or-later",
     },
   },
@@ -180,203 +172,177 @@ function Lines({ children }: { children: string }) {
 export function AetherSite() {
   const [language, setLanguage] = useState<Language>("zh");
   const [menuOpen, setMenuOpen] = useState(false);
+  const [previewOpen, setPreviewOpen] = useState(false);
   const t = copy[language];
 
   useEffect(() => {
     document.documentElement.lang = language === "zh" ? "zh-CN" : "en";
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12 });
-    document.querySelectorAll(".reveal").forEach((node) => observer.observe(node));
-    return () => observer.disconnect();
   }, [language]);
 
+  useEffect(() => {
+    if (!previewOpen) return;
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setPreviewOpen(false);
+    };
+    document.body.classList.add("preview-is-open");
+    window.addEventListener("keydown", onKeyDown);
+    return () => {
+      document.body.classList.remove("preview-is-open");
+      window.removeEventListener("keydown", onKeyDown);
+    };
+  }, [previewOpen]);
+
   const closeMenu = () => setMenuOpen(false);
+  const openPreview = () => {
+    setMenuOpen(false);
+    setPreviewOpen(true);
+  };
 
   return (
-    <div className="dream-site">
+    <div className="marketing-site">
       <a className="skip-link" href="#content">Skip to content</a>
 
-      <header className="dream-header">
-        <a className="dream-brand" href="#top" onClick={closeMenu} aria-label="Aether home">
-          <img src="/app-icon.png" alt="" width="42" height="42" />
+      <div className="announcement">
+        <span>{t.announcement}</span>
+        <button onClick={openPreview}>{t.announcementAction}<i>↗</i></button>
+      </div>
+
+      <header className="site-header">
+        <a className="brand" href="#top" onClick={closeMenu} aria-label="Aether home">
+          <img src="/app-icon.png" alt="" width="40" height="40" />
           <span>Aether</span>
         </a>
-        <nav className={menuOpen ? "dream-nav open" : "dream-nav"} aria-label="Primary navigation">
+
+        <nav className={menuOpen ? "site-nav is-open" : "site-nav"} aria-label="Primary navigation">
           {t.nav.map(([href, label]) => <a href={href} key={href} onClick={closeMenu}>{label}</a>)}
         </nav>
+
         <div className="header-actions">
           <div className="language-toggle" aria-label="Language">
-            <button className={language === "zh" ? "active" : ""} onClick={() => setLanguage("zh")}>中文</button>
-            <i />
+            <button className={language === "zh" ? "active" : ""} onClick={() => setLanguage("zh")}>中</button>
+            <span>/</span>
             <button className={language === "en" ? "active" : ""} onClick={() => setLanguage("en")}>EN</button>
           </div>
-          <a className="header-github" href={github} target="_blank" rel="noreferrer">GitHub <span>↗</span></a>
-          <button className="menu-toggle" onClick={() => setMenuOpen((open) => !open)} aria-label="Toggle navigation" aria-expanded={menuOpen}>
-            <span /><span />
+          <a className="header-contact" href={github} target="_blank" rel="noreferrer">GitHub <span>↗</span></a>
+          <button className="menu-button" onClick={() => setMenuOpen((open) => !open)} aria-label="Toggle navigation" aria-expanded={menuOpen}>
+            <i /><i />
           </button>
         </div>
       </header>
 
       <main id="content">
-        <section className="dream-hero" id="top">
-          <img className="hero-illustration" src="/aetherkiri-muse.png" alt="Blue-haired anime astronomer in a starlit study" />
-          <div className="hero-veil" />
-          <div className="constellation constellation-a" aria-hidden="true"><i /><i /><i /><i /></div>
-          <div className="constellation constellation-b" aria-hidden="true"><i /><i /><i /></div>
-          <span className="floating-glyph glyph-one" aria-hidden="true">✦</span>
-          <span className="floating-glyph glyph-two" aria-hidden="true">◇</span>
-          <span className="floating-glyph glyph-three" aria-hidden="true">☾</span>
-
+        <section className="hero" id="top">
+          <img className="hero-art" src="/aetherkiri-muse.png" alt="Blue-haired anime astronomer in a moonlit observatory" />
+          <div className="hero-shade" />
+          <div className="hero-stars" aria-hidden="true" />
           <div className="hero-copy">
-            <p className="hero-overline"><i />{t.hero.overline}</p>
+            <p className="eyebrow light"><i />{t.hero.eyebrow}</p>
             <h1><span>{t.hero.titleA}</span><em>{t.hero.titleB}</em></h1>
-            <p className="hero-description">{t.hero.text}</p>
-            <div className="hero-buttons">
-              <a className="dream-button primary" href="#about">{t.hero.primary}<span>↓</span></a>
-              <a className="dream-button quiet" href={github} target="_blank" rel="noreferrer">{t.hero.secondary}<span>↗</span></a>
+            <p className="hero-text">{t.hero.text}</p>
+            <div className="hero-actions">
+              <a className="button button-light" href={github} target="_blank" rel="noreferrer">{t.hero.contact}<span>↗</span></a>
+              <button className="button button-ghost" onClick={openPreview}>{t.hero.preview}<span>＋</span></button>
             </div>
-            <div className="hero-platforms">
+            <div className="platform-list" aria-label="Supported platforms">
               {t.hero.platforms.map((platform) => <span key={platform}>{platform}</span>)}
             </div>
           </div>
-
-          <p className="hero-side-note">{t.hero.side}</p>
-          <a className="hero-scroll" href="#about" aria-label="Scroll down"><span>SCROLL</span><i /></a>
+          <a className="scroll-note" href="#about"><span>SCROLL</span><i /></a>
         </section>
 
-        <section className="paper-section about-section" id="about">
-          <div className="paper-wave" aria-hidden="true" />
-          <div className="ink-star star-left" aria-hidden="true">✦</div>
-          <div className="ink-orbit" aria-hidden="true"><i /><span>AE</span></div>
-          <div className="section-wrap about-grid reveal">
+        <section className="about" id="about">
+          <div className="paper-orbit orbit-one" aria-hidden="true">✦</div>
+          <div className="paper-orbit orbit-two" aria-hidden="true">A</div>
+          <div className="section-inner about-grid">
             <div>
-              <p className="chapter-label">{t.about.eyebrow}</p>
-              <h2 className="editorial-title"><Lines>{t.about.title}</Lines></h2>
+              <p className="eyebrow">{t.about.eyebrow}</p>
+              <h2><Lines>{t.about.title}</Lines></h2>
             </div>
             <div className="about-copy">
               <p>{t.about.text}</p>
-              <div className="hand-note"><span>↳</span>{t.about.note}</div>
-              <div className="signature">Aether <i>✦</i></div>
-            </div>
-          </div>
-        </section>
-
-        <section className="magic-section" id="magic">
-          <div className="magic-cloud cloud-one" aria-hidden="true" />
-          <div className="magic-cloud cloud-two" aria-hidden="true" />
-          <div className="section-wrap">
-            <div className="magic-heading reveal">
-              <p className="chapter-label">{t.magic.eyebrow}</p>
-              <h2 className="editorial-title"><Lines>{t.magic.title}</Lines></h2>
-            </div>
-            <div className="magic-cards">
-              {t.magic.items.map(([icon, title, text], index) => (
-                <article className={`magic-card magic-card-${index + 1} reveal`} key={title} style={{ "--delay": `${index * 80}ms` } as CSSProperties}>
-                  <div className="card-charm" aria-hidden="true">{icon}</div>
-                  <span className="card-index">0{index + 1}</span>
-                  <h3>{title}</h3>
-                  <p>{text}</p>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="journey-section" id="journey">
-          <div className="journey-stars" aria-hidden="true" />
-          <div className="section-wrap journey-grid">
-            <div className="journey-heading reveal">
-              <p className="chapter-label light">{t.journey.eyebrow}</p>
-              <h2 className="editorial-title light"><Lines>{t.journey.title}</Lines></h2>
-              <p>{t.journey.text}</p>
-              <div className="web-note"><span>WEB</span>{t.journey.web}</div>
-            </div>
-            <div className="journey-steps">
-              {t.journey.steps.map(([number, title, text], index) => (
-                <article className="journey-step reveal" key={title} style={{ "--delay": `${index * 90}ms` } as CSSProperties}>
-                  <div className="step-number">{number}</div>
-                  <div><h3>{title}</h3><p>{text}</p></div>
-                  <span aria-hidden="true">{index === t.journey.steps.length - 1 ? "✦" : "↓"}</span>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="compat-section" id="compatibility">
-          <div className="section-wrap compat-grid">
-            <div className="compat-copy reveal">
-              <p className="chapter-label">{t.compatibility.eyebrow}</p>
-              <h2 className="editorial-title"><Lines>{t.compatibility.title}</Lines></h2>
-              <p className="compat-description">{t.compatibility.text}</p>
-              <a className="ink-link" href={`${github}/blob/main/doc/verified_games.zh-CN.md`} target="_blank" rel="noreferrer">{t.compatibility.action}<span>↗</span></a>
-            </div>
-            <div className="compat-card reveal">
-              <div className="compat-moon" aria-hidden="true">☾</div>
-              <div className="compat-number">{t.compatibility.number}<sup>+</sup></div>
-              <strong>{t.compatibility.label}</strong>
-              <small>{t.compatibility.updated}</small>
-              <div className="game-ribbons">
-                {t.compatibility.games.map((game, index) => <span key={game} style={{ "--rotate": `${index % 2 ? 1.4 : -1.1}deg` } as CSSProperties}>{game}</span>)}
+              <div className="trait-list">
+                {t.about.traits.map((trait, index) => <span key={trait}><i>0{index + 1}</i>{trait}</span>)}
               </div>
             </div>
           </div>
         </section>
 
-        <section className="architecture-section">
-          <div className="section-wrap architecture-grid">
-            <div className="architecture-heading reveal">
-              <p className="chapter-label">{t.architecture.eyebrow}</p>
-              <h2 className="editorial-title"><Lines>{t.architecture.title}</Lines></h2>
-              <p>{t.architecture.text}</p>
+        <section className="updates" id="updates">
+          <div className="update-glow" aria-hidden="true" />
+          <div className="section-inner update-grid">
+            <div className="release-stamp">
+              <span>{t.updates.badge}</span>
+              <strong>{t.updates.version}</strong>
+              <i>✦</i>
             </div>
-            <div className="layer-book">
-              {t.architecture.layers.map(([title, text], index) => (
-                <article className="layer-row reveal" key={title} style={{ "--delay": `${index * 70}ms` } as CSSProperties}>
-                  <span>{String(index + 1).padStart(2, "0")}</span>
-                  <div><h3>{title}</h3><p>{text}</p></div>
-                  <i aria-hidden="true">✦</i>
-                </article>
-              ))}
+            <div className="update-copy">
+              <p className="eyebrow light">{t.updates.eyebrow}</p>
+              <h2><Lines>{t.updates.title}</Lines></h2>
+              <p>{t.updates.text}</p>
+              <div className="update-actions">
+                <button className="text-link" onClick={openPreview}>{t.updates.action}<span>＋</span></button>
+                <a className="text-link quiet" href={`${github}/releases/tag/0.1.0-alpha.3`} target="_blank" rel="noreferrer">{t.updates.release}<span>↗</span></a>
+              </div>
             </div>
           </div>
         </section>
 
-        <section className="open-section" id="open-source">
-          <div className="open-sky" aria-hidden="true" />
-          <div className="open-symbol symbol-a" aria-hidden="true">✧</div>
-          <div className="open-symbol symbol-b" aria-hidden="true">◇</div>
-          <div className="open-content reveal">
-            <img src="/app-icon.png" alt="Aether app icon" width="104" height="104" />
-            <p className="chapter-label light">{t.open.eyebrow}</p>
-            <h2 className="editorial-title light"><Lines>{t.open.title}</Lines></h2>
-            <p>{t.open.text}</p>
-            <div className="open-buttons">
-              <a className="dream-button paper" href={github} target="_blank" rel="noreferrer">{t.open.source}<span>↗</span></a>
-              <a className="dream-button outline" href={`${github}/issues`} target="_blank" rel="noreferrer">{t.open.issues}</a>
+        <section className="contact" id="contact">
+          <div className="section-inner contact-grid">
+            <div className="contact-heading">
+              <p className="eyebrow">{t.contact.eyebrow}</p>
+              <h2><Lines>{t.contact.title}</Lines></h2>
+              <p>{t.contact.text}</p>
+            </div>
+            <div className="contact-links">
+              <a href={github} target="_blank" rel="noreferrer"><span><strong>{t.contact.repository[0]}</strong><small>{t.contact.repository[1]}</small></span><i>↗</i></a>
+              <a href={discussions} target="_blank" rel="noreferrer"><span><strong>{t.contact.discussions[0]}</strong><small>{t.contact.discussions[1]}</small></span><i>↗</i></a>
+              <a href={issues} target="_blank" rel="noreferrer"><span><strong>{t.contact.issues[0]}</strong><small>{t.contact.issues[1]}</small></span><i>↗</i></a>
             </div>
           </div>
         </section>
       </main>
 
-      <footer className="dream-footer">
-        <div className="footer-top">
-          <div className="footer-brand"><img src="/app-icon.png" alt="" width="54" height="54" /><div><strong>Aether</strong><span>{t.footer.line}</span></div></div>
+      <footer className="site-footer">
+        <div className="footer-inner">
+          <div className="footer-brand"><img src="/app-icon.png" alt="" width="46" height="46" /><div><strong>Aether</strong><span>{t.footer.line}</span></div></div>
           <div className="footer-links">
             <a href={github} target="_blank" rel="noreferrer">{t.footer.source}</a>
-            <a href={`${github}/blob/main/doc/development.zh-CN.md`} target="_blank" rel="noreferrer">{t.footer.docs}</a>
-            <a href={`${github}/issues`} target="_blank" rel="noreferrer">{t.footer.issues}</a>
+            <a href={`${github}/releases`} target="_blank" rel="noreferrer">{t.footer.releases}</a>
             <a href={`${github}/blob/main/LICENSE`} target="_blank" rel="noreferrer">{t.footer.license}</a>
           </div>
         </div>
         <div className="footer-bottom"><span>© {new Date().getFullYear()} Aether</span><span>Stories, across every screen.</span></div>
       </footer>
+
+      {previewOpen && (
+        <div className="preview-backdrop" role="presentation" onMouseDown={(event) => {
+          if (event.currentTarget === event.target) setPreviewOpen(false);
+        }}>
+          <section className="preview-panel" role="dialog" aria-modal="true" aria-labelledby="preview-title">
+            <div className="preview-head">
+              <div>
+                <p className="eyebrow">{t.panel.eyebrow}</p>
+                <h2 id="preview-title">{t.panel.title}</h2>
+                <p>{t.panel.intro}</p>
+              </div>
+              <button className="preview-close" onClick={() => setPreviewOpen(false)} aria-label={t.panel.close}>×</button>
+            </div>
+            <div className="version-list">
+              {t.panel.versions.map((version) => (
+                <article className="version-card" key={version.tag}>
+                  <div className="version-meta"><span>{version.label}</span><time>{version.date}</time></div>
+                  <div className="version-body">
+                    <div><strong>{version.tag}</strong><h3>{version.title}</h3></div>
+                    <ul>{version.items.map((item) => <li key={item}>{item}</li>)}</ul>
+                  </div>
+                  <a href={`${github}/releases/tag/${version.tag}`} target="_blank" rel="noreferrer">{t.panel.openRelease}<span>↗</span></a>
+                </article>
+              ))}
+            </div>
+          </section>
+        </div>
+      )}
     </div>
   );
 }
