@@ -26,7 +26,8 @@ export function Cosmos() {
     const ctx = canvas?.getContext("2d");
     if (!canvas || !ctx) return;
 
-    const calm = reducedMotion();
+    const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    let calm = motionQuery.matches;
     const pointer = { x: -9999, y: -9999, px: 0, py: 0, tx: 0, ty: 0 };
     let width = 0;
     let height = 0;
@@ -36,7 +37,8 @@ export function Cosmos() {
     let last = performance.now();
     let meteorClock = 1800;
     let scroll = window.scrollY;
-    let visible = true;
+    let visible = document.visibilityState === "visible";
+    let lastPaint = 0;
 
     const seed = () => {
       const dpr = Math.min(window.devicePixelRatio || 1, 2);
@@ -63,6 +65,14 @@ export function Cosmos() {
     const wrap = (value: number, size: number) => ((value % size) + size) % size;
 
     const draw = (time: number) => {
+      frame = 0;
+      if (!visible) return;
+      // Keep the ambient sky at 30 fps; pointer and CSS motion remain smooth.
+      if (!calm && time - lastPaint < 1000 / 30) {
+        frame = window.requestAnimationFrame(draw);
+        return;
+      }
+      lastPaint = time;
       const dt = Math.min(time - last, 48);
       last = time;
       pointer.px += (pointer.tx - pointer.px) * 0.05;
@@ -146,10 +156,17 @@ export function Cosmos() {
         }
       }
 
-      frame = visible ? window.requestAnimationFrame(draw) : 0;
+      frame = !calm ? window.requestAnimationFrame(draw) : 0;
     };
 
+    const requestDraw = () => {
+      if (visible && !frame) frame = window.requestAnimationFrame(draw);
+    };
+    const onResize = () => { seed(); requestDraw(); };
+    const onMotion = () => { calm = motionQuery.matches; requestDraw(); };
+
     const onPointer = (event: PointerEvent) => {
+      if (calm || event.pointerType === "touch") return;
       pointer.x = event.clientX;
       pointer.y = event.clientY;
       pointer.tx = (event.clientX / width - 0.5) * 2;
@@ -161,9 +178,13 @@ export function Cosmos() {
       pointer.tx = 0;
       pointer.ty = 0;
     };
-    const onScroll = () => { scroll = window.scrollY; };
+    const onScroll = () => { if (!calm) scroll = window.scrollY; };
     const onVisibility = () => {
       visible = document.visibilityState === "visible";
+      if (!visible) {
+        window.cancelAnimationFrame(frame);
+        frame = 0;
+      }
       if (visible && !frame) {
         last = performance.now();
         frame = window.requestAnimationFrame(draw);
@@ -171,15 +192,17 @@ export function Cosmos() {
     };
 
     seed();
-    frame = window.requestAnimationFrame(draw);
-    window.addEventListener("resize", seed);
+    requestDraw();
+    window.addEventListener("resize", onResize);
+    motionQuery.addEventListener("change", onMotion);
     window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("pointermove", onPointer, { passive: true });
     document.documentElement.addEventListener("pointerleave", onLeave);
     document.addEventListener("visibilitychange", onVisibility);
     return () => {
       window.cancelAnimationFrame(frame);
-      window.removeEventListener("resize", seed);
+      window.removeEventListener("resize", onResize);
+      motionQuery.removeEventListener("change", onMotion);
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("pointermove", onPointer);
       document.documentElement.removeEventListener("pointerleave", onLeave);
@@ -274,31 +297,40 @@ export function Cursor() {
       pos.ry += (pos.y - pos.ry) * 0.16;
       if (dot.current) dot.current.style.transform = `translate3d(${pos.x}px, ${pos.y}px, 0)`;
       if (ring.current) ring.current.style.transform = `translate3d(${pos.rx}px, ${pos.ry}px, 0)`;
-      raf = window.requestAnimationFrame(loop);
+      raf = Math.abs(pos.x - pos.rx) + Math.abs(pos.y - pos.ry) > 0.1
+        ? window.requestAnimationFrame(loop) : 0;
     };
     const onMove = (event: PointerEvent) => {
       pos.x = event.clientX;
       pos.y = event.clientY;
+      if (!raf && document.visibilityState === "visible") raf = window.requestAnimationFrame(loop);
       const target = event.target as Element | null;
-      const hot = target?.closest("a, button, [data-cursor]");
+      const hot = target?.closest("a, button, input, summary, [data-cursor]");
       ring.current?.classList.toggle("is-hot", Boolean(hot));
       document.documentElement.classList.remove("cursor-hidden");
     };
     const onDown = () => ring.current?.classList.add("is-down");
     const onUp = () => ring.current?.classList.remove("is-down");
-    const onLeave = () => document.documentElement.classList.add("cursor-hidden");
+    const onLeave = () => {
+      document.documentElement.classList.add("cursor-hidden");
+      window.cancelAnimationFrame(raf);
+      raf = 0;
+    };
+    const onVisibility = () => { if (document.visibilityState !== "visible") onLeave(); };
     raf = window.requestAnimationFrame(loop);
     window.addEventListener("pointermove", onMove, { passive: true });
     window.addEventListener("pointerdown", onDown);
     window.addEventListener("pointerup", onUp);
     document.documentElement.addEventListener("pointerleave", onLeave);
+    document.addEventListener("visibilitychange", onVisibility);
     return () => {
       window.cancelAnimationFrame(raf);
-      document.documentElement.classList.remove("has-cursor");
+      document.documentElement.classList.remove("has-cursor", "cursor-hidden");
       window.removeEventListener("pointermove", onMove);
       window.removeEventListener("pointerdown", onDown);
       window.removeEventListener("pointerup", onUp);
       document.documentElement.removeEventListener("pointerleave", onLeave);
+      document.removeEventListener("visibilitychange", onVisibility);
     };
   }, []);
 

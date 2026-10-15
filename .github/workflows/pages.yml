@@ -4,6 +4,8 @@ on:
   push:
     branches: ["main"]
   workflow_dispatch:
+  schedule:
+    - cron: "17 */6 * * *"
 
 permissions:
   contents: read
@@ -27,6 +29,15 @@ jobs:
           cache: npm
       - name: Install dependencies
         run: npm ci
+      - name: Sync all public releases
+        run: npm run sync:releases
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          DOWNLOAD_BASE_URL: ${{ vars.DOWNLOAD_BASE_URL }}
+      - name: Lint and typecheck
+        run: npm run lint && npx tsc --noEmit
+      - name: Test release catalog
+        run: node --test tests/releases.test.mjs
       - name: Build static site
         run: npm run build:pages
       - name: Upload Pages artifact

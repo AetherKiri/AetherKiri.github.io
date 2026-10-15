@@ -1,22 +1,11 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://aetherkiri.github.io"),
   title: "Aether — 让故事，再次抵达你",
   description:
-    "Aether 是一个由 Godot 4.7 承载、以 C++17 引擎核心驱动的跨平台 KiriKiri2 运行时。",
+    "Aether 是 Godot 驱动的跨平台多运行时视觉小说平台，支持 KiriKiri2、ONS、Ren’Py 与 Flash 等。浏览和下载全部公开版本。",
   applicationName: "Aether",
   keywords: ["Aether", "AetherKiri", "KiriKiri2", "Godot", "visual novel", "open source"],
   icons: {
@@ -28,7 +17,7 @@ export const metadata: Metadata = {
     url: "/",
     siteName: "Aether",
     title: "Aether — 让故事，再次抵达你",
-    description: "Godot 驱动的 KiriKiri2 跨平台运行时。",
+    description: "让喜欢的故事再次抵达你。探索 Aether 多运行时平台，下载最新与历史版本。",
     locale: "zh_CN",
     images: [
       {
@@ -42,7 +31,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Aether — 让故事，再次抵达你",
-    description: "Godot 驱动的 KiriKiri2 跨平台运行时。",
+    description: "让喜欢的故事再次抵达你。探索 Aether 多运行时平台，下载最新与历史版本。",
     images: ["/og-aether.png"],
   },
 };
@@ -54,7 +43,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="zh-CN">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body>
         {children}
       </body>
     </html>

@@ -3,11 +3,12 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { CSSProperties, PointerEvent as ReactPointerEvent, ReactNode } from "react";
 import { GROUP_NUMBER, QQ_PAGE, SHARE_URL } from "./community";
+import { Downloads, latestRelease, versions } from "./downloads";
 import { Cosmos, Cursor, SplitText, copyText, magnetic, reducedMotion, spotlight, tilt, useRevealAll, useScrollMotion } from "./effects";
 
 type Language = "zh" | "en";
 
-const github = "https://github.com/AetherKiri/AetherKiri";
+const github = "https://github.com/AetherKiri/Aether";
 const issues = `${github}/issues`;
 const verifiedGames = `${github}/blob/main/doc/verified_games.md`;
 
@@ -15,11 +16,13 @@ const RUNTIMES = [
   { n: "KiriKiri / KiriKiri2", t: "C++17", s: "Stable", d: "TJS2/KAG 完整兼容，主力运行时" },
   { n: "Artemis Engine", t: "artemis", s: "Available", d: "Artemis 脚本与资源管线" },
   { n: "ONScripterYuri", t: "ONS", s: "Stable", d: "ONS/NScripter 系完整支援" },
-  { n: "WHITE ALBUM2 (Leaf TtT)", t: "wa2", s: "Available", d: "Leaf 分支引擎，WA2 专线" },
-  { n: "minori", t: "Rust", s: "Available", d: "minori 系演出与脚本" },
-  { n: "Qlie", t: "Internal", s: "Internal", d: "条件编译，内部验证" },
+  { n: "Siglus", t: "Rust", s: "Available", d: "Siglus 引擎与原生资源管线" },
+  { n: "BGI / Ethornell", t: "BGI", s: "Available", d: "BGI / Ethornell 运行时" },
   { n: "SoftPal", t: "softpal", s: "Available", d: "SoftPal 架构支援" },
   { n: "CatSystem2", t: "catsystem2", s: "Available", d: "CatSystem2 运行时" },
+  { n: "Ren’Py 8", t: "Native", s: "Available", d: "原生 Ren’Py SDK，独立存档与虚拟按键" },
+  { n: "Flash", t: "Ruffle", s: "Available", d: "本地 SWF 播放与独立 Flash 游戏库" },
+  { n: "TyranoScript", t: "WebView", s: "Experimental", d: "实验性浏览器项目播放" },
 ];
 const RENDERS = [
   { n: "Godot Native", b: "默认", p: ["RenderingDevice 直驱", "批处理合批", "VSync 自适应"] },
@@ -29,9 +32,10 @@ const GAMES = ["Fate/stay night", "WHITE ALBUM2", "GINKA", "穗织", "星空列�
 
 const copy = {
   zh: {
-    announcement: "Aether 0.1.0-alpha.3 已发布",
-    announcementAction: "看看更新了什么",
+    announcement: `Aether ${latestRelease.tag} 已发布`,
+    announcementAction: "浏览版本",
     nav: [
+      ["#downloads", "下载"],
       ["#about", "关于"],
       ["#runtime", "多 Runtime"],
       ["#games", "游戏支持"],
@@ -41,9 +45,9 @@ const copy = {
       eyebrow: "OPEN-SOURCE MULTI-RUNTIME ENGINE",
       titleA: "让故事",
       titleB: "再次抵达你",
-      text: "Aether 以 Godot 为宿主、C++17 为核心，支持 KiriKiri2、ONS、WHITE ALBUM2、minori、SoftPal、Artemis、CatSystem2、Qlie 八大运行时，让经典视觉小说自然抵达今天的每一块屏幕。",
-      contact: "在 GitHub 联系我们",
-      preview: "新功能预览",
+      text: "一个游戏库，多种熟悉的引擎。Aether 以 Godot 为宿主，汇聚 KiriKiri2、ONS、Siglus、Artemis 等运行时，并支持原生 Ren’Py 与 Flash，让喜欢的故事再次抵达你。",
+      contact: "下载 Aether",
+      preview: "探索源代码",
       platforms: ["macOS", "iOS / iPadOS", "Android", "Web", "Linux", "Windows"],
     },
     qq: {
@@ -57,7 +61,7 @@ const copy = {
     },
     runtime: {
       title: "多 Runtime",
-      desc: "八大引擎统一调度，游戏自动选择最佳运行时",
+      desc: "从经典引擎到原生 Ren’Py 与 Flash，按游戏特征选择运行时；兼容范围因平台和版本而异。",
     },
     render: {
       title: "渲染高性能",
@@ -65,7 +69,7 @@ const copy = {
     },
     games: {
       title: "已验证游戏",
-      desc: "74 款游戏人工烟测与流程验证，覆盖主流 Galgame",
+      desc: "从启动、画面到交互，持续记录真实游戏的兼容进展。",
       verified: "Flow 验证",
       smoke: "Smoke 验证",
     },
@@ -80,54 +84,25 @@ const copy = {
       issuesBefore: "如果你想分享想法、提出问题、参与项目方向讨论，或反馈缺陷与游戏兼容性问题，欢迎来到",
       issues: "GitHub Issues",
     },
-    panel: {
-      eyebrow: "WHAT'S NEW",
-      title: "版本能力预览",
-      intro: "从最新修复到跨平台基础，看看每个公开版本带来了什么。",
-      close: "关闭版本预览",
-      openRelease: "查看完整发布说明",
-      latest: "LATEST",
-      foundation: "FOUNDATION",
-      versions: [
-        {
-          tag: "0.1.0-alpha.3",
-          date: "2026.08.01",
-          label: "LATEST",
-          title: "渲染与角色图层兼容",
-          items: ["恢复兼容的角色图层显示", "避免重型转场过程出现黑帧"],
-        },
-        {
-          tag: "0.1.0-alpha.2",
-          date: "2026.07.31",
-          label: "FOUNDATION",
-          title: "跨平台运行基础",
-          items: [
-            "升级 Godot 4.7 与原生渲染链路",
-            "接入 Web、Linux、Android 与 iOS 支持",
-            "加入内置多语言 KAG3 Demo",
-            "改善存储、字体、视频与插件兼容能力",
-          ],
-        },
-      ],
-    },
     footer: {
       line: "A Godot-hosted multi-runtime engine.",
       source: "Source",
       releases: "Releases",
       license: "GPL-3.0-or-later",
     },
-    marquee: ["KiriKiri2", "ONScripterYuri", "WHITE ALBUM2", "minori", "SoftPal", "Artemis", "CatSystem2", "Qlie"],
+    marquee: ["KiriKiri2", "ONScripterYuri", "Siglus", "BGI", "SoftPal", "Artemis", "CatSystem2", "Ren’Py", "Flash"],
     stats: [
-      ["8", "Runtime"],
-      ["74", "已验证游戏"],
+      [String(RUNTIMES.length), "Runtime / Player"],
+      [String(versions.length), "公开版本"],
       ["C++17", "引擎核心"],
       ["GPL-3.0", "开源协议"],
     ],
   },
   en: {
-    announcement: "Aether 0.1.0-alpha.3 is live",
-    announcementAction: "See what changed",
+    announcement: `Aether ${latestRelease.tag} is live`,
+    announcementAction: "Browse releases",
     nav: [
+      ["#downloads", "Downloads"],
       ["#about", "About"],
       ["#runtime", "Runtimes"],
       ["#games", "Games"],
@@ -137,9 +112,9 @@ const copy = {
       eyebrow: "OPEN-SOURCE MULTI-RUNTIME ENGINE",
       titleA: "Let stories",
       titleB: "find you again",
-      text: "Aether is hosted by Godot with a C++17 core, supporting 8 runtimes: KiriKiri2, ONS, WHITE ALBUM2, minori, SoftPal, Artemis, CatSystem2, Qlie—bringing classic visual novels naturally to today’s screens.",
-      contact: "Find us on GitHub",
-      preview: "Preview what’s new",
+      text: "One library, many familiar engines. Hosted by Godot, Aether brings together KiriKiri2, ONS, Siglus, Artemis and more, with native Ren’Py and Flash playback. Let your favorite stories find you again.",
+      contact: "Download Aether",
+      preview: "Explore the source",
       platforms: ["macOS", "iOS / iPadOS", "Android", "Web", "Linux", "Windows"],
     },
     qq: {
@@ -153,7 +128,7 @@ const copy = {
     },
     runtime: {
       title: "Multi-Runtime",
-      desc: "8 engines unified dispatch, automatic runtime selection",
+      desc: "Classic engines, native Ren’Py, and Flash in one app. Games select their runtime by their markers; compatibility varies by platform and release.",
     },
     render: {
       title: "High-Performance Rendering",
@@ -161,7 +136,7 @@ const copy = {
     },
     games: {
       title: "Verified Games",
-      desc: "74 games manually smoke & flow tested, covering mainstream Galgame",
+      desc: "Real game compatibility, tracked through startup, rendering, and interaction checks.",
       verified: "Flow Verified",
       smoke: "Smoke Verified",
     },
@@ -176,46 +151,16 @@ const copy = {
       issuesBefore: "To share ideas, ask questions, shape the project, or report bugs and game compatibility findings, visit",
       issues: "GitHub Issues",
     },
-    panel: {
-      eyebrow: "WHAT’S NEW",
-      title: "Version capability preview",
-      intro: "From the latest fixes to the cross-platform foundation, see what each public release added.",
-      close: "Close version preview",
-      openRelease: "Read the full release notes",
-      latest: "LATEST",
-      foundation: "FOUNDATION",
-      versions: [
-        {
-          tag: "0.1.0-alpha.3",
-          date: "AUG 01, 2026",
-          label: "LATEST",
-          title: "Rendering and character layers",
-          items: ["Restored compatible character-layer rendering", "Prevented black frames during heavy transitions"],
-        },
-        {
-          tag: "0.1.0-alpha.2",
-          date: "JUL 31, 2026",
-          label: "FOUNDATION",
-          title: "Cross-platform runtime foundation",
-          items: [
-            "Upgraded to Godot 4.7 and native rendering",
-            "Added Web, Linux, Android, and iOS support",
-            "Bundled a multilingual KAG3 demo",
-            "Improved storage, fonts, video, and plugin compatibility",
-          ],
-        },
-      ],
-    },
     footer: {
       line: "A Godot-hosted multi-runtime engine.",
       source: "Source",
       releases: "Releases",
       license: "GPL-3.0-or-later",
     },
-    marquee: ["KiriKiri2", "ONScripterYuri", "WHITE ALBUM2", "minori", "SoftPal", "Artemis", "CatSystem2", "Qlie"],
+    marquee: ["KiriKiri2", "ONScripterYuri", "Siglus", "BGI", "SoftPal", "Artemis", "CatSystem2", "Ren’Py", "Flash"],
     stats: [
-      ["8", "Runtime"],
-      ["74", "Verified Games"],
+      [String(RUNTIMES.length), "Runtime / Player"],
+      [String(versions.length), "Public Releases"],
       ["C++17", "Engine Core"],
       ["GPL-3.0", "License"],
     ],
@@ -317,13 +262,12 @@ function Marquee({ items, reverse = false }: { items: readonly string[]; reverse
 /* ------------------------------------------------------------------ */
 /* Site                                                                */
 /* ------------------------------------------------------------------ */
-const SECTIONS = ["about", "runtime", "games", "contact"] as const;
+const SECTIONS = ["downloads", "about", "runtime", "games", "contact"] as const;
 
 export function AetherSite() {
   const heroRef = useRef<HTMLElement>(null);
   const [language, setLanguage] = useState<Language>("zh");
   const [menuOpen, setMenuOpen] = useState(false);
-  const [previewOpen, setPreviewOpen] = useState(false);
   const [active, setActive] = useState<string>("");
   const [qCopied, setQCopied] = useState(false);
   const scrolled = useScrollMotion();
@@ -341,19 +285,16 @@ export function AetherSite() {
   }, [language]);
 
   useEffect(() => {
-    if (!previewOpen && !menuOpen) return;
+    if (!menuOpen) return;
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key !== "Escape") return;
-      setPreviewOpen(false);
       setMenuOpen(false);
     };
-    if (previewOpen) document.body.classList.add("preview-is-open");
     window.addEventListener("keydown", onKeyDown);
     return () => {
-      document.body.classList.remove("preview-is-open");
       window.removeEventListener("keydown", onKeyDown);
     };
-  }, [previewOpen, menuOpen]);
+  }, [menuOpen]);
 
   /* Track which section is in view to drive the nav indicator. */
   useEffect(() => {
@@ -376,10 +317,6 @@ export function AetherSite() {
   }, []);
 
   const closeMenu = () => setMenuOpen(false);
-  const openPreview = () => {
-    setMenuOpen(false);
-    setPreviewOpen(true);
-  };
 
   const moveHero = (event: ReactPointerEvent<HTMLElement>) => {
     const hero = heroRef.current;
@@ -461,7 +398,7 @@ export function AetherSite() {
         {/* ---------------------------------------------------------- HERO */}
         <section className="hero" id="top" ref={heroRef} onPointerMove={moveHero} onPointerLeave={resetHero}>
           <div className="hero-scene" aria-hidden="true">
-            <div className="hero-bg"><img src="/hero-background-v2.webp" alt="" /></div>
+            <div className="hero-bg"><img src="/hero-background-v2.webp" alt="" fetchPriority="high" decoding="async" /></div>
             <div className="hero-moonlight" />
             <svg className="hero-orbits" viewBox="0 0 800 800">
               <defs>
@@ -475,10 +412,10 @@ export function AetherSite() {
               <g className="orbit orbit-b"><circle cx="400" cy="400" r="290" strokeDasharray="2 10" /><circle className="orbit-body warm" cx="690" cy="400" r="3" /></g>
               <g className="orbit orbit-c"><circle cx="400" cy="400" r="210" /><circle className="orbit-body" cx="400" cy="610" r="2.5" /></g>
             </svg>
-            <div className="hero-character"><img src="/hero-character-v2.webp" alt="" /></div>
+            <div className="hero-character"><img src="/hero-character-v2.webp" alt="" decoding="async" /></div>
             <div className="hero-orrery">
               <div className="hero-orrery-float">
-                <img src="/hero-orrery-v2.webp" alt="" />
+                <img src="/hero-orrery-v2.webp" alt="" decoding="async" />
                 <i className="orrery-core" />
               </div>
             </div>
@@ -489,11 +426,11 @@ export function AetherSite() {
           <div className="hero-vignette" aria-hidden="true" />
 
           <div className="hero-copy">
-            <button className="announce" onClick={openPreview} onPointerMove={spotlight}>
+            <a className="announce" href="#downloads" onPointerMove={spotlight}>
               <span className="announce-dot" aria-hidden="true" />
               <span className="announce-text">{t.announcement}</span>
               <span className="announce-action">{t.announcementAction}<i aria-hidden="true">→</i></span>
-            </button>
+            </a>
             <p className="hero-eyebrow"><i aria-hidden="true" />{t.hero.eyebrow}</p>
             <h1 key={language}>
               <span className="hero-line"><SplitText text={t.hero.titleA} delay={0.9} step={language === "zh" ? 0.09 : 0.035} /></span>
@@ -501,14 +438,14 @@ export function AetherSite() {
             </h1>
             <p className="hero-text">{t.hero.text}</p>
             <div className="hero-actions">
-              <a className="button button-primary" href={github} target="_blank" rel="noreferrer" {...magnetic}>
+              <a className="button button-primary" href="#downloads" {...magnetic}>
                 <span className="button-label">{t.hero.contact}</span>
+                <span className="button-icon" aria-hidden="true">↓</span>
+              </a>
+              <a className="button button-glass" href={github} target="_blank" rel="noreferrer" {...magnetic}>
+                <span className="button-label">{t.hero.preview}</span>
                 <span className="button-icon" aria-hidden="true">↗</span>
               </a>
-              <button className="button button-glass" onClick={openPreview} {...magnetic}>
-                <span className="button-label">{t.hero.preview}</span>
-                <span className="button-icon" aria-hidden="true">＋</span>
-              </button>
             </div>
             <ul className="platform-list" aria-label="Supported platforms">
               {t.hero.platforms.map((platform, index) => (
@@ -517,7 +454,7 @@ export function AetherSite() {
             </ul>
           </div>
 
-          <a className="scroll-cue" href="#about" aria-label="Scroll">
+          <a className="scroll-cue" href="#downloads" aria-label="Scroll">
             <span className="scroll-cue-mouse"><i /></span>
             <span>SCROLL</span>
           </a>
@@ -525,11 +462,13 @@ export function AetherSite() {
 
         <Marquee items={t.marquee} />
 
+        <Downloads language={language} />
+
         {/* --------------------------------------------------------- ABOUT */}
         <section className="about-section" id="about">
           <div className="section-inner about-grid">
             <div className="about-copy">
-              <SectionHead index="01" kicker="ABOUT" title={t.about.title} desc="" />
+              <SectionHead index="02" kicker="ABOUT" title={t.about.title} desc="" />
               <div data-reveal><ScrubText text={t.about.text} language={language} /></div>
             </div>
             <div className="stat-grid">
@@ -548,7 +487,7 @@ export function AetherSite() {
         {/* ------------------------------------------------------- RUNTIME */}
         <section className="runtime-section" id="runtime">
           <div className="section-inner">
-            <SectionHead index="02" kicker="RUNTIMES" title={t.runtime.title} desc={t.runtime.desc} />
+            <SectionHead index="03" kicker="RUNTIMES" title={t.runtime.title} desc={t.runtime.desc} />
             <div className="runtime-grid">
               {RUNTIMES.map((r, index) => (
                 <article
@@ -584,7 +523,7 @@ export function AetherSite() {
         {/* -------------------------------------------------------- RENDER */}
         <section className="render-section">
           <div className="section-inner">
-            <SectionHead index="03" kicker="RENDERING" title={t.render.title} desc={t.render.desc} />
+            <SectionHead index="04" kicker="RENDERING" title={t.render.title} desc={t.render.desc} />
             <div className="render-grid">
               {RENDERS.map((r, index) => (
                 <article className="render-card" key={r.n} data-reveal style={{ "--delay": `${index * 120}ms` } as CSSProperties} {...tilt(4)}>
@@ -610,7 +549,7 @@ export function AetherSite() {
         {/* --------------------------------------------------------- GAMES */}
         <section className="games-section" id="games">
           <div className="section-inner">
-            <SectionHead index="04" kicker="COMPATIBILITY" title={t.games.title} desc={t.games.desc} />
+            <SectionHead index="05" kicker="COMPATIBILITY" title={t.games.title} desc={t.games.desc} />
           </div>
           <div className="game-rails" aria-hidden="true">
             <div className="game-rail">
@@ -636,7 +575,7 @@ export function AetherSite() {
               ))}
             </div>
             <a className="games-note" href={verifiedGames} target="_blank" rel="noreferrer" data-reveal>
-              完整 74 款见仓库 doc/verified_games.md<i aria-hidden="true">↗</i>
+              {language === "zh" ? "查看完整游戏兼容记录" : "Read the full compatibility notes"}<i aria-hidden="true">↗</i>
             </a>
           </div>
         </section>
@@ -647,7 +586,7 @@ export function AetherSite() {
         <section className="contact-section" id="contact">
           <div className="contact-halo" aria-hidden="true" />
           <div className="section-inner">
-            <SectionHead index="05" kicker="CONTACT" title={t.contact.title} desc="" />
+            <SectionHead index="06" kicker="CONTACT" title={t.contact.title} desc="" />
             <div className="contact-grid">
               <a className="contact-card" href={github} target="_blank" rel="noreferrer" data-reveal {...tilt(5)}>
                 <span className="card-glow" aria-hidden="true" />
@@ -704,53 +643,13 @@ export function AetherSite() {
           </div>
           <div className="footer-links">
             <a href={github} target="_blank" rel="noreferrer">{t.footer.source}</a>
-            <a href={`${github}/releases`} target="_blank" rel="noreferrer">{t.footer.releases}</a>
+            <a href="#downloads">{t.footer.releases}</a>
             <a href={`${github}/blob/main/LICENSE`} target="_blank" rel="noreferrer">{t.footer.license}</a>
           </div>
         </div>
         <div className="footer-bottom"><span>© {new Date().getFullYear()} Aether</span><span>Stories, across every screen.</span></div>
       </footer>
 
-      {/* ------------------------------------------------------- PREVIEW */}
-      {previewOpen && (
-        <div
-          className="preview-backdrop"
-          role="presentation"
-          onMouseDown={(event) => {
-            if (event.currentTarget === event.target) setPreviewOpen(false);
-          }}
-        >
-          <section className="preview-panel" role="dialog" aria-modal="true" aria-labelledby="preview-title">
-            <div className="preview-head">
-              <div>
-                <p className="section-kicker"><i />{t.panel.eyebrow}</p>
-                <h2 id="preview-title">{t.panel.title}</h2>
-                <p>{t.panel.intro}</p>
-              </div>
-              <button className="preview-close" onClick={() => setPreviewOpen(false)} aria-label={t.panel.close} autoFocus>
-                <i /><i />
-              </button>
-            </div>
-            <ol className="version-list">
-              {t.panel.versions.map((version, index) => (
-                <li className="version-card" key={version.tag} style={{ "--i": index } as CSSProperties}>
-                  <span className="version-node" aria-hidden="true" />
-                  <div className="version-meta">
-                    <span className={index === 0 ? "version-label is-latest" : "version-label"}>{version.label}</span>
-                    <time>{version.date}</time>
-                  </div>
-                  <strong className="version-tag">{version.tag}</strong>
-                  <h3>{version.title}</h3>
-                  <ul>{version.items.map((item) => <li key={item}>{item}</li>)}</ul>
-                  <a href={`${github}/releases/tag/${version.tag}`} target="_blank" rel="noreferrer">
-                    {t.panel.openRelease}<span aria-hidden="true">↗</span>
-                  </a>
-                </li>
-              ))}
-            </ol>
-          </section>
-        </div>
-      )}
     </div>
   );
 }

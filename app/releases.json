@@ -1,0 +1,2417 @@
+{
+  "repository": "AetherKiri/Aether",
+  "versions": [
+    {
+      "tag": "1.0.8-alpha.1",
+      "name": "1.0.8-alpha.1",
+      "publishedAt": "2026-10-13T17:47:56Z",
+      "prerelease": true,
+      "url": "https://github.com/AetherKiri/Aether/releases/tag/1.0.8-alpha.1",
+      "notesUrl": "/releases/1.0.8-alpha.1.json",
+      "assets": [
+        {
+          "name": "AetherKiri-1.0.8-alpha.1-android.apk",
+          "size": 227597821,
+          "platform": "Android",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.8-alpha.1/AetherKiri-1.0.8-alpha.1-android.apk",
+          "mirror": null,
+          "digest": "sha256:e0564d838d67b8e9064d6923bc9252138e9f739f4aa4e64bee7874456edb4231"
+        },
+        {
+          "name": "AetherKiri-1.0.8-alpha.1-ios-app-store.ipa",
+          "size": 144579428,
+          "platform": "iOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.8-alpha.1/AetherKiri-1.0.8-alpha.1-ios-app-store.ipa",
+          "mirror": null,
+          "digest": "sha256:3d517517c7b416b7fe286737a5915f4bef394f00e3b6f75244d5749836594f6f"
+        },
+        {
+          "name": "AetherKiri-1.0.8-alpha.1-ios-unsigned.ipa",
+          "size": 144329098,
+          "platform": "iOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.8-alpha.1/AetherKiri-1.0.8-alpha.1-ios-unsigned.ipa",
+          "mirror": null,
+          "digest": "sha256:c20cda2b6f2d2b96ccc9c7ab442e8208f1e11b0c72b5e5c67ee2667e9b8aaa12"
+        },
+        {
+          "name": "AetherKiri-1.0.8-alpha.1-linux-arm64.tar.gz",
+          "size": 140211499,
+          "platform": "Linux",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.8-alpha.1/AetherKiri-1.0.8-alpha.1-linux-arm64.tar.gz",
+          "mirror": null,
+          "digest": "sha256:b34ed35d38a1cfe4894f09b99104f826fc8be89e8c9c51ed1edf2cb72301aed0"
+        },
+        {
+          "name": "AetherKiri-1.0.8-alpha.1-linux-x86_64.tar.gz",
+          "size": 145611513,
+          "platform": "Linux",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.8-alpha.1/AetherKiri-1.0.8-alpha.1-linux-x86_64.tar.gz",
+          "mirror": null,
+          "digest": "sha256:52feb5838ce90046ebd4814226b89a7fef65b75f80d414e0f20abb3ae6c4b4f0"
+        },
+        {
+          "name": "AetherKiri-1.0.8-alpha.1-macos-app-store.pkg",
+          "size": 152192657,
+          "platform": "macOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.8-alpha.1/AetherKiri-1.0.8-alpha.1-macos-app-store.pkg",
+          "mirror": null,
+          "digest": "sha256:b388a3b832de78061908456b2db9d9328995e5d13d88890e34cb066c4c415f69"
+        },
+        {
+          "name": "AetherKiri-1.0.8-alpha.1-macos.zip",
+          "size": 152207505,
+          "platform": "macOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.8-alpha.1/AetherKiri-1.0.8-alpha.1-macos.zip",
+          "mirror": null,
+          "digest": "sha256:c4e4fbd085282e25f490e82db4ab3ec7144351f4e3c9ecffc168694dffbafeab"
+        }
+      ]
+    },
+    {
+      "tag": "1.0.7",
+      "name": "1.0.7",
+      "publishedAt": "2026-10-12T17:16:09Z",
+      "prerelease": false,
+      "url": "https://github.com/AetherKiri/Aether/releases/tag/1.0.7",
+      "notesUrl": "/releases/1.0.7.json",
+      "assets": [
+        {
+          "name": "AetherKiri-1.0.7-android.apk",
+          "size": 212764470,
+          "platform": "Android",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.7/AetherKiri-1.0.7-android.apk",
+          "mirror": null,
+          "digest": "sha256:ce6c742c613ef58b5af38b89fa4bab6a151a37acb68a300fc370f35cbde17fca"
+        },
+        {
+          "name": "AetherKiri-1.0.7-ios-app-store.ipa",
+          "size": 139024537,
+          "platform": "iOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.7/AetherKiri-1.0.7-ios-app-store.ipa",
+          "mirror": null,
+          "digest": "sha256:18d067fd05b8aab48ed6064f4b5884df74af213e1c329dc514d0638da3a6bc18"
+        },
+        {
+          "name": "AetherKiri-1.0.7-ios-unsigned.ipa",
+          "size": 138797031,
+          "platform": "iOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.7/AetherKiri-1.0.7-ios-unsigned.ipa",
+          "mirror": null,
+          "digest": "sha256:baccf63324643c795012318ada3d4b9c9bd56d77e75abad52473f8a89eb1162f"
+        },
+        {
+          "name": "AetherKiri-1.0.7-linux-arm64.tar.gz",
+          "size": 134128316,
+          "platform": "Linux",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.7/AetherKiri-1.0.7-linux-arm64.tar.gz",
+          "mirror": null,
+          "digest": "sha256:06fa0f9ec28666c8a1c08ce7b6d78f1ed6fb0386a8d38b88bd06d30344643591"
+        },
+        {
+          "name": "AetherKiri-1.0.7-linux-x86_64.tar.gz",
+          "size": 138823835,
+          "platform": "Linux",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.7/AetherKiri-1.0.7-linux-x86_64.tar.gz",
+          "mirror": null,
+          "digest": "sha256:9629992a1e07d4fdb980a72ce5f58b0f339d50250bf9626edffd585b488b6fec"
+        },
+        {
+          "name": "AetherKiri-1.0.7-macos-app-store.pkg",
+          "size": 146708683,
+          "platform": "macOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.7/AetherKiri-1.0.7-macos-app-store.pkg",
+          "mirror": null,
+          "digest": "sha256:505e3bed59dcf8aba0f9d28706d0d52b1d8049ccdefaebcd7d4e9bb600fd6d9a"
+        },
+        {
+          "name": "AetherKiri-1.0.7-macos.zip",
+          "size": 146724371,
+          "platform": "macOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.7/AetherKiri-1.0.7-macos.zip",
+          "mirror": null,
+          "digest": "sha256:614c55a2f8d15cc0e2a4f0c8d43a3d37d94c993530d06d61d1836d6c0cdc0e45"
+        }
+      ]
+    },
+    {
+      "tag": "1.0.7-alpha.6",
+      "name": "1.0.7-alpha.6",
+      "publishedAt": "2026-10-12T16:03:21Z",
+      "prerelease": true,
+      "url": "https://github.com/AetherKiri/Aether/releases/tag/1.0.7-alpha.6",
+      "notesUrl": "/releases/1.0.7-alpha.6.json",
+      "assets": [
+        {
+          "name": "AetherKiri-1.0.7-alpha.6-android.apk",
+          "size": 212764494,
+          "platform": "Android",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.7-alpha.6/AetherKiri-1.0.7-alpha.6-android.apk",
+          "mirror": null,
+          "digest": "sha256:37803a3fd2b3cc50ca8f4b0e77d5edfb372630861957ac0964c8a5c29b2a57d9"
+        },
+        {
+          "name": "AetherKiri-1.0.7-alpha.6-ios-app-store.ipa",
+          "size": 139024544,
+          "platform": "iOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.7-alpha.6/AetherKiri-1.0.7-alpha.6-ios-app-store.ipa",
+          "mirror": null,
+          "digest": "sha256:0629829bf38385814864775f184ba32964f327a6a9a03c1db5911f9573062b29"
+        },
+        {
+          "name": "AetherKiri-1.0.7-alpha.6-ios-unsigned.ipa",
+          "size": 138797044,
+          "platform": "iOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.7-alpha.6/AetherKiri-1.0.7-alpha.6-ios-unsigned.ipa",
+          "mirror": null,
+          "digest": "sha256:00cf31885dad972f396cc8b4c0a970597ee3162071893af976f15872bff8793b"
+        },
+        {
+          "name": "AetherKiri-1.0.7-alpha.6-linux-arm64.tar.gz",
+          "size": 134128308,
+          "platform": "Linux",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.7-alpha.6/AetherKiri-1.0.7-alpha.6-linux-arm64.tar.gz",
+          "mirror": null,
+          "digest": "sha256:67629fa300fd14e95e81217238a3cd0503d63c9916f306f81ded68ec52d6f309"
+        },
+        {
+          "name": "AetherKiri-1.0.7-alpha.6-linux-x86_64.tar.gz",
+          "size": 138823371,
+          "platform": "Linux",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.7-alpha.6/AetherKiri-1.0.7-alpha.6-linux-x86_64.tar.gz",
+          "mirror": null,
+          "digest": "sha256:240a41a49378d018c5e242e801cbe6d8684cc9f5ef7958baa892622cd251b115"
+        },
+        {
+          "name": "AetherKiri-1.0.7-alpha.6-macos-app-store.pkg",
+          "size": 146708722,
+          "platform": "macOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.7-alpha.6/AetherKiri-1.0.7-alpha.6-macos-app-store.pkg",
+          "mirror": null,
+          "digest": "sha256:d7fc3edda75d84a148f86c35a7792958d7979389888d08a3992cab3118040018"
+        },
+        {
+          "name": "AetherKiri-1.0.7-alpha.6-macos.zip",
+          "size": 146724369,
+          "platform": "macOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.7-alpha.6/AetherKiri-1.0.7-alpha.6-macos.zip",
+          "mirror": null,
+          "digest": "sha256:316461d94599a481a9cfb7428118dfc9c593f1603481122f7ce25133c015bc2a"
+        }
+      ]
+    },
+    {
+      "tag": "1.0.7-alpha.5",
+      "name": "1.0.7-alpha.5",
+      "publishedAt": "2026-10-09T08:35:23Z",
+      "prerelease": true,
+      "url": "https://github.com/AetherKiri/Aether/releases/tag/1.0.7-alpha.5",
+      "notesUrl": "/releases/1.0.7-alpha.5.json",
+      "assets": [
+        {
+          "name": "AetherKiri-1.0.7-alpha.5-android.apk",
+          "size": 212741132,
+          "platform": "Android",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.7-alpha.5/AetherKiri-1.0.7-alpha.5-android.apk",
+          "mirror": null,
+          "digest": "sha256:aefb22238ca1e16f48c5121951df07d50d55a292b5236bd44595fd05ebf33d37"
+        },
+        {
+          "name": "AetherKiri-1.0.7-alpha.5-ios-app-store.ipa",
+          "size": 138715832,
+          "platform": "iOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.7-alpha.5/AetherKiri-1.0.7-alpha.5-ios-app-store.ipa",
+          "mirror": null,
+          "digest": "sha256:ed51474e339eac94c75cd9f4931f6022a56b3480ae1a281d06d7893a2baa18d4"
+        },
+        {
+          "name": "AetherKiri-1.0.7-alpha.5-ios-unsigned.ipa",
+          "size": 138485738,
+          "platform": "iOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.7-alpha.5/AetherKiri-1.0.7-alpha.5-ios-unsigned.ipa",
+          "mirror": null,
+          "digest": "sha256:40019d111c8cd306e5d7f3c0c59b618eb9ead99903847f2958c8897a4b525696"
+        },
+        {
+          "name": "AetherKiri-1.0.7-alpha.5-macos-app-store.pkg",
+          "size": 146397144,
+          "platform": "macOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.7-alpha.5/AetherKiri-1.0.7-alpha.5-macos-app-store.pkg",
+          "mirror": null,
+          "digest": "sha256:2e197892936b289be789dd66633bfaf8dfb3a0cf6ad13ec2f71a18f3866f5b71"
+        },
+        {
+          "name": "AetherKiri-1.0.7-alpha.5-macos.zip",
+          "size": 146402728,
+          "platform": "macOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.7-alpha.5/AetherKiri-1.0.7-alpha.5-macos.zip",
+          "mirror": null,
+          "digest": "sha256:57f7b723e14a82daf5202ed3e0f106616d7adf6ba7fd7fb0b34e5d4d46ee5657"
+        }
+      ]
+    },
+    {
+      "tag": "1.0.7-alpha.4",
+      "name": "1.0.7-alpha.4",
+      "publishedAt": "2026-10-08T13:43:00Z",
+      "prerelease": true,
+      "url": "https://github.com/AetherKiri/Aether/releases/tag/1.0.7-alpha.4",
+      "notesUrl": "/releases/1.0.7-alpha.4.json",
+      "assets": [
+        {
+          "name": "AetherKiri-1.0.7-alpha.4-android.apk",
+          "size": 212741132,
+          "platform": "Android",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.7-alpha.4/AetherKiri-1.0.7-alpha.4-android.apk",
+          "mirror": null,
+          "digest": "sha256:7c992460ed3c258ac817dab65235fddc29734b1d17a52ca46b37f4a73616ebd9"
+        },
+        {
+          "name": "AetherKiri-1.0.7-alpha.4-ios-app-store.ipa",
+          "size": 138715198,
+          "platform": "iOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.7-alpha.4/AetherKiri-1.0.7-alpha.4-ios-app-store.ipa",
+          "mirror": null,
+          "digest": "sha256:2bdc65b68cc4685d1609ad2f786d9e1cfc2493a55c04fa431a70e2073d44d1ab"
+        },
+        {
+          "name": "AetherKiri-1.0.7-alpha.4-ios-unsigned.ipa",
+          "size": 138486215,
+          "platform": "iOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.7-alpha.4/AetherKiri-1.0.7-alpha.4-ios-unsigned.ipa",
+          "mirror": null,
+          "digest": "sha256:72090ff6d7cc0651966922ec07108f1f60b2894bf4db95b8937cc45d95d7e0a8"
+        },
+        {
+          "name": "AetherKiri-1.0.7-alpha.4-macos-app-store.pkg",
+          "size": 146396730,
+          "platform": "macOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.7-alpha.4/AetherKiri-1.0.7-alpha.4-macos-app-store.pkg",
+          "mirror": null,
+          "digest": "sha256:8f729e9611bb4d82fb3d46d14673ba8910e60cb634b569dde01e085a65d45fa8"
+        },
+        {
+          "name": "AetherKiri-1.0.7-alpha.4-macos.zip",
+          "size": 146402477,
+          "platform": "macOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.7-alpha.4/AetherKiri-1.0.7-alpha.4-macos.zip",
+          "mirror": null,
+          "digest": "sha256:389e5e2e98c4786a154ce0716161ac0b297874e5001b2d1fc8b58a8314e5ba15"
+        }
+      ]
+    },
+    {
+      "tag": "1.0.7-alpha.3",
+      "name": "1.0.7-alpha.3",
+      "publishedAt": "2026-10-06T02:26:11Z",
+      "prerelease": true,
+      "url": "https://github.com/AetherKiri/Aether/releases/tag/1.0.7-alpha.3",
+      "notesUrl": "/releases/1.0.7-alpha.3.json",
+      "assets": [
+        {
+          "name": "AetherKiri-1.0.7-alpha.3-android.apk",
+          "size": 212681212,
+          "platform": "Android",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.7-alpha.3/AetherKiri-1.0.7-alpha.3-android.apk",
+          "mirror": null,
+          "digest": "sha256:b95435dbbd4394e886f0bc90e94de1e72c9aeca5fcde4bb4a76d8669d12a7b70"
+        },
+        {
+          "name": "AetherKiri-1.0.7-alpha.3-ios-app-store.ipa",
+          "size": 138672163,
+          "platform": "iOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.7-alpha.3/AetherKiri-1.0.7-alpha.3-ios-app-store.ipa",
+          "mirror": null,
+          "digest": "sha256:73af2f94f83408f69992cbc6f7edc20874021e5bf2272eb954c011d0556acbdd"
+        },
+        {
+          "name": "AetherKiri-1.0.7-alpha.3-ios-unsigned.ipa",
+          "size": 138443019,
+          "platform": "iOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.7-alpha.3/AetherKiri-1.0.7-alpha.3-ios-unsigned.ipa",
+          "mirror": null,
+          "digest": "sha256:c748cdcdff772a7589c63065e3c2ab5b6ea887a85bfe3d1cff0927c868a60942"
+        },
+        {
+          "name": "AetherKiri-1.0.7-alpha.3-macos-app-store.pkg",
+          "size": 146350977,
+          "platform": "macOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.7-alpha.3/AetherKiri-1.0.7-alpha.3-macos-app-store.pkg",
+          "mirror": null,
+          "digest": "sha256:e9607156f6a3e02ef21784636aeb7a7d75ecdaee62f771b76deec0232950bb6d"
+        },
+        {
+          "name": "AetherKiri-1.0.7-alpha.3-macos.zip",
+          "size": 146361684,
+          "platform": "macOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.7-alpha.3/AetherKiri-1.0.7-alpha.3-macos.zip",
+          "mirror": null,
+          "digest": "sha256:4366add4307d203dc0cda58dd906c4fed1d0052d0a3c5e55e1a5b44c857a3502"
+        }
+      ]
+    },
+    {
+      "tag": "1.0.6",
+      "name": "1.0.6",
+      "publishedAt": "2026-10-03T08:42:00Z",
+      "prerelease": false,
+      "url": "https://github.com/AetherKiri/Aether/releases/tag/1.0.6",
+      "notesUrl": "/releases/1.0.6.json",
+      "assets": [
+        {
+          "name": "AetherKiri-1.0.6-android.apk",
+          "size": 210769364,
+          "platform": "Android",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.6/AetherKiri-1.0.6-android.apk",
+          "mirror": null,
+          "digest": "sha256:5667ef8ebcc09a0edb942d2bb6af65e281bad0c8d8c81d31ec7c2ca39e1dd7db"
+        },
+        {
+          "name": "AetherKiri-1.0.6-ios-app-store.ipa",
+          "size": 137712779,
+          "platform": "iOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.6/AetherKiri-1.0.6-ios-app-store.ipa",
+          "mirror": null,
+          "digest": "sha256:27f89ee6012d4632da2d905c6e7218775677974d406262ca265571c08d3d3cb4"
+        },
+        {
+          "name": "AetherKiri-1.0.6-ios-unsigned.ipa",
+          "size": 137484972,
+          "platform": "iOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.6/AetherKiri-1.0.6-ios-unsigned.ipa",
+          "mirror": null,
+          "digest": "sha256:11f31f4ac83e769ecafadc6511449f332c15969b33b3b98cd0c17a7939909de1"
+        },
+        {
+          "name": "AetherKiri-1.0.6-macos-app-store.pkg",
+          "size": 145353574,
+          "platform": "macOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.6/AetherKiri-1.0.6-macos-app-store.pkg",
+          "mirror": null,
+          "digest": "sha256:51a6be9e060401fe9b3974e91165b9fe879c421d83635beeaa8f6a33e0ae6006"
+        },
+        {
+          "name": "AetherKiri-1.0.6-macos.zip",
+          "size": 145370966,
+          "platform": "macOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.6/AetherKiri-1.0.6-macos.zip",
+          "mirror": null,
+          "digest": "sha256:05c3ed35cdad3192439e2950b8b504bb527b222be280b88e53958f838fd3f6f0"
+        }
+      ]
+    },
+    {
+      "tag": "1.0.5",
+      "name": "1.0.5",
+      "publishedAt": "2026-09-29T17:48:15Z",
+      "prerelease": false,
+      "url": "https://github.com/AetherKiri/Aether/releases/tag/1.0.5",
+      "notesUrl": "/releases/1.0.5.json",
+      "assets": [
+        {
+          "name": "AetherKiri-1.0.5-android.apk",
+          "size": 213483995,
+          "platform": "Android",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.5/AetherKiri-1.0.5-android.apk",
+          "mirror": null,
+          "digest": "sha256:ef526c873689991692c8db06747a21cd74985f077c3c881579e3c6db8940b36e"
+        },
+        {
+          "name": "AetherKiri-1.0.5-ios-app-store.ipa",
+          "size": 137673463,
+          "platform": "iOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.5/AetherKiri-1.0.5-ios-app-store.ipa",
+          "mirror": null,
+          "digest": "sha256:7bed4d077bd7f01b132d327eae0f8aaa591934bbf3c0040ff6be22cf6c2b1844"
+        },
+        {
+          "name": "AetherKiri-1.0.5-ios-unsigned.ipa",
+          "size": 137447523,
+          "platform": "iOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.5/AetherKiri-1.0.5-ios-unsigned.ipa",
+          "mirror": null,
+          "digest": "sha256:22c966a649d752ecb2345016c770601fe9123ce914a07a1b50a8c8c425868514"
+        },
+        {
+          "name": "AetherKiri-1.0.5-macos-app-store.pkg",
+          "size": 147191345,
+          "platform": "macOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.5/AetherKiri-1.0.5-macos-app-store.pkg",
+          "mirror": null,
+          "digest": "sha256:9b90a52b6ca1c6f219d3d93f8919bde83a81a98f2896dd8f6a8e2e9e16f2516b"
+        },
+        {
+          "name": "AetherKiri-1.0.5-macos.zip",
+          "size": 147199286,
+          "platform": "macOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.5/AetherKiri-1.0.5-macos.zip",
+          "mirror": null,
+          "digest": "sha256:cee4b8e2b0dc90f1e5269554688d2a8845b582925c0f822ce2e4f905cd7faaeb"
+        }
+      ]
+    },
+    {
+      "tag": "1.0.5-alpha.2",
+      "name": "1.0.5-alpha.2",
+      "publishedAt": "2026-09-28T19:20:07Z",
+      "prerelease": true,
+      "url": "https://github.com/AetherKiri/Aether/releases/tag/1.0.5-alpha.2",
+      "notesUrl": "/releases/1.0.5-alpha.2.json",
+      "assets": [
+        {
+          "name": "AetherKiri-1.0.5-alpha.2-android.apk",
+          "size": 213467631,
+          "platform": "Android",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.5-alpha.2/AetherKiri-1.0.5-alpha.2-android.apk",
+          "mirror": null,
+          "digest": "sha256:306090977cec1bb8bb8f77d933e91d79f4614051832b18f10aa33d4cb23bb76b"
+        },
+        {
+          "name": "AetherKiri-1.0.5-alpha.2-ios-app-store.ipa",
+          "size": 137655623,
+          "platform": "iOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.5-alpha.2/AetherKiri-1.0.5-alpha.2-ios-app-store.ipa",
+          "mirror": null,
+          "digest": "sha256:a299cf5d9559036cc56103cec29a30a8766b9fbf9c739a376f3174d456ed7b32"
+        },
+        {
+          "name": "AetherKiri-1.0.5-alpha.2-ios-unsigned.ipa",
+          "size": 137427427,
+          "platform": "iOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.5-alpha.2/AetherKiri-1.0.5-alpha.2-ios-unsigned.ipa",
+          "mirror": null,
+          "digest": "sha256:af8604fb842f322e32084c6347d055691463a7dd5f198fdca750edaa215710c2"
+        },
+        {
+          "name": "AetherKiri-1.0.5-alpha.2-macos-app-store.pkg",
+          "size": 147182745,
+          "platform": "macOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.5-alpha.2/AetherKiri-1.0.5-alpha.2-macos-app-store.pkg",
+          "mirror": null,
+          "digest": "sha256:b5d889f481fb68e64da34626527b60cc690437aaf91b244c8e041885f22d2210"
+        },
+        {
+          "name": "AetherKiri-1.0.5-alpha.2-macos.zip",
+          "size": 147184539,
+          "platform": "macOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.5-alpha.2/AetherKiri-1.0.5-alpha.2-macos.zip",
+          "mirror": null,
+          "digest": "sha256:f0d0b1ef97fb84f852c1ca72cb8607daa4ca685d38549849b73f0c4af6e663df"
+        }
+      ]
+    },
+    {
+      "tag": "1.0.5-alpha.1",
+      "name": "1.0.5-alpha.1",
+      "publishedAt": "2026-09-23T19:02:10Z",
+      "prerelease": true,
+      "url": "https://github.com/AetherKiri/Aether/releases/tag/1.0.5-alpha.1",
+      "notesUrl": "/releases/1.0.5-alpha.1.json",
+      "assets": [
+        {
+          "name": "AetherKiri-1.0.5-alpha.1-android.apk",
+          "size": 213222562,
+          "platform": "Android",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.5-alpha.1/AetherKiri-1.0.5-alpha.1-android.apk",
+          "mirror": null,
+          "digest": "sha256:51920b6c6c291f396cd9ff138fb13ef9f594bdd3fa63e5a56cbfe71c2afe5513"
+        },
+        {
+          "name": "AetherKiri-1.0.5-alpha.1-ios-app-store.ipa",
+          "size": 137492221,
+          "platform": "iOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.5-alpha.1/AetherKiri-1.0.5-alpha.1-ios-app-store.ipa",
+          "mirror": null,
+          "digest": "sha256:776142fe01b32573b82cba7d7145af7591ef5fb858adf7008d0aaf34f4ebe0c5"
+        },
+        {
+          "name": "AetherKiri-1.0.5-alpha.1-ios-unsigned.ipa",
+          "size": 137273129,
+          "platform": "iOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.5-alpha.1/AetherKiri-1.0.5-alpha.1-ios-unsigned.ipa",
+          "mirror": null,
+          "digest": "sha256:c614be4b92f37e1b64d33c6fd08ccac1877f4ea4682c086d7022cfd1d995847f"
+        },
+        {
+          "name": "AetherKiri-1.0.5-alpha.1-macos-app-store.pkg",
+          "size": 147021926,
+          "platform": "macOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.5-alpha.1/AetherKiri-1.0.5-alpha.1-macos-app-store.pkg",
+          "mirror": null,
+          "digest": "sha256:613307cd0c50a2441436216e990b3c21ca683bb1c1d8b1788a1d1d48466060ec"
+        },
+        {
+          "name": "AetherKiri-1.0.5-alpha.1-macos.zip",
+          "size": 147026587,
+          "platform": "macOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.5-alpha.1/AetherKiri-1.0.5-alpha.1-macos.zip",
+          "mirror": null,
+          "digest": "sha256:059b67acc1a83a20a097217e19ae7eddaac6b2f1dc14a0adf8bb25d3529f6a18"
+        },
+        {
+          "name": "AetherKiri-1.0.5-alpha.1-web.zip",
+          "size": 98726477,
+          "platform": "Web",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.5-alpha.1/AetherKiri-1.0.5-alpha.1-web.zip",
+          "mirror": null,
+          "digest": "sha256:5687b19c348b257ca3fa62ddb36207e082c5fb69766c9514d1c1600f2c6e3080"
+        }
+      ]
+    },
+    {
+      "tag": "1.0.4",
+      "name": "1.0.4",
+      "publishedAt": "2026-09-22T02:00:52Z",
+      "prerelease": false,
+      "url": "https://github.com/AetherKiri/Aether/releases/tag/1.0.4",
+      "notesUrl": "/releases/1.0.4.json",
+      "assets": [
+        {
+          "name": "AetherKiri-1.0.4-android.apk",
+          "size": 213223378,
+          "platform": "Android",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.4/AetherKiri-1.0.4-android.apk",
+          "mirror": null,
+          "digest": "sha256:33c0ac60ad96478b53e5d7a3f7defd535784eacb96301e3a1850ee4623aa88e6"
+        },
+        {
+          "name": "AetherKiri-1.0.4-ios-app-store.ipa",
+          "size": 137492340,
+          "platform": "iOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.4/AetherKiri-1.0.4-ios-app-store.ipa",
+          "mirror": null,
+          "digest": "sha256:6e064c66e6b626b7d78d5eec317a0837157272c846331864d3b592b260fd26b0"
+        },
+        {
+          "name": "AetherKiri-1.0.4-ios-unsigned.ipa",
+          "size": 137272012,
+          "platform": "iOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.4/AetherKiri-1.0.4-ios-unsigned.ipa",
+          "mirror": null,
+          "digest": "sha256:ac218e303c323c0b9be60bfa51f93e198c00961a471b0204a1677a5f0751433f"
+        },
+        {
+          "name": "AetherKiri-1.0.4-macos-app-store.pkg",
+          "size": 147023584,
+          "platform": "macOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.4/AetherKiri-1.0.4-macos-app-store.pkg",
+          "mirror": null,
+          "digest": "sha256:099ca4de21c8de1a89abe83fd7d20f268667a1dcba2bf53a4107e4681ee186c3"
+        },
+        {
+          "name": "AetherKiri-1.0.4-macos.zip",
+          "size": 147027760,
+          "platform": "macOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.4/AetherKiri-1.0.4-macos.zip",
+          "mirror": null,
+          "digest": "sha256:efbeb8bd29e2ed324084173cc979901e883082147e66b8a2e377d6f0ed0379e8"
+        },
+        {
+          "name": "AetherKiri-1.0.4-web.zip",
+          "size": 98728489,
+          "platform": "Web",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.4/AetherKiri-1.0.4-web.zip",
+          "mirror": null,
+          "digest": "sha256:a7b0fb0c70f6a1be576fdf4520b8887715a51d3a5b7513739596859c63a2b1d5"
+        }
+      ]
+    },
+    {
+      "tag": "1.0.4-alpha.5",
+      "name": "1.0.4-alpha.5",
+      "publishedAt": "2026-09-21T18:34:44Z",
+      "prerelease": true,
+      "url": "https://github.com/AetherKiri/Aether/releases/tag/1.0.4-alpha.5",
+      "notesUrl": "/releases/1.0.4-alpha.5.json",
+      "assets": [
+        {
+          "name": "AetherKiri-1.0.4-alpha.5-android.apk",
+          "size": 213223402,
+          "platform": "Android",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.4-alpha.5/AetherKiri-1.0.4-alpha.5-android.apk",
+          "mirror": null,
+          "digest": "sha256:017778d51075f1ba7f61ed8d2ffb457ee336baa432fae5ca2358690c4abea5cd"
+        },
+        {
+          "name": "AetherKiri-1.0.4-alpha.5-ios-app-store.ipa",
+          "size": 137492347,
+          "platform": "iOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.4-alpha.5/AetherKiri-1.0.4-alpha.5-ios-app-store.ipa",
+          "mirror": null,
+          "digest": "sha256:4abc439984c4c0d0d995f537b26da5a18986e3f06ab5903fad7600257c7b34c2"
+        },
+        {
+          "name": "AetherKiri-1.0.4-alpha.5-ios-unsigned.ipa",
+          "size": 137272034,
+          "platform": "iOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.4-alpha.5/AetherKiri-1.0.4-alpha.5-ios-unsigned.ipa",
+          "mirror": null,
+          "digest": "sha256:d6047fe75d9be985b535e0449b52a18a4049612aef85172134717d65db653e13"
+        },
+        {
+          "name": "AetherKiri-1.0.4-alpha.5-macos-app-store.pkg",
+          "size": 147023530,
+          "platform": "macOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.4-alpha.5/AetherKiri-1.0.4-alpha.5-macos-app-store.pkg",
+          "mirror": null,
+          "digest": "sha256:8ae56aefd22a18fba3d1d03b741eea7e37bb6ed8ac3e90cd797f2ad93547056b"
+        },
+        {
+          "name": "AetherKiri-1.0.4-alpha.5-macos.zip",
+          "size": 147028124,
+          "platform": "macOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.4-alpha.5/AetherKiri-1.0.4-alpha.5-macos.zip",
+          "mirror": null,
+          "digest": "sha256:c2ffd346d80548b434f9e16d3735caeabd51fbbf15115576ba1d8fdc2391770c"
+        },
+        {
+          "name": "AetherKiri-1.0.4-alpha.5-web.zip",
+          "size": 98730396,
+          "platform": "Web",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.4-alpha.5/AetherKiri-1.0.4-alpha.5-web.zip",
+          "mirror": null,
+          "digest": "sha256:80ba14bc95e611f8f8f719672bb146ae29bc4648c7a575ae08ed79db70675f78"
+        }
+      ]
+    },
+    {
+      "tag": "1.0.4-alpha.4",
+      "name": "1.0.4-alpha.4",
+      "publishedAt": "2026-09-21T07:01:32Z",
+      "prerelease": true,
+      "url": "https://github.com/AetherKiri/Aether/releases/tag/1.0.4-alpha.4",
+      "notesUrl": "/releases/1.0.4-alpha.4.json",
+      "assets": [
+        {
+          "name": "AetherKiri-1.0.4-alpha.4-android.apk",
+          "size": 213221998,
+          "platform": "Android",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.4-alpha.4/AetherKiri-1.0.4-alpha.4-android.apk",
+          "mirror": null,
+          "digest": "sha256:d36b386de7044f840b1577c1cf309345816643e23d22360a44ab73ca9bbd0cec"
+        },
+        {
+          "name": "AetherKiri-1.0.4-alpha.4-ios-app-store.ipa",
+          "size": 137489361,
+          "platform": "iOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.4-alpha.4/AetherKiri-1.0.4-alpha.4-ios-app-store.ipa",
+          "mirror": null,
+          "digest": "sha256:859e53d9012f6035d994990da7f1f5a36e00fbfc34b004a830e83e9940904551"
+        },
+        {
+          "name": "AetherKiri-1.0.4-alpha.4-ios-unsigned.ipa",
+          "size": 137271972,
+          "platform": "iOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.4-alpha.4/AetherKiri-1.0.4-alpha.4-ios-unsigned.ipa",
+          "mirror": null,
+          "digest": "sha256:4dfeccfdfe11c1b5221a1b82a6380753c97044bab373054e92f1988ee2cca3a6"
+        },
+        {
+          "name": "AetherKiri-1.0.4-alpha.4-macos-app-store.pkg",
+          "size": 147022192,
+          "platform": "macOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.4-alpha.4/AetherKiri-1.0.4-alpha.4-macos-app-store.pkg",
+          "mirror": null,
+          "digest": "sha256:5d811507ca8b7c47fd78233de420bafdc651e57fc30943bed2bad71ebbae5235"
+        },
+        {
+          "name": "AetherKiri-1.0.4-alpha.4-macos.zip",
+          "size": 147028401,
+          "platform": "macOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.4-alpha.4/AetherKiri-1.0.4-alpha.4-macos.zip",
+          "mirror": null,
+          "digest": "sha256:f3047cd21c030f55d5f6403803a4e643a6e5bfb7dc4404905839db83f1a20679"
+        },
+        {
+          "name": "AetherKiri-1.0.4-alpha.4-web.zip",
+          "size": 98728051,
+          "platform": "Web",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.4-alpha.4/AetherKiri-1.0.4-alpha.4-web.zip",
+          "mirror": null,
+          "digest": "sha256:7301c76883c4c9a6e7146e723afce5a870dcf7b348ed6a68421c0c7119178a91"
+        }
+      ]
+    },
+    {
+      "tag": "1.0.4-alpha.3",
+      "name": "1.0.4-alpha.3",
+      "publishedAt": "2026-09-20T20:10:56Z",
+      "prerelease": true,
+      "url": "https://github.com/AetherKiri/Aether/releases/tag/1.0.4-alpha.3",
+      "notesUrl": "/releases/1.0.4-alpha.3.json",
+      "assets": [
+        {
+          "name": "AetherKiri-1.0.4-alpha.3-android.apk",
+          "size": 213175543,
+          "platform": "Android",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.4-alpha.3/AetherKiri-1.0.4-alpha.3-android.apk",
+          "mirror": null,
+          "digest": "sha256:ab7de6845218082de09d621f5d4644f60f3a638f27307fac98e47ea99205e3d6"
+        },
+        {
+          "name": "AetherKiri-1.0.4-alpha.3-ios-app-store.ipa",
+          "size": 137461972,
+          "platform": "iOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.4-alpha.3/AetherKiri-1.0.4-alpha.3-ios-app-store.ipa",
+          "mirror": null,
+          "digest": "sha256:40c575f70c4171383d976c3de0876ae1c5c31ccb0123c307fa4cebb603079e44"
+        },
+        {
+          "name": "AetherKiri-1.0.4-alpha.3-ios-unsigned.ipa",
+          "size": 137241984,
+          "platform": "iOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.4-alpha.3/AetherKiri-1.0.4-alpha.3-ios-unsigned.ipa",
+          "mirror": null,
+          "digest": "sha256:bf243b61558aa202895562329958c7ad9cd727a0a135a729a29038e01646bef1"
+        },
+        {
+          "name": "AetherKiri-1.0.4-alpha.3-macos-app-store.pkg",
+          "size": 146987340,
+          "platform": "macOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.4-alpha.3/AetherKiri-1.0.4-alpha.3-macos-app-store.pkg",
+          "mirror": null,
+          "digest": "sha256:7d06618f41ffc7c1b399bfcb3828278cf7b57854010eb2ac46fb89f88d5051d5"
+        },
+        {
+          "name": "AetherKiri-1.0.4-alpha.3-macos.zip",
+          "size": 146990811,
+          "platform": "macOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.4-alpha.3/AetherKiri-1.0.4-alpha.3-macos.zip",
+          "mirror": null,
+          "digest": "sha256:804baca1b1250ca3c0218658f2ef1b54d280d8fca15957357735e6d0fed40f41"
+        },
+        {
+          "name": "AetherKiri-1.0.4-alpha.3-web.zip",
+          "size": 98696760,
+          "platform": "Web",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.4-alpha.3/AetherKiri-1.0.4-alpha.3-web.zip",
+          "mirror": null,
+          "digest": "sha256:3b236106e9c81350109598921d83f3f77dbac678423555634abc384ef5da8d2d"
+        }
+      ]
+    },
+    {
+      "tag": "1.0.4-alpha.2",
+      "name": "1.0.4-alpha.2",
+      "publishedAt": "2026-09-20T12:55:15Z",
+      "prerelease": true,
+      "url": "https://github.com/AetherKiri/Aether/releases/tag/1.0.4-alpha.2",
+      "notesUrl": "/releases/1.0.4-alpha.2.json",
+      "assets": [
+        {
+          "name": "AetherKiri-1.0.4-alpha.2-android.apk",
+          "size": 213093623,
+          "platform": "Android",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.4-alpha.2/AetherKiri-1.0.4-alpha.2-android.apk",
+          "mirror": null,
+          "digest": "sha256:1ac9e8fda8a80d74cf53ef9583599eeee0e8227e6ec15919deca9c19bf5f0989"
+        },
+        {
+          "name": "AetherKiri-1.0.4-alpha.2-ios-app-store.ipa",
+          "size": 137420092,
+          "platform": "iOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.4-alpha.2/AetherKiri-1.0.4-alpha.2-ios-app-store.ipa",
+          "mirror": null,
+          "digest": "sha256:d875783d96375c88612abd16154de97a949b30fd221cb684f74162fc9e08663f"
+        },
+        {
+          "name": "AetherKiri-1.0.4-alpha.2-ios-unsigned.ipa",
+          "size": 137196298,
+          "platform": "iOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.4-alpha.2/AetherKiri-1.0.4-alpha.2-ios-unsigned.ipa",
+          "mirror": null,
+          "digest": "sha256:3c7596ba46fa69d74f13efd4624d01d930a6c95238af613ebeef06e0346a2aea"
+        },
+        {
+          "name": "AetherKiri-1.0.4-alpha.2-macos-app-store.pkg",
+          "size": 146947047,
+          "platform": "macOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.4-alpha.2/AetherKiri-1.0.4-alpha.2-macos-app-store.pkg",
+          "mirror": null,
+          "digest": "sha256:f7613997bc41c06d50999d0b9ca8d6abfdcd36eb069283d644e95c830af2c139"
+        },
+        {
+          "name": "AetherKiri-1.0.4-alpha.2-macos.zip",
+          "size": 146949382,
+          "platform": "macOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.4-alpha.2/AetherKiri-1.0.4-alpha.2-macos.zip",
+          "mirror": null,
+          "digest": "sha256:10e7e98c2a4a6b8c76a91d1f3b0a12e53b7310dbd166a3d44d42ba451b5845d7"
+        },
+        {
+          "name": "AetherKiri-1.0.4-alpha.2-web.zip",
+          "size": 98693271,
+          "platform": "Web",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.4-alpha.2/AetherKiri-1.0.4-alpha.2-web.zip",
+          "mirror": null,
+          "digest": "sha256:981255f6474d650122be9175cc9cb9df045c71043898ff347089d1ae44b0cebe"
+        }
+      ]
+    },
+    {
+      "tag": "1.0.4-alpha.1",
+      "name": "1.0.4-alpha.1",
+      "publishedAt": "2026-09-17T03:51:19Z",
+      "prerelease": true,
+      "url": "https://github.com/AetherKiri/Aether/releases/tag/1.0.4-alpha.1",
+      "notesUrl": "/releases/1.0.4-alpha.1.json",
+      "assets": [
+        {
+          "name": "AetherKiri-1.0.4-alpha.1-android.apk",
+          "size": 213077243,
+          "platform": "Android",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.4-alpha.1/AetherKiri-1.0.4-alpha.1-android.apk",
+          "mirror": null,
+          "digest": "sha256:5b8a0f2dcc48bffdf78490c2fff655a4c498df3eca1481c60088eff485cbd1a5"
+        },
+        {
+          "name": "AetherKiri-1.0.4-alpha.1-ios-app-store.ipa",
+          "size": 137415579,
+          "platform": "iOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.4-alpha.1/AetherKiri-1.0.4-alpha.1-ios-app-store.ipa",
+          "mirror": null,
+          "digest": "sha256:a3fd5e7209c68fe823a0cd88ae32f9c2f73ea2c32c3ee22282d506a92fd03251"
+        },
+        {
+          "name": "AetherKiri-1.0.4-alpha.1-ios-unsigned.ipa",
+          "size": 137191248,
+          "platform": "iOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.4-alpha.1/AetherKiri-1.0.4-alpha.1-ios-unsigned.ipa",
+          "mirror": null,
+          "digest": "sha256:5ee8569b977fff74d8aea954cb0e6688cb0e0eccfa7081133436af66878e3d1c"
+        },
+        {
+          "name": "AetherKiri-1.0.4-alpha.1-macos-app-store.pkg",
+          "size": 146947532,
+          "platform": "macOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.4-alpha.1/AetherKiri-1.0.4-alpha.1-macos-app-store.pkg",
+          "mirror": null,
+          "digest": "sha256:08d1f12c7fdb9e1b2a3f3a3fc808b48a35e7636f29fdb675e305e98591f215a9"
+        },
+        {
+          "name": "AetherKiri-1.0.4-alpha.1-macos.zip",
+          "size": 146950633,
+          "platform": "macOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.4-alpha.1/AetherKiri-1.0.4-alpha.1-macos.zip",
+          "mirror": null,
+          "digest": "sha256:f425472b10ae066e13bacadc5e5951fc58ae02977fa60d3e295bf12ce07164c7"
+        },
+        {
+          "name": "AetherKiri-1.0.4-alpha.1-web.zip",
+          "size": 98691494,
+          "platform": "Web",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.4-alpha.1/AetherKiri-1.0.4-alpha.1-web.zip",
+          "mirror": null,
+          "digest": "sha256:6a02e207d3b8c897bc5535b8b3c7d4fd85b873ec05aef9b5e931c39cf11037d5"
+        }
+      ]
+    },
+    {
+      "tag": "1.0.3",
+      "name": "1.0.3",
+      "publishedAt": "2026-09-13T21:01:51Z",
+      "prerelease": false,
+      "url": "https://github.com/AetherKiri/Aether/releases/tag/1.0.3",
+      "notesUrl": "/releases/1.0.3.json",
+      "assets": [
+        {
+          "name": "AetherKiri-1.0.3-android.apk",
+          "size": 213207543,
+          "platform": "Android",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.3/AetherKiri-1.0.3-android.apk",
+          "mirror": null,
+          "digest": "sha256:072f7526b902abfcd602a4a143518ee4ec4b291e1e63766a02b49bf2c6b8d4e8"
+        },
+        {
+          "name": "AetherKiri-1.0.3-ios-app-store.ipa",
+          "size": 137020612,
+          "platform": "iOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.3/AetherKiri-1.0.3-ios-app-store.ipa",
+          "mirror": null,
+          "digest": "sha256:0fd3fb445b9040b3b8901a979e36c21ef182c168c576b3e1fdb6dfb6503c642d"
+        },
+        {
+          "name": "AetherKiri-1.0.3-ios-unsigned.ipa",
+          "size": 136799850,
+          "platform": "iOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.3/AetherKiri-1.0.3-ios-unsigned.ipa",
+          "mirror": null,
+          "digest": "sha256:472eedba0d5b65dfb048a9000d80030b3aacc083a67cf3913e2997964c093ac8"
+        },
+        {
+          "name": "AetherKiri-1.0.3-macos-app-store.pkg",
+          "size": 146515965,
+          "platform": "macOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.3/AetherKiri-1.0.3-macos-app-store.pkg",
+          "mirror": null,
+          "digest": "sha256:405e3be77fe34670c7a5c2069f3075bb85ae3c058ea19109c587010e8fb596f7"
+        },
+        {
+          "name": "AetherKiri-1.0.3-macos.zip",
+          "size": 146523262,
+          "platform": "macOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.3/AetherKiri-1.0.3-macos.zip",
+          "mirror": null,
+          "digest": "sha256:6aa599c5ba2b97490b5a8af43750f1fdca7765604424b48e72ebb12d208fa9aa"
+        },
+        {
+          "name": "AetherKiri-1.0.3-web.zip",
+          "size": 98688247,
+          "platform": "Web",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.3/AetherKiri-1.0.3-web.zip",
+          "mirror": null,
+          "digest": "sha256:7098ba4823dddd3e4de5868d3b88dd89afb3b2e1a7094f6b259c78e8febf4c6f"
+        }
+      ]
+    },
+    {
+      "tag": "1.0.3-alpha.3",
+      "name": "1.0.3-alpha.3",
+      "publishedAt": "2026-09-13T05:16:31Z",
+      "prerelease": true,
+      "url": "https://github.com/AetherKiri/Aether/releases/tag/1.0.3-alpha.3",
+      "notesUrl": "/releases/1.0.3-alpha.3.json",
+      "assets": [
+        {
+          "name": "AetherKiri-1.0.3-alpha.3-android.apk",
+          "size": 213207363,
+          "platform": "Android",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.3-alpha.3/AetherKiri-1.0.3-alpha.3-android.apk",
+          "mirror": null,
+          "digest": "sha256:81d306db249f32e1f3e99075b2c1d59a75be030945b6b9915eb5d21c84151cd2"
+        },
+        {
+          "name": "AetherKiri-1.0.3-alpha.3-ios-app-store.ipa",
+          "size": 137019304,
+          "platform": "iOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.3-alpha.3/AetherKiri-1.0.3-alpha.3-ios-app-store.ipa",
+          "mirror": null,
+          "digest": "sha256:e3eae95882d60f9ff38495131edc8a1d3663fad26b4abbdd2a1cc1738e827c78"
+        },
+        {
+          "name": "AetherKiri-1.0.3-alpha.3-ios-unsigned.ipa",
+          "size": 136799406,
+          "platform": "iOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.3-alpha.3/AetherKiri-1.0.3-alpha.3-ios-unsigned.ipa",
+          "mirror": null,
+          "digest": "sha256:5c2db8062d6285699026d89f7e7e3d46d0daf6500756b7b51fa32fddec1eb620"
+        },
+        {
+          "name": "AetherKiri-1.0.3-alpha.3-macos-app-store.pkg",
+          "size": 153030947,
+          "platform": "macOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.3-alpha.3/AetherKiri-1.0.3-alpha.3-macos-app-store.pkg",
+          "mirror": null,
+          "digest": "sha256:68fbeec89fcc7cfcc5edf528cafc352856a970735504ad3d196b3554294a7173"
+        },
+        {
+          "name": "AetherKiri-1.0.3-alpha.3-macos.zip",
+          "size": 153020068,
+          "platform": "macOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.3-alpha.3/AetherKiri-1.0.3-alpha.3-macos.zip",
+          "mirror": null,
+          "digest": "sha256:d9a38545cf7bd13b4bfc217576907a7c2ddcb66bd3840567ed99ea942b24b86e"
+        },
+        {
+          "name": "AetherKiri-1.0.3-alpha.3-web.zip",
+          "size": 98686057,
+          "platform": "Web",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.3-alpha.3/AetherKiri-1.0.3-alpha.3-web.zip",
+          "mirror": null,
+          "digest": "sha256:8f2f6936e22ec5fa29030d63d17f6f08a2e8bb32628ea8f7f81a60a6d571cf2a"
+        }
+      ]
+    },
+    {
+      "tag": "1.0.3-alpha.2",
+      "name": "1.0.3-alpha.2",
+      "publishedAt": "2026-09-12T22:28:24Z",
+      "prerelease": true,
+      "url": "https://github.com/AetherKiri/Aether/releases/tag/1.0.3-alpha.2",
+      "notesUrl": "/releases/1.0.3-alpha.2.json",
+      "assets": [
+        {
+          "name": "AetherKiri-1.0.3-alpha.2-android.apk",
+          "size": 213207363,
+          "platform": "Android",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.3-alpha.2/AetherKiri-1.0.3-alpha.2-android.apk",
+          "mirror": null,
+          "digest": "sha256:fcfb3bb7351bcee6879db2d44a6fcd49266b08a66b78b6711a424602120b05e6"
+        },
+        {
+          "name": "AetherKiri-1.0.3-alpha.2-ios-app-store.ipa",
+          "size": 137019292,
+          "platform": "iOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.3-alpha.2/AetherKiri-1.0.3-alpha.2-ios-app-store.ipa",
+          "mirror": null,
+          "digest": "sha256:1afa02ba9f602a5e84578ded97c784b2ea72e40ea95eecd80f4178d4c853a611"
+        },
+        {
+          "name": "AetherKiri-1.0.3-alpha.2-ios-unsigned.ipa",
+          "size": 136799417,
+          "platform": "iOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.3-alpha.2/AetherKiri-1.0.3-alpha.2-ios-unsigned.ipa",
+          "mirror": null,
+          "digest": "sha256:74031ed319529afa2f8a17d5b1d0cd8ff79d8647f72a53052e50e79b4dedeb8c"
+        },
+        {
+          "name": "AetherKiri-1.0.3-alpha.2-macos-app-store.pkg",
+          "size": 153030952,
+          "platform": "macOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.3-alpha.2/AetherKiri-1.0.3-alpha.2-macos-app-store.pkg",
+          "mirror": null,
+          "digest": "sha256:2bf80f3e0906d6f24a11982a54d38843b5fef4e5ea0c7fb22e2138b92710177b"
+        },
+        {
+          "name": "AetherKiri-1.0.3-alpha.2-macos.zip",
+          "size": 153020067,
+          "platform": "macOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.3-alpha.2/AetherKiri-1.0.3-alpha.2-macos.zip",
+          "mirror": null,
+          "digest": "sha256:a254fca1d0ffcadc30941287f34557ed451a2246dc5915786dedad460eb1edc1"
+        },
+        {
+          "name": "AetherKiri-1.0.3-alpha.2-web.zip",
+          "size": 98686355,
+          "platform": "Web",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.3-alpha.2/AetherKiri-1.0.3-alpha.2-web.zip",
+          "mirror": null,
+          "digest": "sha256:b3771651e1bc54b521432decd3c6e17047728eaaffc4e160718b8fa90a7522ac"
+        }
+      ]
+    },
+    {
+      "tag": "1.0.3-alpha.1",
+      "name": "1.0.3-alpha.1",
+      "publishedAt": "2026-09-10T03:07:57Z",
+      "prerelease": true,
+      "url": "https://github.com/AetherKiri/Aether/releases/tag/1.0.3-alpha.1",
+      "notesUrl": "/releases/1.0.3-alpha.1.json",
+      "assets": [
+        {
+          "name": "AetherKiri-1.0.3-alpha.1-android.apk",
+          "size": 145410839,
+          "platform": "Android",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.3-alpha.1/AetherKiri-1.0.3-alpha.1-android.apk",
+          "mirror": null,
+          "digest": "sha256:cf4494c9ea7e4ddcdf72340b3d3a87b867e833d87c8abc96c72e32f5b822f566"
+        },
+        {
+          "name": "AetherKiri-1.0.3-alpha.1-ios-app-store.ipa",
+          "size": 129110393,
+          "platform": "iOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.3-alpha.1/AetherKiri-1.0.3-alpha.1-ios-app-store.ipa",
+          "mirror": null,
+          "digest": "sha256:ffd36a97fe0dc6337ee0d25eac15da0fda6957cf542670d424315fcd61847590"
+        },
+        {
+          "name": "AetherKiri-1.0.3-alpha.1-ios-unsigned.ipa",
+          "size": 128913587,
+          "platform": "iOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.3-alpha.1/AetherKiri-1.0.3-alpha.1-ios-unsigned.ipa",
+          "mirror": null,
+          "digest": "sha256:cdf17a97d880d2a09da843289bb147fa612bdaf694365217de85b6d771adfd99"
+        },
+        {
+          "name": "AetherKiri-1.0.3-alpha.1-macos-app-store.pkg",
+          "size": 143969518,
+          "platform": "macOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.3-alpha.1/AetherKiri-1.0.3-alpha.1-macos-app-store.pkg",
+          "mirror": null,
+          "digest": "sha256:c23f964bab140bcef18800878e9fce563275152793e96f134995bdc076d19a27"
+        },
+        {
+          "name": "AetherKiri-1.0.3-alpha.1-macos.zip",
+          "size": 143953129,
+          "platform": "macOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.3-alpha.1/AetherKiri-1.0.3-alpha.1-macos.zip",
+          "mirror": null,
+          "digest": "sha256:3b1b4688542d6bbaedffe2f2fcb5d3adf0131b03fc7995378d72a3ede7f623a1"
+        },
+        {
+          "name": "AetherKiri-1.0.3-alpha.1-web.zip",
+          "size": 98639836,
+          "platform": "Web",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.3-alpha.1/AetherKiri-1.0.3-alpha.1-web.zip",
+          "mirror": null,
+          "digest": "sha256:10ea0171635bd2a94586b0086f88f2bf60baf7b53ee737906996c3c3317b414b"
+        }
+      ]
+    },
+    {
+      "tag": "1.0.2",
+      "name": "1.0.2",
+      "publishedAt": "2026-09-06T14:27:24Z",
+      "prerelease": false,
+      "url": "https://github.com/AetherKiri/Aether/releases/tag/1.0.2",
+      "notesUrl": "/releases/1.0.2.json",
+      "assets": [
+        {
+          "name": "AetherKiri-1.0.2-android.apk",
+          "size": 143690519,
+          "platform": "Android",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.2/AetherKiri-1.0.2-android.apk",
+          "mirror": null,
+          "digest": "sha256:9ae5b00b7fb7ef8c596034b6821cac579bc39de1b8a06d6d586acdc24a6d07f6"
+        },
+        {
+          "name": "AetherKiri-1.0.2-ios-app-store.ipa",
+          "size": 128315937,
+          "platform": "iOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.2/AetherKiri-1.0.2-ios-app-store.ipa",
+          "mirror": null,
+          "digest": "sha256:fd22afdef1b5023a08afdbf36d17ff4d3c869176ddcf17ab3c56c2b963af9f0b"
+        },
+        {
+          "name": "AetherKiri-1.0.2-ios-unsigned.ipa",
+          "size": 128127785,
+          "platform": "iOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.2/AetherKiri-1.0.2-ios-unsigned.ipa",
+          "mirror": null,
+          "digest": "sha256:51468c50e7247b020e1cc67d77e92f99a0a72378f1931274f16f0f6f5eb3e3b0"
+        },
+        {
+          "name": "AetherKiri-1.0.2-macos-app-store.pkg",
+          "size": 143090271,
+          "platform": "macOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.2/AetherKiri-1.0.2-macos-app-store.pkg",
+          "mirror": null,
+          "digest": "sha256:c1b9137c55806258db82e4580a989cd6b4f5779044f832baa1dbdaf219a59d1b"
+        },
+        {
+          "name": "AetherKiri-1.0.2-macos.zip",
+          "size": 143074588,
+          "platform": "macOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.2/AetherKiri-1.0.2-macos.zip",
+          "mirror": null,
+          "digest": "sha256:76f57d173489c9b22f171884cd55d629c7d41bb7c1436c832d7f30b674eef90d"
+        },
+        {
+          "name": "AetherKiri-1.0.2-web.zip",
+          "size": 98097419,
+          "platform": "Web",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.2/AetherKiri-1.0.2-web.zip",
+          "mirror": null,
+          "digest": "sha256:8be652caf81e1d9575dbb552a88e0f0553335b833d226d3c0b0a7e6191c00f12"
+        }
+      ]
+    },
+    {
+      "tag": "1.0.2-alpha.5",
+      "name": "1.0.2-alpha.5",
+      "publishedAt": "2026-09-04T16:22:25Z",
+      "prerelease": true,
+      "url": "https://github.com/AetherKiri/Aether/releases/tag/1.0.2-alpha.5",
+      "notesUrl": "/releases/1.0.2-alpha.5.json",
+      "assets": [
+        {
+          "name": "AetherKiri-1.0.2-alpha.5-android.apk",
+          "size": 143674135,
+          "platform": "Android",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.2-alpha.5/AetherKiri-1.0.2-alpha.5-android.apk",
+          "mirror": null,
+          "digest": "sha256:9067da11a9c0b98e1f5edf3226b1154ce4b6d75ae71cbff78dde30b2dd43a1a0"
+        },
+        {
+          "name": "AetherKiri-1.0.2-alpha.5-ios-app-store.ipa",
+          "size": 128308319,
+          "platform": "iOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.2-alpha.5/AetherKiri-1.0.2-alpha.5-ios-app-store.ipa",
+          "mirror": null,
+          "digest": "sha256:0c57e1478351b42116b3f16d4edf1d1a187386d34c05a180e9245d4d8cba3880"
+        },
+        {
+          "name": "AetherKiri-1.0.2-alpha.5-ios-unsigned.ipa",
+          "size": 128111268,
+          "platform": "iOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.2-alpha.5/AetherKiri-1.0.2-alpha.5-ios-unsigned.ipa",
+          "mirror": null,
+          "digest": "sha256:c3ed1d205cdbaa59935142df3b5eb3c88dcbe0b66b0a4a05bdffde08ff693bbf"
+        },
+        {
+          "name": "AetherKiri-1.0.2-alpha.5-macos-app-store.pkg",
+          "size": 143085283,
+          "platform": "macOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.2-alpha.5/AetherKiri-1.0.2-alpha.5-macos-app-store.pkg",
+          "mirror": null,
+          "digest": "sha256:2aa2a0f4436b56b9e71c416c689faa8bb74a5a9112957b4a0ae5572c3b375e9c"
+        },
+        {
+          "name": "AetherKiri-1.0.2-alpha.5-macos.zip",
+          "size": 143063455,
+          "platform": "macOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.2-alpha.5/AetherKiri-1.0.2-alpha.5-macos.zip",
+          "mirror": null,
+          "digest": "sha256:def9e42704762868f92a5e46c29e0d53722c1d59e7087d85f4fd09cf96205609"
+        },
+        {
+          "name": "AetherKiri-1.0.2-alpha.5-web.zip",
+          "size": 98091040,
+          "platform": "Web",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.2-alpha.5/AetherKiri-1.0.2-alpha.5-web.zip",
+          "mirror": null,
+          "digest": "sha256:6225f828bbdcd265f71d88f3319d8c65c29306eb399ed9812f253d34add9bd9d"
+        }
+      ]
+    },
+    {
+      "tag": "1.0.2-alpha.4",
+      "name": "1.0.2-alpha.4",
+      "publishedAt": "2026-09-04T11:10:25Z",
+      "prerelease": true,
+      "url": "https://github.com/AetherKiri/Aether/releases/tag/1.0.2-alpha.4",
+      "notesUrl": "/releases/1.0.2-alpha.4.json",
+      "assets": [
+        {
+          "name": "AetherKiri-1.0.2-alpha.4-android.apk",
+          "size": 143674135,
+          "platform": "Android",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.2-alpha.4/AetherKiri-1.0.2-alpha.4-android.apk",
+          "mirror": null,
+          "digest": "sha256:45bc116571887eee19e59ada251bff4b4f7d9ed2b0efd4f32e8aea6217151566"
+        },
+        {
+          "name": "AetherKiri-1.0.2-alpha.4-ios-app-store.ipa",
+          "size": 128308603,
+          "platform": "iOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.2-alpha.4/AetherKiri-1.0.2-alpha.4-ios-app-store.ipa",
+          "mirror": null,
+          "digest": "sha256:7a0d379a55489251bfc8d9aedca5b9fdf57eaeab4eb536ba05d0bfb01c5fac6a"
+        },
+        {
+          "name": "AetherKiri-1.0.2-alpha.4-ios-unsigned.ipa",
+          "size": 128116439,
+          "platform": "iOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.2-alpha.4/AetherKiri-1.0.2-alpha.4-ios-unsigned.ipa",
+          "mirror": null,
+          "digest": "sha256:1cbe6d3703295551f16a0c6f398876ff1b264addd47499b19b18bccd356d9c8e"
+        },
+        {
+          "name": "AetherKiri-1.0.2-alpha.4-macos-app-store.pkg",
+          "size": 143085143,
+          "platform": "macOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.2-alpha.4/AetherKiri-1.0.2-alpha.4-macos-app-store.pkg",
+          "mirror": null,
+          "digest": "sha256:0bd0adbf0ed080f8a3f39b5a25fbca537b6377f6776ec31227d3b323c7b5b876"
+        },
+        {
+          "name": "AetherKiri-1.0.2-alpha.4-macos.zip",
+          "size": 143064007,
+          "platform": "macOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.2-alpha.4/AetherKiri-1.0.2-alpha.4-macos.zip",
+          "mirror": null,
+          "digest": "sha256:cab9b51e2bbfe2740bc045556953ecf5faddee6710a2b80cad1b7784ed9c56c7"
+        },
+        {
+          "name": "AetherKiri-1.0.2-alpha.4-web.zip",
+          "size": 98090828,
+          "platform": "Web",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.2-alpha.4/AetherKiri-1.0.2-alpha.4-web.zip",
+          "mirror": null,
+          "digest": "sha256:0277730c6b5f124a73469a0f99e70406d153b9d793275cecc5e278a1ffa05e47"
+        }
+      ]
+    },
+    {
+      "tag": "1.0.2-alpha.3",
+      "name": "1.0.2-alpha.3",
+      "publishedAt": "2026-09-04T03:11:58Z",
+      "prerelease": true,
+      "url": "https://github.com/AetherKiri/Aether/releases/tag/1.0.2-alpha.3",
+      "notesUrl": "/releases/1.0.2-alpha.3.json",
+      "assets": [
+        {
+          "name": "AetherKiri-1.0.2-alpha.3-android.apk",
+          "size": 143665772,
+          "platform": "Android",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.2-alpha.3/AetherKiri-1.0.2-alpha.3-android.apk",
+          "mirror": null,
+          "digest": "sha256:39c3b61faaa80b66ceeccba06fcea36f8d102d4b22fc85fb1408e75c6f6d1ca5"
+        },
+        {
+          "name": "AetherKiri-1.0.2-alpha.3-ios-app-store.ipa",
+          "size": 128304973,
+          "platform": "iOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.2-alpha.3/AetherKiri-1.0.2-alpha.3-ios-app-store.ipa",
+          "mirror": null,
+          "digest": "sha256:7c8d01052b9cbed7ff6baaefe09e36345513ed1949487620353a72b7e3a4c3fa"
+        },
+        {
+          "name": "AetherKiri-1.0.2-alpha.3-ios-unsigned.ipa",
+          "size": 128113637,
+          "platform": "iOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.2-alpha.3/AetherKiri-1.0.2-alpha.3-ios-unsigned.ipa",
+          "mirror": null,
+          "digest": "sha256:9de9254f7b52b9ff5ea1ca79b81fe6fd788bf849755920010979f7ce02969b9c"
+        },
+        {
+          "name": "AetherKiri-1.0.2-alpha.3-macos-app-store.pkg",
+          "size": 143079194,
+          "platform": "macOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.2-alpha.3/AetherKiri-1.0.2-alpha.3-macos-app-store.pkg",
+          "mirror": null,
+          "digest": "sha256:fcf41ab3f3ee12b878e6a5e45d92745cabcf0f7b8e234d3738fd834aeb681219"
+        },
+        {
+          "name": "AetherKiri-1.0.2-alpha.3-macos.zip",
+          "size": 143059840,
+          "platform": "macOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.2-alpha.3/AetherKiri-1.0.2-alpha.3-macos.zip",
+          "mirror": null,
+          "digest": "sha256:8e4259bbd995b954057ea27fe3823b99dd66ca5b054b62fe99a2421cc555dd90"
+        },
+        {
+          "name": "AetherKiri-1.0.2-alpha.3-web.zip",
+          "size": 98088267,
+          "platform": "Web",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.2-alpha.3/AetherKiri-1.0.2-alpha.3-web.zip",
+          "mirror": null,
+          "digest": "sha256:ec6fa62ce4122e9275128ed181e6f6b2c1d079460a3632eaec3ffebaf51a957b"
+        }
+      ]
+    },
+    {
+      "tag": "1.0.2-alpha.2",
+      "name": "1.0.2-alpha.2",
+      "publishedAt": "2026-09-03T12:03:21Z",
+      "prerelease": true,
+      "url": "https://github.com/AetherKiri/Aether/releases/tag/1.0.2-alpha.2",
+      "notesUrl": "/releases/1.0.2-alpha.2.json",
+      "assets": [
+        {
+          "name": "AetherKiri-1.0.2-alpha.2-android.apk",
+          "size": 143665772,
+          "platform": "Android",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.2-alpha.2/AetherKiri-1.0.2-alpha.2-android.apk",
+          "mirror": null,
+          "digest": "sha256:bcffe80390a5563d0d1c083c7e25140a5f4b41c1bbdcd598dc2285dc0b3c7952"
+        },
+        {
+          "name": "AetherKiri-1.0.2-alpha.2-ios-app-store.ipa",
+          "size": 128302133,
+          "platform": "iOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.2-alpha.2/AetherKiri-1.0.2-alpha.2-ios-app-store.ipa",
+          "mirror": null,
+          "digest": "sha256:8901c78501aee2726244340c46b7faed3f0f9316c500687cefb66d88f0566b63"
+        },
+        {
+          "name": "AetherKiri-1.0.2-alpha.2-ios-unsigned.ipa",
+          "size": 128111893,
+          "platform": "iOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.2-alpha.2/AetherKiri-1.0.2-alpha.2-ios-unsigned.ipa",
+          "mirror": null,
+          "digest": "sha256:d243acbb02c8a820cb2bc3ac1b6dbb6cacd23bf3421a51901083736876f457df"
+        },
+        {
+          "name": "AetherKiri-1.0.2-alpha.2-macos-app-store.pkg",
+          "size": 143078984,
+          "platform": "macOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.2-alpha.2/AetherKiri-1.0.2-alpha.2-macos-app-store.pkg",
+          "mirror": null,
+          "digest": "sha256:3b9d82a6e1823b8a7616f3af8020de0d4679a28914a2503dcd860294573c90db"
+        },
+        {
+          "name": "AetherKiri-1.0.2-alpha.2-macos.zip",
+          "size": 143061502,
+          "platform": "macOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.2-alpha.2/AetherKiri-1.0.2-alpha.2-macos.zip",
+          "mirror": null,
+          "digest": "sha256:a93de5201eec477dec6dcb60b807f291d5896bf0fce7568bcbcb9a07de28d933"
+        },
+        {
+          "name": "AetherKiri-1.0.2-alpha.2-web.zip",
+          "size": 98082041,
+          "platform": "Web",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.2-alpha.2/AetherKiri-1.0.2-alpha.2-web.zip",
+          "mirror": null,
+          "digest": "sha256:6c285fc19569d7820c4264b47bfafeef14634101dbaeb06c1075caa490999f4b"
+        }
+      ]
+    },
+    {
+      "tag": "1.0.2-alpha.1",
+      "name": "1.0.2-alpha.1",
+      "publishedAt": "2026-08-31T04:57:10Z",
+      "prerelease": true,
+      "url": "https://github.com/AetherKiri/Aether/releases/tag/1.0.2-alpha.1",
+      "notesUrl": "/releases/1.0.2-alpha.1.json",
+      "assets": [
+        {
+          "name": "AetherKiri-1.0.2-alpha.1-android.apk",
+          "size": 141678405,
+          "platform": "Android",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.2-alpha.1/AetherKiri-1.0.2-alpha.1-android.apk",
+          "mirror": null,
+          "digest": "sha256:8bdd630f890a62ad340a79084bd04e85ab5d6baec303d6839dbfaae3fb7d6a57"
+        },
+        {
+          "name": "AetherKiri-1.0.2-alpha.1-ios-app-store.ipa",
+          "size": 127278559,
+          "platform": "iOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.2-alpha.1/AetherKiri-1.0.2-alpha.1-ios-app-store.ipa",
+          "mirror": null,
+          "digest": "sha256:1b5d0ce9e653e85c7b33d1de0ba242995b88a74d5f7fda9acbdaa7377d7d6819"
+        },
+        {
+          "name": "AetherKiri-1.0.2-alpha.1-ios-unsigned.ipa",
+          "size": 127094262,
+          "platform": "iOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.2-alpha.1/AetherKiri-1.0.2-alpha.1-ios-unsigned.ipa",
+          "mirror": null,
+          "digest": "sha256:06c31051f04fab6f1ed6c3bf61c689c4b635c244396bdb29b754956f071afbc2"
+        },
+        {
+          "name": "AetherKiri-1.0.2-alpha.1-macos-app-store.pkg",
+          "size": 142000067,
+          "platform": "macOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.2-alpha.1/AetherKiri-1.0.2-alpha.1-macos-app-store.pkg",
+          "mirror": null,
+          "digest": "sha256:62226fe238b9da007f6aab3d1186198118f7fa54965d85dfc0aa84018c9a3499"
+        },
+        {
+          "name": "AetherKiri-1.0.2-alpha.1-macos.zip",
+          "size": 141976631,
+          "platform": "macOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.2-alpha.1/AetherKiri-1.0.2-alpha.1-macos.zip",
+          "mirror": null,
+          "digest": "sha256:22a1ecff0c3178b518f73c1c0562fdfc139fa60bb447f0b1f2b4a66eed89528d"
+        },
+        {
+          "name": "AetherKiri-1.0.2-alpha.1-web.zip",
+          "size": 97215879,
+          "platform": "Web",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.2-alpha.1/AetherKiri-1.0.2-alpha.1-web.zip",
+          "mirror": null,
+          "digest": "sha256:7b626260c692e675906f994fe6111de3eea3348d5b63757063712a289e83860a"
+        }
+      ]
+    },
+    {
+      "tag": "1.0.1",
+      "name": "1.0.1",
+      "publishedAt": "2026-08-30T12:40:18Z",
+      "prerelease": false,
+      "url": "https://github.com/AetherKiri/Aether/releases/tag/1.0.1",
+      "notesUrl": "/releases/1.0.1.json",
+      "assets": [
+        {
+          "name": "AetherKiri-1.0.1-android.apk",
+          "size": 138676037,
+          "platform": "Android",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.1/AetherKiri-1.0.1-android.apk",
+          "mirror": null,
+          "digest": "sha256:53084d89dd86f5158289a2baaec5d5d026efc2d313d04b5b66da3b69c585aa9b"
+        },
+        {
+          "name": "AetherKiri-1.0.1-ios-app-store.ipa",
+          "size": 126183766,
+          "platform": "iOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.1/AetherKiri-1.0.1-ios-app-store.ipa",
+          "mirror": null,
+          "digest": "sha256:13a5335b1cec0372b204713db6d58cf92233c85c9f79f15c8fad5567e728f5ae"
+        },
+        {
+          "name": "AetherKiri-1.0.1-ios-unsigned.ipa",
+          "size": 125996465,
+          "platform": "iOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.1/AetherKiri-1.0.1-ios-unsigned.ipa",
+          "mirror": null,
+          "digest": "sha256:b1b00cd489979bdc30c0f58c405fc7ad0daf750d783692efc574b38949fbcb1c"
+        },
+        {
+          "name": "AetherKiri-1.0.1-macos-app-store.pkg",
+          "size": 140593503,
+          "platform": "macOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.1/AetherKiri-1.0.1-macos-app-store.pkg",
+          "mirror": null,
+          "digest": "sha256:57464fc22be30448855e584f9768bd726fe6a09e78ae17eb55a26eebab764347"
+        },
+        {
+          "name": "AetherKiri-1.0.1-macos.zip",
+          "size": 140575332,
+          "platform": "macOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.1/AetherKiri-1.0.1-macos.zip",
+          "mirror": null,
+          "digest": "sha256:d2f71375fa8f90f1dbd65605a31c6ec1c6e5d45bc5e4539bac20f7db7f7fdab9"
+        },
+        {
+          "name": "AetherKiri-1.0.1-web.zip",
+          "size": 97198411,
+          "platform": "Web",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.1/AetherKiri-1.0.1-web.zip",
+          "mirror": null,
+          "digest": "sha256:22e62c68b3e1ca360be34a89c7e14153907e00f6e0473e4236dd456ad190fbf7"
+        }
+      ]
+    },
+    {
+      "tag": "1.0.0",
+      "name": "1.0.0",
+      "publishedAt": "2026-08-28T08:21:11Z",
+      "prerelease": false,
+      "url": "https://github.com/AetherKiri/Aether/releases/tag/1.0.0",
+      "notesUrl": "/releases/1.0.0.json",
+      "assets": [
+        {
+          "name": "AetherKiri-1.0.0-android.apk",
+          "size": 138557076,
+          "platform": "Android",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.0/AetherKiri-1.0.0-android.apk",
+          "mirror": null,
+          "digest": "sha256:74851c3ecce0d7b6b41c23446cd6629758edac78b59ce5032ed89ec8e9b96df2"
+        },
+        {
+          "name": "AetherKiri-1.0.0-ios-app-store.ipa",
+          "size": 126111905,
+          "platform": "iOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.0/AetherKiri-1.0.0-ios-app-store.ipa",
+          "mirror": null,
+          "digest": "sha256:3023225a0ad858d6ca12ecc07d86157508b1ff736709870e07fe903d254e6567"
+        },
+        {
+          "name": "AetherKiri-1.0.0-ios-unsigned.ipa",
+          "size": 125923676,
+          "platform": "iOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.0/AetherKiri-1.0.0-ios-unsigned.ipa",
+          "mirror": null,
+          "digest": "sha256:9bc41b90a4c81b9bee65d326fa77d8a4c34f09e90e7b4fc050a35f577bdbf2d7"
+        },
+        {
+          "name": "AetherKiri-1.0.0-macos-app-store.pkg",
+          "size": 140514895,
+          "platform": "macOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.0/AetherKiri-1.0.0-macos-app-store.pkg",
+          "mirror": null,
+          "digest": "sha256:caf10802894745dab39162d9d6e6d83b37ad681482b7d57917a8161fbf00820b"
+        },
+        {
+          "name": "AetherKiri-1.0.0-macos.zip",
+          "size": 140493933,
+          "platform": "macOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.0/AetherKiri-1.0.0-macos.zip",
+          "mirror": null,
+          "digest": "sha256:f9d6b8ef59bb5169dbe249634b8220114a35c935d59695e02f39278774f1447b"
+        },
+        {
+          "name": "AetherKiri-1.0.0-web.zip",
+          "size": 97147687,
+          "platform": "Web",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.0/AetherKiri-1.0.0-web.zip",
+          "mirror": null,
+          "digest": "sha256:316a3f013f1fe8ffb85cc5d0bc2245b2e92b90fa9f3948b1f54bf82b926e7d65"
+        }
+      ]
+    },
+    {
+      "tag": "0.5.0",
+      "name": "0.5.0",
+      "publishedAt": "2026-08-27T04:20:33Z",
+      "prerelease": false,
+      "url": "https://github.com/AetherKiri/Aether/releases/tag/0.5.0",
+      "notesUrl": "/releases/0.5.0.json",
+      "assets": [
+        {
+          "name": "AetherKiri-0.5.0-android.apk",
+          "size": 138311316,
+          "platform": "Android",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/0.5.0/AetherKiri-0.5.0-android.apk",
+          "mirror": null,
+          "digest": "sha256:75a78d5e4e65d30910ca3fd9b39764da14195096101c5bb68d77216cc7828b0b"
+        },
+        {
+          "name": "AetherKiri-0.5.0-ios-app-store.ipa",
+          "size": 126038565,
+          "platform": "iOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/0.5.0/AetherKiri-0.5.0-ios-app-store.ipa",
+          "mirror": null,
+          "digest": "sha256:a901f59d1484dc67a0a5a2f1b594bd614fd81ec7888c074679f72ef9bbf8d322"
+        },
+        {
+          "name": "AetherKiri-0.5.0-ios-unsigned.ipa",
+          "size": 125852658,
+          "platform": "iOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/0.5.0/AetherKiri-0.5.0-ios-unsigned.ipa",
+          "mirror": null,
+          "digest": "sha256:84fdfdcce11083690fe2b876bc9a500cca5b5810c7083bfccf5d759892949cbd"
+        },
+        {
+          "name": "AetherKiri-0.5.0-macos-app-store.pkg",
+          "size": 140441714,
+          "platform": "macOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/0.5.0/AetherKiri-0.5.0-macos-app-store.pkg",
+          "mirror": null,
+          "digest": "sha256:2c90a843272878fdb4010ac730fcaecda98a729305fb58135f6925f8d8ecd5e5"
+        },
+        {
+          "name": "AetherKiri-0.5.0-macos.zip",
+          "size": 140429604,
+          "platform": "macOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/0.5.0/AetherKiri-0.5.0-macos.zip",
+          "mirror": null,
+          "digest": "sha256:bde70562d0826a673271c84ba01eb3e28f413658176a4cca3439ef4f473200d0"
+        },
+        {
+          "name": "AetherKiri-0.5.0-web.zip",
+          "size": 97086578,
+          "platform": "Web",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/0.5.0/AetherKiri-0.5.0-web.zip",
+          "mirror": null,
+          "digest": "sha256:136b736e4d8635c7fa7d6be5d584ec57291e439f5567822196fb03e5407bf437"
+        }
+      ]
+    },
+    {
+      "tag": "0.4.4",
+      "name": "0.4.4",
+      "publishedAt": "2026-08-25T01:55:25Z",
+      "prerelease": false,
+      "url": "https://github.com/AetherKiri/Aether/releases/tag/0.4.4",
+      "notesUrl": "/releases/0.4.4.json",
+      "assets": [
+        {
+          "name": "AetherKiri-0.4.4-android.apk",
+          "size": 137950868,
+          "platform": "Android",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/0.4.4/AetherKiri-0.4.4-android.apk",
+          "mirror": null,
+          "digest": "sha256:4b8250b8a44c2a647f8458a1e3eb578d914dff8fbfff5cda1aa63b40375a5b64"
+        },
+        {
+          "name": "AetherKiri-0.4.4-ios-app-store.ipa",
+          "size": 125875222,
+          "platform": "iOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/0.4.4/AetherKiri-0.4.4-ios-app-store.ipa",
+          "mirror": null,
+          "digest": "sha256:f780ace8118c108bc719e056239abc744f0e9f91c95622d30674b87f87f2d8ca"
+        },
+        {
+          "name": "AetherKiri-0.4.4-ios-unsigned.ipa",
+          "size": 125689634,
+          "platform": "iOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/0.4.4/AetherKiri-0.4.4-ios-unsigned.ipa",
+          "mirror": null,
+          "digest": "sha256:2771c6578b7168268c22932b5d2a177163cc898fe46b0858657345b570ccf729"
+        },
+        {
+          "name": "AetherKiri-0.4.4-macos-app-store.pkg",
+          "size": 140264518,
+          "platform": "macOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/0.4.4/AetherKiri-0.4.4-macos-app-store.pkg",
+          "mirror": null,
+          "digest": "sha256:8e24ea73a346f8e84dfc990f1cceaa224558c432741fbab252f5afde7034a7cd"
+        },
+        {
+          "name": "AetherKiri-0.4.4-macos.zip",
+          "size": 140247801,
+          "platform": "macOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/0.4.4/AetherKiri-0.4.4-macos.zip",
+          "mirror": null,
+          "digest": "sha256:d39f5f602793be35b9f3e47b2e327c5569d8217f0276bf1743d5b1c0c53bf7c9"
+        },
+        {
+          "name": "AetherKiri-0.4.4-web.zip",
+          "size": 96964473,
+          "platform": "Web",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/0.4.4/AetherKiri-0.4.4-web.zip",
+          "mirror": null,
+          "digest": "sha256:bd81d3ab74c56d9fe439c5ef718c3ae6129d4697401daea18673a96d83d9e113"
+        }
+      ]
+    },
+    {
+      "tag": "0.4.3",
+      "name": "0.4.3",
+      "publishedAt": "2026-08-22T09:09:48Z",
+      "prerelease": false,
+      "url": "https://github.com/AetherKiri/Aether/releases/tag/0.4.3",
+      "notesUrl": "/releases/0.4.3.json",
+      "assets": [
+        {
+          "name": "AetherKiri-0.4.3-android.apk",
+          "size": 137229972,
+          "platform": "Android",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/0.4.3/AetherKiri-0.4.3-android.apk",
+          "mirror": null,
+          "digest": "sha256:46e63868cf39b3effd08027fe57891d6cfcbaafb17e99b8f162cc01806b765cb"
+        },
+        {
+          "name": "AetherKiri-0.4.3-ios-app-store.ipa",
+          "size": 125695248,
+          "platform": "iOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/0.4.3/AetherKiri-0.4.3-ios-app-store.ipa",
+          "mirror": null,
+          "digest": "sha256:23806f915b6b97d25902f8fc3c64e56bada47e7f18dd2cf2d9608e85f64405f4"
+        },
+        {
+          "name": "AetherKiri-0.4.3-ios-unsigned.ipa",
+          "size": 125511388,
+          "platform": "iOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/0.4.3/AetherKiri-0.4.3-ios-unsigned.ipa",
+          "mirror": null,
+          "digest": "sha256:d42d89a3616bab6728271f50583fbf82382edabcf381c5d0cef755549cfaa554"
+        },
+        {
+          "name": "AetherKiri-0.4.3-macos-app-store.pkg",
+          "size": 140116388,
+          "platform": "macOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/0.4.3/AetherKiri-0.4.3-macos-app-store.pkg",
+          "mirror": null,
+          "digest": "sha256:30d93c3a0cd9254991212289130f6b23764e88469ecb9af517e43abab9b151ca"
+        },
+        {
+          "name": "AetherKiri-0.4.3-macos.zip",
+          "size": 140105745,
+          "platform": "macOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/0.4.3/AetherKiri-0.4.3-macos.zip",
+          "mirror": null,
+          "digest": "sha256:0b71976b97024f9e8d464e5055034a3c449ae6d2117f94d6cf4b038c78732d92"
+        },
+        {
+          "name": "AetherKiri-0.4.3-web.zip",
+          "size": 96745808,
+          "platform": "Web",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/0.4.3/AetherKiri-0.4.3-web.zip",
+          "mirror": null,
+          "digest": "sha256:e97348251d2f4ecb70894ab183a779c36102ceee057ca735fec4904647477aeb"
+        }
+      ]
+    },
+    {
+      "tag": "0.4.2",
+      "name": "0.4.2",
+      "publishedAt": "2026-08-21T04:32:40Z",
+      "prerelease": false,
+      "url": "https://github.com/AetherKiri/Aether/releases/tag/0.4.2",
+      "notesUrl": "/releases/0.4.2.json",
+      "assets": [
+        {
+          "name": "AetherKiri-0.4.2-android.apk",
+          "size": 137229972,
+          "platform": "Android",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/0.4.2/AetherKiri-0.4.2-android.apk",
+          "mirror": null,
+          "digest": "sha256:ed3c7e28ea62878d60606d0c88c006c0659b4b08f42d135e6c6ed906e47fe3b6"
+        },
+        {
+          "name": "AetherKiri-0.4.2-ios-app-store.ipa",
+          "size": 125694254,
+          "platform": "iOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/0.4.2/AetherKiri-0.4.2-ios-app-store.ipa",
+          "mirror": null,
+          "digest": "sha256:f94783be242ae40ca847e28c47ab2378458a3694077adb05de44d3756704452b"
+        },
+        {
+          "name": "AetherKiri-0.4.2-ios-unsigned.ipa",
+          "size": 125508521,
+          "platform": "iOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/0.4.2/AetherKiri-0.4.2-ios-unsigned.ipa",
+          "mirror": null,
+          "digest": "sha256:8db74266c3bb99e41a52c27ea29e8bcb61d6cc2cb4c0f4fdf7a08487f53aaf15"
+        },
+        {
+          "name": "AetherKiri-0.4.2-macos-app-store.pkg",
+          "size": 140116569,
+          "platform": "macOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/0.4.2/AetherKiri-0.4.2-macos-app-store.pkg",
+          "mirror": null,
+          "digest": "sha256:a205ca35f69fdded8a0200a10113e3d8def7307d7b458798cafe10f0db90a590"
+        },
+        {
+          "name": "AetherKiri-0.4.2-macos.zip",
+          "size": 140103257,
+          "platform": "macOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/0.4.2/AetherKiri-0.4.2-macos.zip",
+          "mirror": null,
+          "digest": "sha256:e8f0f863a500d87fa250657078f45eb974172357cce0ece18efa11b9c0e379cd"
+        },
+        {
+          "name": "AetherKiri-0.4.2-web.zip",
+          "size": 96739293,
+          "platform": "Web",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/0.4.2/AetherKiri-0.4.2-web.zip",
+          "mirror": null,
+          "digest": "sha256:040e46f3d72c370c3b86674a8d5acf95836ff18822147be9e1146048b62598b1"
+        }
+      ]
+    },
+    {
+      "tag": "0.4.1",
+      "name": "0.4.1",
+      "publishedAt": "2026-08-16T20:46:33Z",
+      "prerelease": false,
+      "url": "https://github.com/AetherKiri/Aether/releases/tag/0.4.1",
+      "notesUrl": "/releases/0.4.1.json",
+      "assets": [
+        {
+          "name": "AetherKiri-0.4.1-android.apk",
+          "size": 137197204,
+          "platform": "Android",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/0.4.1/AetherKiri-0.4.1-android.apk",
+          "mirror": null,
+          "digest": "sha256:ca2b129ae71914be3825576590d8b1ef48591fc730e034e417bcc85ea44502a7"
+        },
+        {
+          "name": "AetherKiri-0.4.1-ios-app-store.ipa",
+          "size": 125670630,
+          "platform": "iOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/0.4.1/AetherKiri-0.4.1-ios-app-store.ipa",
+          "mirror": null,
+          "digest": "sha256:c150b40f0dc99ff3ab11187b2aefb4bbcd6839b3fcf2cfcedf027f0f30b9d1c0"
+        },
+        {
+          "name": "AetherKiri-0.4.1-ios-unsigned.ipa",
+          "size": 125490822,
+          "platform": "iOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/0.4.1/AetherKiri-0.4.1-ios-unsigned.ipa",
+          "mirror": null,
+          "digest": "sha256:447ded3cba7cbe52ebd108fb4b8f316d3923b72ef6048e2f24a95f44c1e5b15d"
+        },
+        {
+          "name": "AetherKiri-0.4.1-macos-app-store.pkg",
+          "size": 140097883,
+          "platform": "macOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/0.4.1/AetherKiri-0.4.1-macos-app-store.pkg",
+          "mirror": null,
+          "digest": "sha256:fa9027cddbe631655bc365601d9c7576cfd6a9e1657eb0fd9b4f154b4809c05c"
+        },
+        {
+          "name": "AetherKiri-0.4.1-macos.zip",
+          "size": 140082568,
+          "platform": "macOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/0.4.1/AetherKiri-0.4.1-macos.zip",
+          "mirror": null,
+          "digest": "sha256:3b09d6cf2aa71a82fc10c9f0e73826e538ce507c220704ba68dabe6060965597"
+        },
+        {
+          "name": "AetherKiri-0.4.1-web.zip",
+          "size": 96724540,
+          "platform": "Web",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/0.4.1/AetherKiri-0.4.1-web.zip",
+          "mirror": null,
+          "digest": "sha256:3144290c5cdeeb3dc109a466771ecafafe7537bc6cc3b23dcb3de96b2f6fd698"
+        }
+      ]
+    },
+    {
+      "tag": "0.4.0",
+      "name": "0.4.0",
+      "publishedAt": "2026-08-16T14:45:31Z",
+      "prerelease": false,
+      "url": "https://github.com/AetherKiri/Aether/releases/tag/0.4.0",
+      "notesUrl": "/releases/0.4.0.json",
+      "assets": [
+        {
+          "name": "AetherKiri-0.4.0-android.apk",
+          "size": 137164436,
+          "platform": "Android",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/0.4.0/AetherKiri-0.4.0-android.apk",
+          "mirror": null,
+          "digest": "sha256:0a61903d4315d0d8ca885e0a7741414eada6ed8e3693c8c188a505c5f336706c"
+        },
+        {
+          "name": "AetherKiri-0.4.0-ios-app-store.ipa",
+          "size": 125664795,
+          "platform": "iOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/0.4.0/AetherKiri-0.4.0-ios-app-store.ipa",
+          "mirror": null,
+          "digest": "sha256:851ccf10a281bf489608c981ab9baee69339c97f38dff6dc055317b4a89b3064"
+        },
+        {
+          "name": "AetherKiri-0.4.0-ios-unsigned.ipa",
+          "size": 125485615,
+          "platform": "iOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/0.4.0/AetherKiri-0.4.0-ios-unsigned.ipa",
+          "mirror": null,
+          "digest": "sha256:b78336cca1d0fe248e021cde592cb864d4ba03ca08786c1691cee30bc09d8736"
+        },
+        {
+          "name": "AetherKiri-0.4.0-macos-app-store.pkg",
+          "size": 140082698,
+          "platform": "macOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/0.4.0/AetherKiri-0.4.0-macos-app-store.pkg",
+          "mirror": null,
+          "digest": "sha256:4087efbefd88f2d329e148d3880c9d2e75200b87214e1a6698c26731ac1e8cf2"
+        },
+        {
+          "name": "AetherKiri-0.4.0-macos.zip",
+          "size": 140065664,
+          "platform": "macOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/0.4.0/AetherKiri-0.4.0-macos.zip",
+          "mirror": null,
+          "digest": "sha256:5bd6153158ae4ef1c16c6a1a9728098ebf6649c0a3135d24f6e3aeb8e0fe2429"
+        },
+        {
+          "name": "AetherKiri-0.4.0-web.zip",
+          "size": 96718858,
+          "platform": "Web",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/0.4.0/AetherKiri-0.4.0-web.zip",
+          "mirror": null,
+          "digest": "sha256:0fce748f71948f513745faa6d98e4d15637ada5540b4fdc66ebc9df8039caaf4"
+        }
+      ]
+    },
+    {
+      "tag": "0.3.0",
+      "name": "0.3.0",
+      "publishedAt": "2026-08-10T21:27:50Z",
+      "prerelease": false,
+      "url": "https://github.com/AetherKiri/Aether/releases/tag/0.3.0",
+      "notesUrl": "/releases/0.3.0.json",
+      "assets": [
+        {
+          "name": "AetherKiri-0.3.0-android.apk",
+          "size": 136210068,
+          "platform": "Android",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/0.3.0/AetherKiri-0.3.0-android.apk",
+          "mirror": null,
+          "digest": "sha256:51bd82b5849486377198bb4a9d04247e912fdd2e44fdae2a3d880df85757d463"
+        },
+        {
+          "name": "AetherKiri-0.3.0-ios-app-store.ipa",
+          "size": 125378582,
+          "platform": "iOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/0.3.0/AetherKiri-0.3.0-ios-app-store.ipa",
+          "mirror": null,
+          "digest": "sha256:80ed8d275b22b37cb31cf40dd5866d33eb3027d7844a70170eeca124ff96a7ff"
+        },
+        {
+          "name": "AetherKiri-0.3.0-ios-unsigned.ipa",
+          "size": 125192208,
+          "platform": "iOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/0.3.0/AetherKiri-0.3.0-ios-unsigned.ipa",
+          "mirror": null,
+          "digest": "sha256:e3594cc0cb39989b9c69a379b51a1f34c87c8200b6643f84b83867005469ab36"
+        },
+        {
+          "name": "AetherKiri-0.3.0-macos-app-store.pkg",
+          "size": 133828004,
+          "platform": "macOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/0.3.0/AetherKiri-0.3.0-macos-app-store.pkg",
+          "mirror": null,
+          "digest": "sha256:5f87e024c01be67b4ea19c0e5e634ba5f8d5bab755f93e7672160179c6d42962"
+        },
+        {
+          "name": "AetherKiri-0.3.0-macos.zip",
+          "size": 133844806,
+          "platform": "macOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/0.3.0/AetherKiri-0.3.0-macos.zip",
+          "mirror": null,
+          "digest": "sha256:51ca724188bcf261045f1792ba6e6920d3c115340f27f6a29815c31a1cf4ced6"
+        },
+        {
+          "name": "AetherKiri-0.3.0-web.zip",
+          "size": 96775150,
+          "platform": "Web",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/0.3.0/AetherKiri-0.3.0-web.zip",
+          "mirror": null,
+          "digest": "sha256:729279fd76b298b2c0119985411b6b8a9e45f92d90f64fb371b56170a155ef13"
+        }
+      ]
+    },
+    {
+      "tag": "0.2.4",
+      "name": "0.2.4",
+      "publishedAt": "2026-08-10T07:00:23Z",
+      "prerelease": false,
+      "url": "https://github.com/AetherKiri/Aether/releases/tag/0.2.4",
+      "notesUrl": "/releases/0.2.4.json",
+      "assets": [
+        {
+          "name": "AetherKiri-0.2.4-android.apk",
+          "size": 132121908,
+          "platform": "Android",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/0.2.4/AetherKiri-0.2.4-android.apk",
+          "mirror": null,
+          "digest": "sha256:540bc275a067075de35ddf5ad37370ec289cf7f0b90192f53d1bb232c12b4404"
+        },
+        {
+          "name": "AetherKiri-0.2.4-ios-app-store.ipa",
+          "size": 124535727,
+          "platform": "iOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/0.2.4/AetherKiri-0.2.4-ios-app-store.ipa",
+          "mirror": null,
+          "digest": "sha256:8d207f385b246873ea27f53108d6464e2b06ac6be7b412416364c7607403447e"
+        },
+        {
+          "name": "AetherKiri-0.2.4-ios-unsigned.ipa",
+          "size": 124347292,
+          "platform": "iOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/0.2.4/AetherKiri-0.2.4-ios-unsigned.ipa",
+          "mirror": null,
+          "digest": "sha256:d4abdda2fca15e7eeb316c81baf839f121503b64cec97481405a6a2050e8e938"
+        },
+        {
+          "name": "AetherKiri-0.2.4-macos-app-store.pkg",
+          "size": 131436918,
+          "platform": "macOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/0.2.4/AetherKiri-0.2.4-macos-app-store.pkg",
+          "mirror": null,
+          "digest": "sha256:a6ad287297ddc0e4396dc4ce756d8e652362821be37e2e2bff805a92e7540622"
+        },
+        {
+          "name": "AetherKiri-0.2.4-macos.zip",
+          "size": 131448201,
+          "platform": "macOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/0.2.4/AetherKiri-0.2.4-macos.zip",
+          "mirror": null,
+          "digest": "sha256:5e3d578055335ba354050cf0cb99cedc600945185310f93f13ad752155dc211a"
+        },
+        {
+          "name": "AetherKiri-0.2.4-web.zip",
+          "size": 96021433,
+          "platform": "Web",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/0.2.4/AetherKiri-0.2.4-web.zip",
+          "mirror": null,
+          "digest": "sha256:573b2c122149c0d13b44a0448fb22c6d2a1fc88321a96121367a8a5e4e656c8e"
+        }
+      ]
+    },
+    {
+      "tag": "0.2.3",
+      "name": "0.2.3",
+      "publishedAt": "2026-08-07T03:08:19Z",
+      "prerelease": false,
+      "url": "https://github.com/AetherKiri/Aether/releases/tag/0.2.3",
+      "notesUrl": "/releases/0.2.3.json",
+      "assets": [
+        {
+          "name": "AetherKiri-0.2.3-android.apk",
+          "size": 131187628,
+          "platform": "Android",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/0.2.3/AetherKiri-0.2.3-android.apk",
+          "mirror": null,
+          "digest": "sha256:2f421e45d2af19c2db18c88d9e4a535219586b1dc9723d57a3e7fc66fa819972"
+        },
+        {
+          "name": "AetherKiri-0.2.3-ios-app-store.ipa",
+          "size": 124199992,
+          "platform": "iOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/0.2.3/AetherKiri-0.2.3-ios-app-store.ipa",
+          "mirror": null,
+          "digest": "sha256:38b820972353ac994aabe671cbc189b6022257940a2c62a0a44800c6ebd6cd3d"
+        },
+        {
+          "name": "AetherKiri-0.2.3-ios-unsigned.ipa",
+          "size": 124017040,
+          "platform": "iOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/0.2.3/AetherKiri-0.2.3-ios-unsigned.ipa",
+          "mirror": null,
+          "digest": "sha256:77c47530c957f2f5429fa497375bbf6e23ac469349c8d06cbbef571de8aee564"
+        },
+        {
+          "name": "AetherKiri-0.2.3-macos-app-store.pkg",
+          "size": 131093620,
+          "platform": "macOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/0.2.3/AetherKiri-0.2.3-macos-app-store.pkg",
+          "mirror": null,
+          "digest": "sha256:200fe39276e1290840c09b6ead30f2b35a1f0aa030854e9c5cac42079b26218b"
+        },
+        {
+          "name": "AetherKiri-0.2.3-macos.zip",
+          "size": 131107795,
+          "platform": "macOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/0.2.3/AetherKiri-0.2.3-macos.zip",
+          "mirror": null,
+          "digest": "sha256:cf5fb4ccd0f6d3277a08c3df88271f4ab2d35f6462e5995efa765923bdb5f9ca"
+        },
+        {
+          "name": "AetherKiri-0.2.3-web.zip",
+          "size": 95709975,
+          "platform": "Web",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/0.2.3/AetherKiri-0.2.3-web.zip",
+          "mirror": null,
+          "digest": "sha256:4e706d360fc7c7a6420ca62d54b2ed203fbf3da57be7849f846f388401b420d1"
+        }
+      ]
+    },
+    {
+      "tag": "0.2.2",
+      "name": "0.2.2",
+      "publishedAt": "2026-08-06T08:00:45Z",
+      "prerelease": false,
+      "url": "https://github.com/AetherKiri/Aether/releases/tag/0.2.2",
+      "notesUrl": "/releases/0.2.2.json",
+      "assets": [
+        {
+          "name": "AetherKiri-0.2.2-android.apk",
+          "size": 131166971,
+          "platform": "Android",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/0.2.2/AetherKiri-0.2.2-android.apk",
+          "mirror": null,
+          "digest": "sha256:5255ff49046b1ccb8947d985ad54d766af3f38e6ce26457c3f0b262a184bd1d5"
+        },
+        {
+          "name": "AetherKiri-0.2.2-ios-app-store.ipa",
+          "size": 124186242,
+          "platform": "iOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/0.2.2/AetherKiri-0.2.2-ios-app-store.ipa",
+          "mirror": null,
+          "digest": "sha256:79334156770b721b8ab91cf36e5a73a4328eb3d53bf231f6e3d7729c55e422e7"
+        },
+        {
+          "name": "AetherKiri-0.2.2-ios-unsigned.ipa",
+          "size": 124001726,
+          "platform": "iOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/0.2.2/AetherKiri-0.2.2-ios-unsigned.ipa",
+          "mirror": null,
+          "digest": "sha256:4204be8e209413d5440e1cb07ba2ffea4e832e641d76683d2bd9c985a3c7052c"
+        },
+        {
+          "name": "AetherKiri-0.2.2-macos-app-store.pkg",
+          "size": 131080022,
+          "platform": "macOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/0.2.2/AetherKiri-0.2.2-macos-app-store.pkg",
+          "mirror": null,
+          "digest": "sha256:16408c1529de7d2bc0d104cdaff1380eee2a0cdd1717754e4e943be6626d090c"
+        },
+        {
+          "name": "AetherKiri-0.2.2-macos.zip",
+          "size": 131096703,
+          "platform": "macOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/0.2.2/AetherKiri-0.2.2-macos.zip",
+          "mirror": null,
+          "digest": "sha256:6caddbdd9d8795031db4b97cfa0a2664172570cef980fae8165515bcd86a0b48"
+        },
+        {
+          "name": "AetherKiri-0.2.2-web.zip",
+          "size": 95703571,
+          "platform": "Web",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/0.2.2/AetherKiri-0.2.2-web.zip",
+          "mirror": null,
+          "digest": "sha256:63e94b2cdc2a9c95b682137df43bb3cd4ad69795eeb0c1e11a99d891be63d3fe"
+        }
+      ]
+    },
+    {
+      "tag": "0.2.1",
+      "name": "0.2.1",
+      "publishedAt": "2026-08-06T02:35:25Z",
+      "prerelease": false,
+      "url": "https://github.com/AetherKiri/Aether/releases/tag/0.2.1",
+      "notesUrl": "/releases/0.2.1.json",
+      "assets": [
+        {
+          "name": "AetherKiri-0.2.1-android.apk",
+          "size": 131166971,
+          "platform": "Android",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/0.2.1/AetherKiri-0.2.1-android.apk",
+          "mirror": null,
+          "digest": "sha256:1875a9f0ee8c0d6dfeb1f3ad92b045359fa7b2cd17523067b7d9c5188abac6b5"
+        },
+        {
+          "name": "AetherKiri-0.2.1-ios-app-store.ipa",
+          "size": 124178301,
+          "platform": "iOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/0.2.1/AetherKiri-0.2.1-ios-app-store.ipa",
+          "mirror": null,
+          "digest": "sha256:e82ef58a431600dd1b5748949acca5174910da091aaef201f0d4dfb8dace4736"
+        },
+        {
+          "name": "AetherKiri-0.2.1-ios-unsigned.ipa",
+          "size": 123998803,
+          "platform": "iOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/0.2.1/AetherKiri-0.2.1-ios-unsigned.ipa",
+          "mirror": null,
+          "digest": "sha256:d1a22f774d890f31b193fc14d31939d86e14730da79dc6151f87d9aab7ad2f40"
+        },
+        {
+          "name": "AetherKiri-0.2.1-macos-app-store.pkg",
+          "size": 131077107,
+          "platform": "macOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/0.2.1/AetherKiri-0.2.1-macos-app-store.pkg",
+          "mirror": null,
+          "digest": "sha256:6519d496d0a8e88670f829ac6f4bb828d7df994e9fba0e2326312cb5a5d12314"
+        },
+        {
+          "name": "AetherKiri-0.2.1-macos.zip",
+          "size": 131095590,
+          "platform": "macOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/0.2.1/AetherKiri-0.2.1-macos.zip",
+          "mirror": null,
+          "digest": "sha256:74f842f6773988b1bfd7efebb0acfb7e2ca3af5a2f8c3335c50e0893f0b1246f"
+        },
+        {
+          "name": "AetherKiri-0.2.1-web.zip",
+          "size": 95699125,
+          "platform": "Web",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/0.2.1/AetherKiri-0.2.1-web.zip",
+          "mirror": null,
+          "digest": "sha256:67bf44716813722efef7835e9103c0853090213e9d5b6ed0f0599e1909c7ef03"
+        }
+      ]
+    },
+    {
+      "tag": "0.2.0",
+      "name": "0.2.0",
+      "publishedAt": "2026-08-05T02:38:44Z",
+      "prerelease": false,
+      "url": "https://github.com/AetherKiri/Aether/releases/tag/0.2.0",
+      "notesUrl": "/releases/0.2.0.json",
+      "assets": [
+        {
+          "name": "AetherKiri-0.2.0-android.apk",
+          "size": 123380475,
+          "platform": "Android",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/0.2.0/AetherKiri-0.2.0-android.apk",
+          "mirror": null,
+          "digest": "sha256:872630cf8bc18f45a5c694b896e28530eb0d8ae820586acccbe73792eea35ff9"
+        },
+        {
+          "name": "AetherKiri-0.2.0-ios-app-store.ipa",
+          "size": 121646187,
+          "platform": "iOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/0.2.0/AetherKiri-0.2.0-ios-app-store.ipa",
+          "mirror": null,
+          "digest": "sha256:39f50547a704d758726594ea6507897fd1bfd8eb59e01b67015276ef40e6aa82"
+        },
+        {
+          "name": "AetherKiri-0.2.0-ios-unsigned.ipa",
+          "size": 121479024,
+          "platform": "iOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/0.2.0/AetherKiri-0.2.0-ios-unsigned.ipa",
+          "mirror": null,
+          "digest": "sha256:2c381a70f6765f9c533d4c8ed71e4a6d24af47045223992f997b8f71d916fd2c"
+        },
+        {
+          "name": "AetherKiri-0.2.0-macos-app-store.pkg",
+          "size": 127893676,
+          "platform": "macOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/0.2.0/AetherKiri-0.2.0-macos-app-store.pkg",
+          "mirror": null,
+          "digest": "sha256:88d1dbe36262e86ab412cd22852e1140cda97c36109eb80fe1213da054efc0cb"
+        },
+        {
+          "name": "AetherKiri-0.2.0-macos.zip",
+          "size": 127908963,
+          "platform": "macOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/0.2.0/AetherKiri-0.2.0-macos.zip",
+          "mirror": null,
+          "digest": "sha256:95af3bd122ae49ea2775826e8c1f2aae424fa88e129da332698632c6f1b758ed"
+        },
+        {
+          "name": "AetherKiri-0.2.0-web.zip",
+          "size": 93657459,
+          "platform": "Web",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/0.2.0/AetherKiri-0.2.0-web.zip",
+          "mirror": null,
+          "digest": "sha256:c0b3950ed8bc985f921d1aa4f31e29cbd4e49d12bd13f027ce118e64a8e60111"
+        }
+      ]
+    },
+    {
+      "tag": "0.1.0-alpha.3",
+      "name": "0.1.0-alpha.3",
+      "publishedAt": "2026-08-01T07:01:23Z",
+      "prerelease": true,
+      "url": "https://github.com/AetherKiri/Aether/releases/tag/0.1.0-alpha.3",
+      "notesUrl": "/releases/0.1.0-alpha.3.json",
+      "assets": [
+        {
+          "name": "AetherKiri-0.1.0-alpha.3-android.apk",
+          "size": 100131808,
+          "platform": "Android",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/0.1.0-alpha.3/AetherKiri-0.1.0-alpha.3-android.apk",
+          "mirror": null,
+          "digest": "sha256:f5b2b872276378d3aabbac3fd2fbc10fbce2d4696b4e5e33f0b6c78c2f9f41d6"
+        },
+        {
+          "name": "AetherKiri-0.1.0-alpha.3-ios-app-store.ipa",
+          "size": 98597098,
+          "platform": "iOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/0.1.0-alpha.3/AetherKiri-0.1.0-alpha.3-ios-app-store.ipa",
+          "mirror": null,
+          "digest": "sha256:e41c4b8c70d406832d3f66a22662ae4dc5a365430a73c42358f9b0e7c24fbc3b"
+        },
+        {
+          "name": "AetherKiri-0.1.0-alpha.3-ios-unsigned.ipa",
+          "size": 98435416,
+          "platform": "iOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/0.1.0-alpha.3/AetherKiri-0.1.0-alpha.3-ios-unsigned.ipa",
+          "mirror": null,
+          "digest": "sha256:21177067d81906b4ef66d15c2db16fb96c02acec109d47b7ba405ca2467f890a"
+        },
+        {
+          "name": "AetherKiri-0.1.0-alpha.3-macos-app-store.pkg",
+          "size": 104830176,
+          "platform": "macOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/0.1.0-alpha.3/AetherKiri-0.1.0-alpha.3-macos-app-store.pkg",
+          "mirror": null,
+          "digest": "sha256:53c7811d119964edc9e44c5de82d804c5d311cf3d19a1287938746e26424209c"
+        },
+        {
+          "name": "AetherKiri-0.1.0-alpha.3-macos.zip",
+          "size": 104854825,
+          "platform": "macOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/0.1.0-alpha.3/AetherKiri-0.1.0-alpha.3-macos.zip",
+          "mirror": null,
+          "digest": "sha256:6f6b8d38353bce214e1c6e9eb3c40cebd5ebc6b0d36b83e377f881dac6fd87bf"
+        },
+        {
+          "name": "AetherKiri-0.1.0-alpha.3-web.zip",
+          "size": 70612232,
+          "platform": "Web",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/0.1.0-alpha.3/AetherKiri-0.1.0-alpha.3-web.zip",
+          "mirror": null,
+          "digest": "sha256:afdbf7098a65c257beb1ecd3912ed50de6f559fa9a98aae64b1b5db861ee08bf"
+        }
+      ]
+    },
+    {
+      "tag": "0.1.0-alpha.2",
+      "name": "0.1.0-alpha.2",
+      "publishedAt": "2026-07-31T15:01:49Z",
+      "prerelease": true,
+      "url": "https://github.com/AetherKiri/Aether/releases/tag/0.1.0-alpha.2",
+      "notesUrl": "/releases/0.1.0-alpha.2.json",
+      "assets": [
+        {
+          "name": "AetherKiri-0.1.0-alpha.2-android.apk",
+          "size": 100099040,
+          "platform": "Android",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/0.1.0-alpha.2/AetherKiri-0.1.0-alpha.2-android.apk",
+          "mirror": null,
+          "digest": "sha256:2ba455ac77f3402a1562d84be58315c0fc321e9db5f4a3009a41720e1f49a471"
+        },
+        {
+          "name": "AetherKiri-0.1.0-alpha.2-ios-app-store.ipa",
+          "size": 98554579,
+          "platform": "iOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/0.1.0-alpha.2/AetherKiri-0.1.0-alpha.2-ios-app-store.ipa",
+          "mirror": null,
+          "digest": "sha256:1d0ab5e208bc61db99202c4f7ebf8190fb63033a8171d14e167d59d951a3ccac"
+        },
+        {
+          "name": "AetherKiri-0.1.0-alpha.2-ios-unsigned.ipa",
+          "size": 98393349,
+          "platform": "iOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/0.1.0-alpha.2/AetherKiri-0.1.0-alpha.2-ios-unsigned.ipa",
+          "mirror": null,
+          "digest": "sha256:42fbd2bd2ad401e6da5a1eaf288ef473c3607f155d2a5ea1c79d694e8f3c84eb"
+        },
+        {
+          "name": "AetherKiri-0.1.0-alpha.2-macos-app-store.pkg",
+          "size": 104786398,
+          "platform": "macOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/0.1.0-alpha.2/AetherKiri-0.1.0-alpha.2-macos-app-store.pkg",
+          "mirror": null,
+          "digest": "sha256:2aa77214a961a8749dcd60f9d1c2710075f2b8171b90ffe6e6a66e30c4694d74"
+        },
+        {
+          "name": "AetherKiri-0.1.0-alpha.2-macos.zip",
+          "size": 104811088,
+          "platform": "macOS",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/0.1.0-alpha.2/AetherKiri-0.1.0-alpha.2-macos.zip",
+          "mirror": null,
+          "digest": "sha256:f6bc06e622bb477043d00b4d1f236ac3bbb932f82e10099b9745e8af577d731f"
+        },
+        {
+          "name": "AetherKiri-0.1.0-alpha.2-web.zip",
+          "size": 70597985,
+          "platform": "Web",
+          "url": "https://github.com/AetherKiri/Aether/releases/download/0.1.0-alpha.2/AetherKiri-0.1.0-alpha.2-web.zip",
+          "mirror": null,
+          "digest": "sha256:934c28eb3c8cc3eb4aecf47da035dcc6e0f6069931381a438c0c38e745a3a5a6"
+        }
+      ]
+    }
+  ]
+}
