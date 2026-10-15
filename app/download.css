@@ -87,6 +87,8 @@
 .dl-download small { font: 8px/1.2 var(--mono); opacity: .65; letter-spacing: .1em; }
 .dl-download svg { width: 19px; height: 19px; }
 .dl-checksum { border-top: 1px solid #94aedb17; }
+.dl-store-meta { color: #b2bfd9; font: 11px/1.6 var(--mono); }
+.dl-store-caption { border-top: 1px solid #94aedb17; padding: 13px 0; color: #94a6c4; font-size: 10px; line-height: 1.8; }
 .dl-checksum summary { display: flex; align-items: center; justify-content: space-between; padding: 11px 0; color: #7c8aa6; cursor: pointer; list-style: none; font: 8px/1.6 var(--mono); letter-spacing: .05em; }
 .dl-checksum summary::-webkit-details-marker { display: none; }
 .dl-checksum summary > span > span { margin-left: 8px; font-family: var(--sans); }

@@ -11,20 +11,6 @@
       "digest": "sha256:ce6c742c613ef58b5af38b89fa4bab6a151a37acb68a300fc370f35cbde17fca"
     },
     {
-      "name": "AetherKiri-1.0.7-ios-app-store.ipa",
-      "size": 139024537,
-      "platform": "iOS",
-      "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.7/AetherKiri-1.0.7-ios-app-store.ipa",
-      "digest": "sha256:18d067fd05b8aab48ed6064f4b5884df74af213e1c329dc514d0638da3a6bc18"
-    },
-    {
-      "name": "AetherKiri-1.0.7-ios-unsigned.ipa",
-      "size": 138797031,
-      "platform": "iOS",
-      "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.7/AetherKiri-1.0.7-ios-unsigned.ipa",
-      "digest": "sha256:baccf63324643c795012318ada3d4b9c9bd56d77e75abad52473f8a89eb1162f"
-    },
-    {
       "name": "AetherKiri-1.0.7-linux-arm64.tar.gz",
       "size": 134128316,
       "platform": "Linux",

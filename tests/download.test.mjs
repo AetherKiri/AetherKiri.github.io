@@ -11,6 +11,8 @@ test("download sync rejects previews, drafts and empty releases", () => {
   const release = stableDownload({ ...base, assets: [
     { name: "aether-android.apk", state: "uploaded", browser_download_url: "https://example.org/a.apk", size: 100 },
     { name: "unfinished.apk", state: "starter" },
+    { name: "aether-ios-unsigned.ipa", state: "uploaded" },
+    { name: "aether-ios-app-store.ipa", state: "uploaded" },
   ] });
   assert.equal(release.assets.length, 1);
   assert.equal(release.assets[0].platform, "Android");
@@ -23,6 +25,7 @@ test("download metadata contains one stable release with official assets", async
   assert.match(release.tag, /^v?\d+\.\d+\.\d+$/);
   assert.ok(release.assets.length > 0);
   for (const asset of release.assets) {
+    assert.notEqual(asset.platform, "iOS");
     const url = new URL(asset.url);
     assert.equal(url.hostname, "github.com");
     assert.equal(url.protocol, "https:");

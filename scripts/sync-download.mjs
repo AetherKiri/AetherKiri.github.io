@@ -13,7 +13,7 @@ export function platformFor(name) {
 
 export function stableDownload(release) {
   if (release.draft || release.prerelease || !release.tag_name) throw new Error("Expected a public stable release");
-  const assets = release.assets.filter(asset => asset.state === "uploaded").map(asset => ({
+  const assets = release.assets.filter(asset => asset.state === "uploaded" && platformFor(asset.name) !== "iOS").map(asset => ({
     name: asset.name,
     size: asset.size,
     platform: platformFor(asset.name),
@@ -25,13 +25,23 @@ export function stableDownload(release) {
 }
 
 async function main() {
-  const response = await fetch("https://api.github.com/repos/AetherKiri/Aether/releases/latest", {
-    headers: {
-      Accept: "application/vnd.github+json",
-      ...(process.env.GITHUB_TOKEN ? { Authorization: `Bearer ${process.env.GITHUB_TOKEN}` } : {}),
-    },
-    signal: AbortSignal.timeout(30000),
-  });
+  let response;
+  for (let attempt = 0; attempt < 3; attempt++) {
+    try {
+      response = await fetch("https://api.github.com/repos/AetherKiri/Aether/releases/latest", {
+        headers: {
+          Accept: "application/vnd.github+json",
+          ...(process.env.GITHUB_TOKEN ? { Authorization: `Bearer ${process.env.GITHUB_TOKEN}` } : {}),
+        },
+        signal: AbortSignal.timeout(30000),
+      });
+      if (response.ok || (response.status < 500 && response.status !== 429)) break;
+    } catch (error) {
+      if (attempt === 2) throw error;
+    }
+    if (attempt < 2) await new Promise(resolve => setTimeout(resolve, 1000 * 2 ** attempt));
+  }
+  if (!response) throw new Error("GitHub stable release request failed");
   if (!response.ok) throw new Error(`GitHub stable release: ${response.status}`);
   const release = stableDownload(await response.json());
   const root = new URL("../", import.meta.url);

@@ -32,9 +32,15 @@ The static artifact is written to `dist-pages/`. The workflow in
 The standalone `/download/` page shows only the latest public stable release
 from [Aether](https://github.com/AetherKiri/Aether). Run `npm run sync:download`
 to refresh `app/download-release.json` and `public/download/latest.json`.
-The deployment workflow refreshes this metadata on every push and every six
-hours. Drafts, previews, and historical releases are not included. Files are
-downloaded directly from the official GitHub Releases assets.
+The deployment workflow fetches the latest stable release on every push and
+every hour, then validates, builds, and deploys the site automatically. Version
+numbers, dates, asset links, sizes, and checksums require no manual edits.
+GitHub may delay scheduled runs. A `repository_dispatch` event with type
+`stable-release-published` can also trigger an immediate refresh.
+Drafts, previews, and historical releases are not included. Android and desktop
+files are downloaded directly from official GitHub Releases assets. iOS uses
+`https://apps.apple.com/app/id6796580469`, without a pinned storefront or language;
+installation, availability, versions, and updates are managed by the App Store.
 
 ## Deployment
 
