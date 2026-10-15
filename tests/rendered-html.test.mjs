@@ -2,13 +2,13 @@ import assert from "node:assert/strict";
 import { access, readFile } from "node:fs/promises";
 import test from "node:test";
 
-async function render() {
+async function render(path = "/") {
   const workerUrl = new URL("../dist/server/index.js", import.meta.url);
   workerUrl.searchParams.set("test", `${process.pid}-${Date.now()}`);
   const { default: worker } = await import(workerUrl.href);
 
   return worker.fetch(
-    new Request("http://localhost/", {
+    new Request(`http://localhost${path}`, {
       headers: { accept: "text/html" },
     }),
     {
@@ -32,13 +32,21 @@ test("server-renders the Aether organization website", async () => {
   assert.match(html, /<title>Aether/);
   assert.match(html, /Godot/);
   assert.match(html, /KiriKiri2/);
-  assert.match(html, /id="downloads"/);
+  assert.match(html, /0\.1\.0-alpha\.3/);
   assert.match(html, /下载 Aether/);
-  assert.match(html, /全部版本/);
-  assert.match(html, /github\.com\/AetherKiri\/Aether\/releases\/download\//);
   assert.match(html, /GitHub Issues/);
   assert.match(html, /GitHub/);
   assert.doesNotMatch(html, /LATEST UPDATE|codex-preview|Your site is taking shape/);
+});
+
+test("server-renders the dedicated stable download page", async () => {
+  const response = await render("/download");
+  assert.equal(response.status, 200);
+  const html = await response.text();
+  assert.match(html, /最新稳定版/);
+  assert.match(html, /选择你的平台/);
+  assert.match(html, /github\.com\/AetherKiri\/Aether\/releases\/download\//);
+  assert.doesNotMatch(html, /全部版本|搜索版本|最新预览版|version-options/);
 });
 
 test("contains static hosting and social preview assets", async () => {

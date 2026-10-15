@@ -15,6 +15,7 @@ export default defineConfig({
       input: {
         main: page("./github-pages/index.html"),
         qq: page("./github-pages/qq/index.html"),
+        download: page("./github-pages/download/index.html"),
       },
     },
   },

@@ -29,15 +29,14 @@ jobs:
           cache: npm
       - name: Install dependencies
         run: npm ci
-      - name: Sync all public releases
-        run: npm run sync:releases
+      - name: Sync latest stable download
+        run: npm run sync:download
         env:
           GITHUB_TOKEN: ${{ github.token }}
-          DOWNLOAD_BASE_URL: ${{ vars.DOWNLOAD_BASE_URL }}
+      - name: Check download metadata
+        run: node --test tests/download.test.mjs
       - name: Lint and typecheck
         run: npm run lint && npx tsc --noEmit
-      - name: Test release catalog
-        run: node --test tests/releases.test.mjs
       - name: Build static site
         run: npm run build:pages
       - name: Upload Pages artifact
