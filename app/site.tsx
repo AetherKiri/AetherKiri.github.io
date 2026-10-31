@@ -4,12 +4,39 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import type { CSSProperties, PointerEvent as ReactPointerEvent, ReactNode } from "react";
 import { GROUP_NUMBER, QQ_PAGE, SHARE_URL } from "./community";
 import { Cosmos, Cursor, SplitText, copyText, magnetic, reducedMotion, spotlight, tilt, useRevealAll, useScrollMotion } from "./effects";
+import release from "./download-release.json";
+import releaseHighlights from "./release-highlights.json";
 
 type Language = "zh" | "en";
 
 const github = "https://github.com/AetherKiri/AetherKiri";
 const issues = `${github}/issues`;
 const verifiedGames = `${github}/blob/main/doc/verified_games.md`;
+
+const currentHighlights = releaseHighlights.find((version) => version.tag === release.tag && !version.prerelease);
+const releaseVersions = [
+  {
+    tag: release.tag,
+    publishedAt: release.publishedAt,
+    url: release.url,
+    prerelease: false,
+    title: currentHighlights?.title ?? { zh: "最新稳定版", en: "Latest stable release" },
+    items: currentHighlights?.items ?? {
+      zh: ["详细更新请参阅官方发布说明。"],
+      en: ["See the official release notes for the full list of changes."],
+    },
+  },
+  ...releaseHighlights.filter((version) => version.tag !== release.tag),
+];
+
+function releaseDate(value: string, language: Language) {
+  return new Intl.DateTimeFormat(language === "zh" ? "zh-CN" : "en-US", {
+    year: "numeric",
+    month: language === "zh" ? "2-digit" : "short",
+    day: "2-digit",
+    timeZone: "Asia/Shanghai",
+  }).format(new Date(value));
+}
 
 const RUNTIMES = [
   { n: "KiriKiri / KiriKiri2", t: "C++17", s: "Stable", d: "TJS2/KAG 完整兼容，主力运行时" },
@@ -29,12 +56,13 @@ const GAMES = ["Fate/stay night", "WHITE ALBUM2", "GINKA", "穗织", "星空列�
 
 const copy = {
   zh: {
-    announcement: "Aether 0.1.0-alpha.3 已发布",
+    announcement: `Aether ${release.tag} 稳定版已发布`,
     announcementAction: "看看更新了什么",
     nav: [
       ["#about", "关于"],
       ["#runtime", "多 Runtime"],
       ["#games", "游戏支持"],
+      ["/patch/", "Patch"],
       ["#contact", "联系"],
     ],
     hero: {
@@ -82,33 +110,13 @@ const copy = {
     },
     panel: {
       eyebrow: "WHAT'S NEW",
-      title: "版本能力预览",
-      intro: "从最新修复到跨平台基础，看看每个公开版本带来了什么。",
-      close: "关闭版本预览",
+      title: "版本更新",
+      intro: "根据官方 Release 整理，了解稳定版改进与预览版新进展。",
+      close: "关闭更新内容",
       openRelease: "查看完整发布说明",
-      latest: "LATEST",
-      foundation: "FOUNDATION",
-      versions: [
-        {
-          tag: "0.1.0-alpha.3",
-          date: "2026.08.01",
-          label: "LATEST",
-          title: "渲染与角色图层兼容",
-          items: ["恢复兼容的角色图层显示", "避免重型转场过程出现黑帧"],
-        },
-        {
-          tag: "0.1.0-alpha.2",
-          date: "2026.07.31",
-          label: "FOUNDATION",
-          title: "跨平台运行基础",
-          items: [
-            "升级 Godot 4.7 与原生渲染链路",
-            "接入 Web、Linux、Android 与 iOS 支持",
-            "加入内置多语言 KAG3 Demo",
-            "改善存储、字体、视频与插件兼容能力",
-          ],
-        },
-      ],
+      latest: "最新稳定版",
+      stable: "稳定版",
+      preview: "预览版",
     },
     footer: {
       line: "A Godot-hosted multi-runtime engine.",
@@ -125,12 +133,13 @@ const copy = {
     ],
   },
   en: {
-    announcement: "Aether 0.1.0-alpha.3 is live",
+    announcement: `Aether ${release.tag} stable is live`,
     announcementAction: "See what changed",
     nav: [
       ["#about", "About"],
       ["#runtime", "Runtimes"],
       ["#games", "Games"],
+      ["/patch/?lang=en", "Patch"],
       ["#contact", "Contact"],
     ],
     hero: {
@@ -178,33 +187,13 @@ const copy = {
     },
     panel: {
       eyebrow: "WHAT’S NEW",
-      title: "Version capability preview",
-      intro: "From the latest fixes to the cross-platform foundation, see what each public release added.",
-      close: "Close version preview",
+      title: "Release highlights",
+      intro: "Highlights from the official releases: stable improvements and a look at the latest preview.",
+      close: "Close release highlights",
       openRelease: "Read the full release notes",
-      latest: "LATEST",
-      foundation: "FOUNDATION",
-      versions: [
-        {
-          tag: "0.1.0-alpha.3",
-          date: "AUG 01, 2026",
-          label: "LATEST",
-          title: "Rendering and character layers",
-          items: ["Restored compatible character-layer rendering", "Prevented black frames during heavy transitions"],
-        },
-        {
-          tag: "0.1.0-alpha.2",
-          date: "JUL 31, 2026",
-          label: "FOUNDATION",
-          title: "Cross-platform runtime foundation",
-          items: [
-            "Upgraded to Godot 4.7 and native rendering",
-            "Added Web, Linux, Android, and iOS support",
-            "Bundled a multilingual KAG3 demo",
-            "Improved storage, fonts, video, and plugin compatibility",
-          ],
-        },
-      ],
+      latest: "LATEST STABLE",
+      stable: "STABLE",
+      preview: "PREVIEW",
     },
     footer: {
       line: "A Godot-hosted multi-runtime engine.",
@@ -394,7 +383,7 @@ export function AetherSite() {
   };
 
   const period = language === "zh" ? "。" : ".";
-  const activeIndex = SECTIONS.indexOf(active as (typeof SECTIONS)[number]);
+  const activeIndex = t.nav.findIndex(([href]) => href === `#${active}`);
 
   return (
     <div className="site">
@@ -705,6 +694,7 @@ export function AetherSite() {
           <div className="footer-links">
             <a href={github} target="_blank" rel="noreferrer">{t.footer.source}</a>
             <a href="/download/">{t.footer.releases}</a>
+            <a href={language === "zh" ? "/patch/" : "/patch/?lang=en"}>Patch</a>
             <a href={`${github}/blob/main/LICENSE`} target="_blank" rel="noreferrer">{t.footer.license}</a>
           </div>
         </div>
@@ -732,17 +722,17 @@ export function AetherSite() {
               </button>
             </div>
             <ol className="version-list">
-              {t.panel.versions.map((version, index) => (
+              {releaseVersions.map((version, index) => (
                 <li className="version-card" key={version.tag} style={{ "--i": index } as CSSProperties}>
                   <span className="version-node" aria-hidden="true" />
                   <div className="version-meta">
-                    <span className={index === 0 ? "version-label is-latest" : "version-label"}>{version.label}</span>
-                    <time>{version.date}</time>
+                    <span className={index === 0 ? "version-label is-latest" : "version-label"}>{index === 0 ? t.panel.latest : version.prerelease ? t.panel.preview : t.panel.stable}</span>
+                    <time dateTime={version.publishedAt}>{releaseDate(version.publishedAt, language)}</time>
                   </div>
                   <strong className="version-tag">{version.tag}</strong>
-                  <h3>{version.title}</h3>
-                  <ul>{version.items.map((item) => <li key={item}>{item}</li>)}</ul>
-                  <a href={`${github}/releases/tag/${version.tag}`} target="_blank" rel="noreferrer">
+                  <h3>{version.title[language]}</h3>
+                  <ul>{version.items[language].map((item) => <li key={item}>{item}</li>)}</ul>
+                  <a href={version.url} target="_blank" rel="noreferrer">
                     {t.panel.openRelease}<span aria-hidden="true">↗</span>
                   </a>
                 </li>

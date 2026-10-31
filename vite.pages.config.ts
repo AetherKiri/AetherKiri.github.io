@@ -16,6 +16,7 @@ export default defineConfig({
         main: page("./github-pages/index.html"),
         qq: page("./github-pages/qq/index.html"),
         download: page("./github-pages/download/index.html"),
+        patch: page("./github-pages/patch/index.html"),
       },
     },
   },

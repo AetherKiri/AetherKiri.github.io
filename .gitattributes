@@ -1,0 +1,2 @@
+# Preserve downloadable scripts exactly, including their original line endings.
+public/patch/**/*.tjs -text

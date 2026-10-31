@@ -32,11 +32,12 @@ test("server-renders the Aether organization website", async () => {
   assert.match(html, /<title>Aether/);
   assert.match(html, /Godot/);
   assert.match(html, /KiriKiri2/);
-  assert.match(html, /0\.1\.0-alpha\.3/);
+  const release = JSON.parse(await readFile(new URL("../app/download-release.json", import.meta.url)));
+  assert.ok(html.includes(`Aether ${release.tag} 稳定版已发布`));
   assert.match(html, /下载 Aether/);
   assert.match(html, /GitHub Issues/);
   assert.match(html, /GitHub/);
-  assert.doesNotMatch(html, /LATEST UPDATE|codex-preview|Your site is taking shape/);
+  assert.doesNotMatch(html, /0\.1\.0-alpha\.3|LATEST UPDATE|codex-preview|Your site is taking shape/);
 });
 
 test("server-renders the dedicated stable download page", async () => {

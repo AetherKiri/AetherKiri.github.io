@@ -1,42 +1,42 @@
 {
-  "tag": "1.0.7",
-  "publishedAt": "2026-10-12T17:16:09Z",
-  "url": "https://github.com/AetherKiri/Aether/releases/tag/1.0.7",
+  "tag": "1.0.10",
+  "publishedAt": "2026-10-27T05:12:24Z",
+  "url": "https://github.com/AetherKiri/Aether/releases/tag/1.0.10",
   "assets": [
     {
-      "name": "AetherKiri-1.0.7-android.apk",
-      "size": 212764470,
+      "name": "AetherKiri-1.0.10-android.apk",
+      "size": 370290872,
       "platform": "Android",
-      "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.7/AetherKiri-1.0.7-android.apk",
-      "digest": "sha256:ce6c742c613ef58b5af38b89fa4bab6a151a37acb68a300fc370f35cbde17fca"
+      "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.10/AetherKiri-1.0.10-android.apk",
+      "digest": "sha256:bd67461ef463c1e136cb6c5cbd215153979db851506386d2234088461b4dec90"
     },
     {
-      "name": "AetherKiri-1.0.7-linux-arm64.tar.gz",
-      "size": 134128316,
+      "name": "AetherKiri-1.0.10-linux-arm64.tar.gz",
+      "size": 253674919,
       "platform": "Linux",
-      "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.7/AetherKiri-1.0.7-linux-arm64.tar.gz",
-      "digest": "sha256:06fa0f9ec28666c8a1c08ce7b6d78f1ed6fb0386a8d38b88bd06d30344643591"
+      "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.10/AetherKiri-1.0.10-linux-arm64.tar.gz",
+      "digest": "sha256:1bb831a1e52a63de8f0b9962a1a0af19822262b53ade9693e0c1f32b2abb04c2"
     },
     {
-      "name": "AetherKiri-1.0.7-linux-x86_64.tar.gz",
-      "size": 138823835,
+      "name": "AetherKiri-1.0.10-linux-x86_64.tar.gz",
+      "size": 260890639,
       "platform": "Linux",
-      "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.7/AetherKiri-1.0.7-linux-x86_64.tar.gz",
-      "digest": "sha256:9629992a1e07d4fdb980a72ce5f58b0f339d50250bf9626edffd585b488b6fec"
+      "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.10/AetherKiri-1.0.10-linux-x86_64.tar.gz",
+      "digest": "sha256:b5e3fb9152c0330f8200ee02c0ad4b36f89f189e230599b8d4c0ae8574477a7f"
     },
     {
-      "name": "AetherKiri-1.0.7-macos-app-store.pkg",
-      "size": 146708683,
+      "name": "AetherKiri-1.0.10-macos-app-store.pkg",
+      "size": 301069957,
       "platform": "macOS",
-      "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.7/AetherKiri-1.0.7-macos-app-store.pkg",
-      "digest": "sha256:505e3bed59dcf8aba0f9d28706d0d52b1d8049ccdefaebcd7d4e9bb600fd6d9a"
+      "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.10/AetherKiri-1.0.10-macos-app-store.pkg",
+      "digest": "sha256:ee5b7351b87d549c9d99fe9edd1041d0fd9bf7af531e68bb52ca60c7a0f15ca5"
     },
     {
-      "name": "AetherKiri-1.0.7-macos.zip",
-      "size": 146724371,
+      "name": "AetherKiri-1.0.10-macos.zip",
+      "size": 327840740,
       "platform": "macOS",
-      "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.7/AetherKiri-1.0.7-macos.zip",
-      "digest": "sha256:614c55a2f8d15cc0e2a4f0c8d43a3d37d94c993530d06d61d1836d6c0cdc0e45"
+      "url": "https://github.com/AetherKiri/Aether/releases/download/1.0.10/AetherKiri-1.0.10-macos.zip",
+      "digest": "sha256:5535d1f1a15c3674db0a09676493d0992c481a5a3986b2b529b9dd5950200c76"
     }
   ]
 }

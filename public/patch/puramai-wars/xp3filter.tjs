@@ -1,0 +1,14 @@
+// Game-local XP3 filter for プラマイウォーズ (ASa Project).
+// The key is derived from each entry hash; offsets are relative to that entry.
+Storages.setXP3ArchiveExtractionFilter(function(hash, offset, buffer, length) {
+    var key = hash & 0x7FFFFFFF;
+    var table = [];
+    table[30] = 0;
+    for (var i = 0; i < 31; ++i) {
+        table[i] = key & 0xFF;
+        key = ((key << 23) | (key >> 8)) & 0xFFFFFFFF;
+    }
+    for (var i = 0; i < length; ++i) {
+        buffer[i] ^= table[(offset + i) % 31];
+    }
+});

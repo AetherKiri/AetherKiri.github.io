@@ -1,0 +1,26 @@
+export const patches = [
+  {
+    id: "tasogare-no-sinsemilla",
+    company: "あっぷりけ",
+    engine: "KiriKiri",
+    title: "黄昏のシンセミア",
+    chineseTitle: "黄昏的禁忌之药",
+    script: "/patch/tasogare-no-sinsemilla/xp3filter.tjs",
+  },
+  {
+    id: "hitotsu-tobashi-renai",
+    company: "ASa Project",
+    engine: "KiriKiri",
+    title: "ひとつ飛ばし恋愛",
+    chineseTitle: "间接之恋",
+    script: "/patch/hitotsu-tobashi-renai/xp3filter.tjs",
+  },
+  {
+    id: "puramai-wars",
+    company: "ASa Project",
+    engine: "KiriKiri",
+    title: "プラマイウォーズ",
+    chineseTitle: "正负战争",
+    script: "/patch/puramai-wars/xp3filter.tjs",
+  },
+] as const;

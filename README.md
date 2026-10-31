@@ -42,6 +42,21 @@ files are downloaded directly from official GitHub Releases assets. iOS uses
 `https://apps.apple.com/app/id6796580469`, without a pinned storefront or language;
 installation, availability, versions, and updates are managed by the App Store.
 
+The homepage announcement uses the same stable release metadata. Bilingual
+release summaries are maintained in `app/release-highlights.json`, with the
+official release URL and an explicit stable/preview label for each version.
+If a new stable release arrives before its summary is written, the homepage
+links to its official notes instead of reusing another version's summary.
+
+## Patch page
+
+The `/patch/` page lists game companies, engines, game titles, and downloadable
+scripts. Add entries to `app/patches.ts` and put each game's script in its own
+directory under `public/patch/`. Download links preserve the `xp3filter.tjs`
+filename. Keep script bytes and encoding unchanged when copying files.
+
+Both the vinext app and the static GitHub Pages build include this page.
+
 ## Deployment
 
 This repository is intended to be named `AetherKiri.github.io` so the

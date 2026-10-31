@@ -1,0 +1,50 @@
+[
+  {
+    "tag": "1.0.10",
+    "publishedAt": "2026-10-27T05:12:24Z",
+    "url": "https://github.com/AetherKiri/Aether/releases/tag/1.0.10",
+    "prerelease": false,
+    "title": {
+      "zh": "新增运行时与游戏兼容修复",
+      "en": "More runtimes and compatibility fixes"
+    },
+    "items": {
+      "zh": [
+        "新增 ADV Player HD（Beta）及 System3 / System35 运行时，并改进 System4 兼容性。",
+        "修复 KiriKiri 立绘、启动与剧情演出，改善 BGI 和 Siglus 游戏兼容性。",
+        "改进 YU-RIS 翻译、存读档、动画与帧节奏，修复 ADVHD 存档及场景恢复。",
+        "支持打包的 Tyrano / Electron 游戏导入，修复 SoftPal、RFVP 启动与 System4 翻译资源加载。"
+      ],
+      "en": [
+        "Added ADV Player HD (Beta) and System3 / System35 runtimes, with System4 compatibility improvements.",
+        "Fixed KiriKiri character rendering, startup and story effects, and improved BGI and Siglus compatibility.",
+        "Improved YU-RIS translation, saves, animation and frame cadence, plus ADVHD saves and scene restoration.",
+        "Added packed Tyrano / Electron game imports and fixed SoftPal and RFVP startup and System4 translated resources."
+      ]
+    }
+  },
+  {
+    "tag": "1.1.0-alpha.1",
+    "publishedAt": "2026-10-29T19:09:31Z",
+    "url": "https://github.com/AetherKiri/Aether/releases/tag/1.1.0-alpha.1",
+    "prerelease": true,
+    "title": {
+      "zh": "新引擎支持与补丁兼容",
+      "en": "New engines and patch compatibility"
+    },
+    "items": {
+      "zh": [
+        "新增 Escu:de / ACPX 游戏支持，并支持使用原版界面的 SystemC 游戏。",
+        "修复 KiriKiri 补丁兼容和启动问题。",
+        "修复 YU-RIS 语音与角色转场。",
+        "加入共享 Lua 回退机制及原生翻译支持。"
+      ],
+      "en": [
+        "Added Escu:de / ACPX game support and SystemC games with their original UI.",
+        "Fixed KiriKiri patch compatibility and startup regressions.",
+        "Fixed YU-RIS voice playback and character transitions.",
+        "Added shared Lua fallback hooks and native translation support."
+      ]
+    }
+  }
+]
