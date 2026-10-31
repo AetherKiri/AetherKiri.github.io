@@ -23,4 +23,12 @@ export const patches = [
     chineseTitle: "正负战争",
     script: "/patch/puramai-wars/xp3filter.tjs",
   },
+  {
+    id: "tenshin-ranman",
+    company: "ゆずソフト",
+    engine: "KiriKiri",
+    title: "天神乱漫 LUCKY or UNLUCKY!?",
+    chineseTitle: "天神乱漫",
+    script: "/patch/tenshin-ranman/xp3filter.tjs",
+  },
 ] as const;
