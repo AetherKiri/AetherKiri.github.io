@@ -10,40 +10,462 @@
     },
     "items": {
       "zh": [
-        "新增 ADV Player HD（Beta）及 System3 / System35 运行时，并改进 System4 兼容性。",
+        "新增 ADV Player HD 咖啡 Beta 及 System3 / System35 运行时，并改进 System4 兼容性。",
         "修复 KiriKiri 立绘、启动与剧情演出，改善 BGI 和 Siglus 游戏兼容性。",
-        "改进 YU-RIS 翻译、存读档、动画与帧节奏，修复 ADVHD 存档及场景恢复。",
+        "改进 YU-RIS 翻译、存读档、动画与帧节奏，开放 YU-RIS 使用，并修复 ADVHD 存档及场景恢复。",
         "支持打包的 Tyrano / Electron 游戏导入，修复 SoftPal、RFVP 启动与 System4 翻译资源加载。"
       ],
       "en": [
-        "Added ADV Player HD (Beta) and System3 / System35 runtimes, with System4 compatibility improvements.",
+        "Added ADV Player HD through coffee Beta access and System3 / System35 runtimes, with System4 compatibility improvements.",
         "Fixed KiriKiri character rendering, startup and story effects, and improved BGI and Siglus compatibility.",
-        "Improved YU-RIS translation, saves, animation and frame cadence, plus ADVHD saves and scene restoration.",
+        "Improved YU-RIS translation, saves, animation and frame cadence, opened runtime access, and fixed ADVHD saves and scene restoration.",
         "Added packed Tyrano / Electron game imports and fixed SoftPal and RFVP startup and System4 translated resources."
       ]
     }
   },
   {
-    "tag": "1.1.0-alpha.1",
-    "publishedAt": "2026-10-29T19:09:31Z",
-    "url": "https://github.com/AetherKiri/Aether/releases/tag/1.1.0-alpha.1",
-    "prerelease": true,
+    "tag": "1.0.9",
+    "publishedAt": "2026-10-21T04:55:07Z",
+    "url": "https://github.com/AetherKiri/Aether/releases/tag/1.0.9",
+    "prerelease": false,
     "title": {
-      "zh": "新引擎支持与补丁兼容",
-      "en": "New engines and patch compatibility"
+      "zh": "恢复 KiriKiri 运行时基线",
+      "en": "Restore the KiriKiri runtime baseline"
     },
     "items": {
       "zh": [
-        "新增 Escu:de / ACPX 游戏支持，并支持使用原版界面的 SystemC 游戏。",
-        "修复 KiriKiri 补丁兼容和启动问题。",
-        "修复 YU-RIS 语音与角色转场。",
-        "加入共享 Lua 回退机制及原生翻译支持。"
+        "回退此前的 AetherKrkr 更新，恢复上一版引擎依赖。"
       ],
       "en": [
-        "Added Escu:de / ACPX game support and SystemC games with their original UI.",
-        "Fixed KiriKiri patch compatibility and startup regressions.",
-        "Fixed YU-RIS voice playback and character transitions.",
-        "Added shared Lua fallback hooks and native translation support."
+        "Reverted the previous AetherKrkr update to restore the earlier engine revision."
+      ]
+    }
+  },
+  {
+    "tag": "1.0.8",
+    "publishedAt": "2026-10-19T15:50:17Z",
+    "url": "https://github.com/AetherKiri/Aether/releases/tag/1.0.8",
+    "prerelease": false,
+    "title": {
+      "zh": "Flash、Ren’Py 与更多引擎接入",
+      "en": "Flash, Ren’Py and more engines"
+    },
+    "items": {
+      "zh": [
+        "新增原生 Flash 播放与嵌套媒体库，接入桌面和移动端 Ren’Py，以及 macOS、iOS、Android 的 TyranoScript 播放。",
+        "接入 AliceSoft System 4、YU-RIS 和 MAGES 游戏支持。",
+        "开放 SoftPal 使用，修复 CG 鉴赏、历史导航、返回游戏库与 iOS 初始化问题。",
+        "在 Apple 构建启用 RFVP，更新至 0.7.0，改善存档、计时与宿主渲染兼容。"
+      ],
+      "en": [
+        "Added native Flash playback and nested media libraries, embedded Ren’Py on desktop and mobile, and TyranoScript on macOS, iOS and Android.",
+        "Integrated AliceSoft System 4, YU-RIS and MAGES game support.",
+        "Opened SoftPal access and fixed CG viewing, history navigation, returning to the library and iOS initialization.",
+        "Enabled RFVP in Apple builds and updated it to 0.7.0, improving saves, timers and host rendering compatibility."
+      ]
+    }
+  },
+  {
+    "tag": "1.0.7",
+    "publishedAt": "2026-10-12T17:16:09Z",
+    "url": "https://github.com/AetherKiri/Aether/releases/tag/1.0.7",
+    "prerelease": false,
+    "title": {
+      "zh": "SoftPal、Linux 与应用内更新",
+      "en": "SoftPal, Linux and in-app updates"
+    },
+    "items": {
+      "zh": [
+        "接入原生 SoftPal 运行时，修复 ACTION 播放与 NEXT 选择肢显示。",
+        "新增 Linux 构建与私有运行时接入，支持应用内检测更新和直接下载 GitHub Release。",
+        "升级 Godot 至 4.7.2、RFVP 至 0.6.0，并修复 KAG 早期补丁启动兼容。"
+      ],
+      "en": [
+        "Integrated the native SoftPal runtime and fixed ACTION playback and NEXT choice presentation.",
+        "Added Linux builds and private runtime integration, plus in-app update checks and direct GitHub Release downloads.",
+        "Updated Godot to 4.7.2 and RFVP to 0.6.0, and repaired startup with early KAG patches."
+      ]
+    }
+  },
+  {
+    "tag": "1.0.6",
+    "publishedAt": "2026-10-03T08:42:00Z",
+    "url": "https://github.com/AetherKiri/Aether/releases/tag/1.0.6",
+    "prerelease": false,
+    "title": {
+      "zh": "运行时架构整理与中文修复",
+      "en": "Runtime architecture and Chinese text fixes"
+    },
+    "items": {
+      "zh": [
+        "重组引擎目录、提升公共 ABI 并统一 Provider 注册，为多运行时接入整理基础。",
+        "恢复中文脚本兼容与单图层文字渲染。"
+      ],
+      "en": [
+        "Reorganized engine directories, promoted the shared ABI and unified provider registration for runtime integration.",
+        "Restored Chinese script compatibility and single-layer text rendering."
+      ]
+    }
+  },
+  {
+    "tag": "1.0.5",
+    "publishedAt": "2026-09-29T17:48:15Z",
+    "url": "https://github.com/AetherKiri/Aether/releases/tag/1.0.5",
+    "prerelease": false,
+    "title": {
+      "zh": "界面焕新与移动端体验改进",
+      "en": "A refreshed UI and mobile improvements"
+    },
+    "items": {
+      "zh": [
+        "更新应用界面，优化 iOS 帧节奏与 GPU 呈现，改善 iPad 画面、鉴赏和文字显示。",
+        "修复 Android 返回手势和原生调用，稳定 iOS E-mote 与 Siglus 接入。",
+        "修复 CatSystem2 的 Grisaia 剧情流程与游戏菜单，加入 Hxv4 解码和 DripVM 支持。"
+      ],
+      "en": [
+        "Refreshed the app UI, optimized iOS frame pacing and GPU presentation, and improved iPad rendering, galleries and text.",
+        "Fixed Android back gestures and native calls, and stabilized iOS E-mote and Siglus integration.",
+        "Fixed Grisaia scenario flow in CatSystem2 and game menu controls, and added Hxv4 decoding and DripVM support."
+      ]
+    }
+  },
+  {
+    "tag": "1.0.4",
+    "publishedAt": "2026-09-22T02:00:52Z",
+    "url": "https://github.com/AetherKiri/Aether/releases/tag/1.0.4",
+    "prerelease": false,
+    "title": {
+      "zh": "界面动效与 Siglus 兼容改进",
+      "en": "Interface motion and Siglus compatibility"
+    },
+    "items": {
+      "zh": [
+        "重做应用外壳、游戏库与设置的弹簧动效。",
+        "改进 Siglus 的 macOS 输入、缩放、旧版兼容、原生存档和字体回退。",
+        "开放 CatSystem2，修复内置字体、存读档和 E-mote 镜头问题，减少回看重绘与 Artemis 恢复时的内存开销。"
+      ],
+      "en": [
+        "Updated spring motion across the app shell, library and settings.",
+        "Improved Siglus input and scaling on macOS, legacy compatibility, native saves and font fallback.",
+        "Opened CatSystem2 access, fixed bundled fonts, save/load and E-mote camera behavior, and reduced backlog repaint and Artemis restore memory use."
+      ]
+    }
+  },
+  {
+    "tag": "1.0.3",
+    "publishedAt": "2026-09-13T21:01:51Z",
+    "url": "https://github.com/AetherKiri/Aether/releases/tag/1.0.3",
+    "prerelease": false,
+    "title": {
+      "zh": "Siglus、CatSystem2 与 RFVP",
+      "en": "Siglus, CatSystem2 and RFVP"
+    },
+    "items": {
+      "zh": [
+        "接入 siglus_rs 和 CatSystem2 Beta 运行时。",
+        "新增实验性 RFVP，支持 Godot GPU Bridge 渲染与 iOS。",
+        "macOS arm64 构建打包 E-mote SDK。"
+      ],
+      "en": [
+        "Integrated siglus_rs and the CatSystem2 Beta runtime.",
+        "Added experimental RFVP support with Godot GPU Bridge rendering and iOS integration.",
+        "Bundled the E-mote SDK in macOS arm64 builds."
+      ]
+    }
+  },
+  {
+    "tag": "1.0.2",
+    "publishedAt": "2026-09-06T14:27:24Z",
+    "url": "https://github.com/AetherKiri/Aether/releases/tag/1.0.2",
+    "prerelease": false,
+    "title": {
+      "zh": "Minori、WA2 与本地翻译",
+      "en": "Minori, WA2 and local translation"
+    },
+    "items": {
+      "zh": [
+        "新增独立 Minori 与 Leaf TtT / WHITE ALBUM2 运行时，以及本地模型翻译。",
+        "改善 Artemis 启动、E-mote、Live2D 和虚拟控制，修复 ONS 松开 Ctrl 后仍快进的问题。",
+        "修复游戏封面匹配、启动条纹和 RPG 黑屏，降低剧情帧同步卡顿。"
+      ],
+      "en": [
+        "Added independent Minori and Leaf TtT / WHITE ALBUM2 runtimes, plus local-model translation.",
+        "Improved Artemis startup, E-mote, Live2D and virtual controls, and fixed ONS fast-forward continuing after Ctrl was released.",
+        "Fixed game cover matching, startup stripes and RPG black screens, and reduced story-frame synchronization stalls."
+      ]
+    }
+  },
+  {
+    "tag": "1.0.1",
+    "publishedAt": "2026-08-30T12:40:18Z",
+    "url": "https://github.com/AetherKiri/Aether/releases/tag/1.0.1",
+    "prerelease": false,
+    "title": {
+      "zh": "画面稳定性与 ONS 移动控制",
+      "en": "Rendering stability and mobile ONS controls"
+    },
+    "items": {
+      "zh": [
+        "稳定原生场景重绘，修复《天色＊アイルノーツ》标题黑屏。",
+        "完善 ONS 移动端虚拟控制，修复电影播放卡死。",
+        "新增购买与 Beta 访问的口令入口。"
+      ],
+      "en": [
+        "Stabilized native scene redraws and fixed the Amairo Isle Nauts title-screen black screen.",
+        "Improved mobile ONS virtual controls and fixed movie-playback freezes.",
+        "Added a passphrase entry point for purchases and Beta access."
+      ]
+    }
+  },
+  {
+    "tag": "1.0.0",
+    "publishedAt": "2026-08-28T08:21:11Z",
+    "url": "https://github.com/AetherKiri/Aether/releases/tag/1.0.0",
+    "prerelease": false,
+    "title": {
+      "zh": "1.0 正式发布",
+      "en": "The 1.0 release"
+    },
+    "items": {
+      "zh": [
+        "改进 DRACU-RIOT! 帧率表现。",
+        "恢复《天色＊アイルノーツ》标题界面与鉴赏功能。"
+      ],
+      "en": [
+        "Improved DRACU-RIOT! frame-rate behavior.",
+        "Restored the Amairo Isle Nauts title screen and gallery."
+      ]
+    }
+  },
+  {
+    "tag": "0.5.0",
+    "publishedAt": "2026-08-27T04:20:33Z",
+    "url": "https://github.com/AetherKiri/Aether/releases/tag/0.5.0",
+    "prerelease": false,
+    "title": {
+      "zh": "游戏演出与触控兼容",
+      "en": "Game presentation and touch compatibility"
+    },
+    "items": {
+      "zh": [
+        "修复《天使☆騒々 RE-BOOT!》AMV 转场与 DRACU-RIOT! 兼容问题。",
+        "恢复 iOS 手势后的 Artemis 输入，修正嵌套合成动画的裁剪坐标。"
+      ],
+      "en": [
+        "Fixed AMV transitions in Tenshi Souzou RE-BOOT! and compatibility issues in DRACU-RIOT!.",
+        "Restored Artemis input after iOS gestures and corrected clipping coordinates in nested motion composites."
+      ]
+    }
+  },
+  {
+    "tag": "0.4.4",
+    "publishedAt": "2026-08-25T01:55:25Z",
+    "url": "https://github.com/AetherKiri/Aether/releases/tag/0.4.4",
+    "prerelease": false,
+    "title": {
+      "zh": "原生 E-mote 渲染修复",
+      "en": "Native E-mote rendering fixes"
+    },
+    "items": {
+      "zh": [
+        "修复原生 E-mote 渲染，并更新依赖基线。"
+      ],
+      "en": [
+        "Fixed native E-mote rendering and refreshed the dependency baseline."
+      ]
+    }
+  },
+  {
+    "tag": "0.4.3",
+    "publishedAt": "2026-08-22T09:09:48Z",
+    "url": "https://github.com/AetherKiri/Aether/releases/tag/0.4.3",
+    "prerelease": false,
+    "title": {
+      "zh": "Android 运行时开放与 Live2D 修复",
+      "en": "Android runtime access and Live2D fixes"
+    },
+    "items": {
+      "zh": [
+        "开放 Android 的 Artemis 和 ONScripter 运行时。",
+        "修复 Live2D 渲染问题。"
+      ],
+      "en": [
+        "Enabled Artemis and ONScripter runtimes on Android.",
+        "Fixed Live2D rendering issues."
+      ]
+    }
+  },
+  {
+    "tag": "0.4.2",
+    "publishedAt": "2026-08-21T04:32:40Z",
+    "url": "https://github.com/AetherKiri/Aether/releases/tag/0.4.2",
+    "prerelease": false,
+    "title": {
+      "zh": "Android 体验与 KAG 文字修复",
+      "en": "Android experience and KAG text fixes"
+    },
+    "items": {
+      "zh": [
+        "修复旧版 Android 存储权限，恢复屏幕方向、Live2D 光栅化与咖啡入口。",
+        "修复 KAG 对话显示、字体切换卡顿与《天使☆騒々 RE-BOOT!》AMV 转场。"
+      ],
+      "en": [
+        "Fixed storage permissions on older Android versions and restored orientation, Live2D rasterization and the coffee link.",
+        "Fixed KAG dialogue rendering, font-switch stalls and AMV transitions in Tenshi Souzou RE-BOOT!."
+      ]
+    }
+  },
+  {
+    "tag": "0.4.1",
+    "publishedAt": "2026-08-16T20:46:33Z",
+    "url": "https://github.com/AetherKiri/Aether/releases/tag/0.4.1",
+    "prerelease": false,
+    "title": {
+      "zh": "Live2D GPU 渲染",
+      "en": "GPU rendering for Live2D"
+    },
+    "items": {
+      "zh": [
+        "将 Live2D 网格光栅化接入 GPU 管线。"
+      ],
+      "en": [
+        "Moved Live2D mesh rasterization into the GPU pipeline."
+      ]
+    }
+  },
+  {
+    "tag": "0.4.0",
+    "publishedAt": "2026-08-16T14:45:31Z",
+    "url": "https://github.com/AetherKiri/Aether/releases/tag/0.4.0",
+    "prerelease": false,
+    "title": {
+      "zh": "E-mote GPU 渲染与 macOS 打包",
+      "en": "E-mote GPU rendering and macOS packaging"
+    },
+    "items": {
+      "zh": [
+        "E-mote 改用 GPU 渲染，优化 macOS Live2D 吞吐。",
+        "补齐插件与 Artemis 兼容，修复 macOS x64 发布包。"
+      ],
+      "en": [
+        "Routed E-mote through GPU rendering and improved Live2D throughput on macOS.",
+        "Closed plugin and Artemis compatibility gaps and fixed macOS x64 release packaging."
+      ]
+    }
+  },
+  {
+    "tag": "0.3.0",
+    "publishedAt": "2026-08-10T21:27:50Z",
+    "url": "https://github.com/AetherKiri/Aether/releases/tag/0.3.0",
+    "prerelease": false,
+    "title": {
+      "zh": "ONScripterYuri 与统一播放器",
+      "en": "ONScripterYuri and a unified player"
+    },
+    "items": {
+      "zh": [
+        "集成 ONScripterYuri，并统一 Godot 多运行时播放器。",
+        "为 TJS2 编译错误提供源码上下文，并修复内存泄漏。"
+      ],
+      "en": [
+        "Integrated ONScripterYuri and unified the Godot player across runtimes.",
+        "Added source context to TJS2 compile errors and fixed memory leaks."
+      ]
+    }
+  },
+  {
+    "tag": "0.2.4",
+    "publishedAt": "2026-08-10T07:00:23Z",
+    "url": "https://github.com/AetherKiri/Aether/releases/tag/0.2.4",
+    "prerelease": false,
+    "title": {
+      "zh": "画面增强与游戏库流程",
+      "en": "Frame enhancement and library workflows"
+    },
+    "items": {
+      "zh": [
+        "新增可配置的画面增强链，隔离游戏会话并改善游戏库操作。",
+        "稳定 L3J 标题转场，复用 D3D E-mote 帧并修正加载图标方向。"
+      ],
+      "en": [
+        "Added configurable frame-enhancement chains, isolated game sessions and improved library workflows.",
+        "Stabilized L3J title transitions, reused D3D E-mote frames and corrected the loading spinner direction."
+      ]
+    }
+  },
+  {
+    "tag": "0.2.3",
+    "publishedAt": "2026-08-07T03:08:19Z",
+    "url": "https://github.com/AetherKiri/Aether/releases/tag/0.2.3",
+    "prerelease": false,
+    "title": {
+      "zh": "插件兼容补全",
+      "en": "Plugin compatibility fixes"
+    },
+    "items": {
+      "zh": [
+        "修复游戏插件的兼容缺口。"
+      ],
+      "en": [
+        "Fixed compatibility gaps in game plugins."
+      ]
+    }
+  },
+  {
+    "tag": "0.2.2",
+    "publishedAt": "2026-08-06T08:00:45Z",
+    "url": "https://github.com/AetherKiri/Aether/releases/tag/0.2.2",
+    "prerelease": false,
+    "title": {
+      "zh": "NEKOPARA Extra 演出修复",
+      "en": "NEKOPARA Extra animation fixes"
+    },
+    "items": {
+      "zh": [
+        "稳定 NEKOPARA Extra 的 E-mote 渲染。"
+      ],
+      "en": [
+        "Stabilized E-mote rendering in NEKOPARA Extra."
+      ]
+    }
+  },
+  {
+    "tag": "0.2.1",
+    "publishedAt": "2026-08-06T02:35:25Z",
+    "url": "https://github.com/AetherKiri/Aether/releases/tag/0.2.1",
+    "prerelease": false,
+    "title": {
+      "zh": "咖啡 Beta 权益",
+      "en": "Coffee Beta access"
+    },
+    "items": {
+      "zh": [
+        "加入咖啡 Beta 访问权益。"
+      ],
+      "en": [
+        "Added coffee entitlements for Beta access."
+      ]
+    }
+  },
+  {
+    "tag": "0.2.0",
+    "publishedAt": "2026-08-05T02:38:44Z",
+    "url": "https://github.com/AetherKiri/Aether/releases/tag/0.2.0",
+    "prerelease": false,
+    "title": {
+      "zh": "Artemis 接入与界面适配",
+      "en": "Artemis integration and interface compatibility"
+    },
+    "items": {
+      "zh": [
+        "接入 Artemis 运行时并优化主菜单性能，完善自适应应用界面。",
+        "支持 iOS KAG 虚拟键盘，修复透明合成、文字裁剪与《千恋＊万花》界面显示。",
+        "修复 E-mote 内存保留与游戏启动插件问题，扩展运行时诊断。"
+      ],
+      "en": [
+        "Integrated the Artemis runtime, improved main-menu performance and refined the adaptive app shell.",
+        "Added the iOS KAG virtual keyboard and fixed alpha composition, text clipping and Senren Banka UI rendering.",
+        "Fixed E-mote memory retention and game startup plugins, and expanded runtime diagnostics."
       ]
     }
   }

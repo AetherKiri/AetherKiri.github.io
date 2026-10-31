@@ -16,9 +16,9 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://aetherkiri.github.io"),
   title: "Aether — 让故事，再次抵达你",
   description:
-    "Aether 是一个由 Godot 4.7 承载、以 C++17 引擎核心驱动的跨平台 KiriKiri2 运行时。",
+    "Aether 是由 Godot 承载的跨平台多运行时视觉小说平台，支持 KiriKiri2、ONS、Ren’Py、Siglus、AliceSoft，并集成 Flash 与 TyranoScript 播放。",
   applicationName: "Aether",
-  keywords: ["Aether", "AetherKiri", "KiriKiri2", "Godot", "visual novel", "open source"],
+  keywords: ["Aether", "AetherKiri", "KiriKiri2", "ONScripter", "Ren’Py", "Siglus", "AliceSoft", "Godot", "visual novel", "open source"],
   icons: {
     icon: "/app-icon.png",
     apple: "/app-icon.png",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     url: "/",
     siteName: "Aether",
     title: "Aether — 让故事，再次抵达你",
-    description: "Godot 驱动的 KiriKiri2 跨平台运行时。",
+    description: "Godot 承载的跨平台多运行时视觉小说平台，汇集原生引擎、Flash 与 TyranoScript。",
     locale: "zh_CN",
     images: [
       {
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Aether — 让故事，再次抵达你",
-    description: "Godot 驱动的 KiriKiri2 跨平台运行时。",
+    description: "Godot 承载的跨平台多运行时视觉小说平台，汇集原生引擎、Flash 与 TyranoScript。",
     images: ["/og-aether.png"],
   },
 };

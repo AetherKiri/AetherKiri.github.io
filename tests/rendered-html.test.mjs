@@ -32,12 +32,18 @@ test("server-renders the Aether organization website", async () => {
   assert.match(html, /<title>Aether/);
   assert.match(html, /Godot/);
   assert.match(html, /KiriKiri2/);
+  for (const runtime of ["Ren’Py 8", "Siglus", "AliceSoft System 4", "YU-RIS", "BGI / Ethornell", "ADV Player HD", "Escu:de / ACPX", "SystemC", "EntisGLS / Cotopha", "TyranoScript", "Flash"]) {
+    assert.ok(html.includes(runtime), `Missing runtime ${runtime}`);
+  }
+  assert.match(html, /20 种运行时与播放器/);
+  assert.match(html, /咖啡权益/);
+  assert.match(html, /实验性/);
   const release = JSON.parse(await readFile(new URL("../app/download-release.json", import.meta.url)));
   assert.ok(html.includes(`Aether ${release.tag} 稳定版已发布`));
   assert.match(html, /下载 Aether/);
   assert.match(html, /GitHub Issues/);
   assert.match(html, /GitHub/);
-  assert.doesNotMatch(html, /0\.1\.0-alpha\.3|LATEST UPDATE|codex-preview|Your site is taking shape/);
+  assert.doesNotMatch(html, /八大|8 runtimes|0\.1\.0-alpha\.3|LATEST UPDATE|codex-preview|Your site is taking shape/);
 });
 
 test("server-renders the dedicated stable download page", async () => {

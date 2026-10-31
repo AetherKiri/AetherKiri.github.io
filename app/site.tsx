@@ -6,28 +6,17 @@ import { GROUP_NUMBER, QQ_PAGE, SHARE_URL } from "./community";
 import { Cosmos, Cursor, SplitText, copyText, magnetic, reducedMotion, spotlight, tilt, useRevealAll, useScrollMotion } from "./effects";
 import release from "./download-release.json";
 import releaseHighlights from "./release-highlights.json";
+import { getReleaseHistory } from "./release-history.mjs";
+import { runtimes, runtimeStatus } from "./runtimes";
 
 type Language = "zh" | "en";
 
-const github = "https://github.com/AetherKiri/AetherKiri";
+const github = "https://github.com/AetherKiri/Aether";
 const issues = `${github}/issues`;
 const verifiedGames = `${github}/blob/main/doc/verified_games.md`;
 
-const currentHighlights = releaseHighlights.find((version) => version.tag === release.tag && !version.prerelease);
-const releaseVersions = [
-  {
-    tag: release.tag,
-    publishedAt: release.publishedAt,
-    url: release.url,
-    prerelease: false,
-    title: currentHighlights?.title ?? { zh: "最新稳定版", en: "Latest stable release" },
-    items: currentHighlights?.items ?? {
-      zh: ["详细更新请参阅官方发布说明。"],
-      en: ["See the official release notes for the full list of changes."],
-    },
-  },
-  ...releaseHighlights.filter((version) => version.tag !== release.tag),
-];
+const releaseVersions = getReleaseHistory(release, releaseHighlights);
+const runtimeNames = runtimes.map((runtime) => runtime.name);
 
 function releaseDate(value: string, language: Language) {
   return new Intl.DateTimeFormat(language === "zh" ? "zh-CN" : "en-US", {
@@ -38,16 +27,6 @@ function releaseDate(value: string, language: Language) {
   }).format(new Date(value));
 }
 
-const RUNTIMES = [
-  { n: "KiriKiri / KiriKiri2", t: "C++17", s: "Stable", d: "TJS2/KAG 完整兼容，主力运行时" },
-  { n: "Artemis Engine", t: "artemis", s: "Available", d: "Artemis 脚本与资源管线" },
-  { n: "ONScripterYuri", t: "ONS", s: "Stable", d: "ONS/NScripter 系完整支援" },
-  { n: "WHITE ALBUM2 (Leaf TtT)", t: "wa2", s: "Available", d: "Leaf 分支引擎，WA2 专线" },
-  { n: "minori", t: "Rust", s: "Available", d: "minori 系演出与脚本" },
-  { n: "Qlie", t: "Internal", s: "Internal", d: "条件编译，内部验证" },
-  { n: "SoftPal", t: "softpal", s: "Available", d: "SoftPal 架构支援" },
-  { n: "CatSystem2", t: "catsystem2", s: "Available", d: "CatSystem2 运行时" },
-];
 const RENDERS = [
   { n: "Godot Native", b: "默认", p: ["RenderingDevice 直驱", "批处理合批", "VSync 自适应"] },
   { n: "GPU Bridge", b: "高性能", p: ["外置 GPU 目标", "零拷贝纹理", "离屏合成"] },
@@ -69,7 +48,7 @@ const copy = {
       eyebrow: "OPEN-SOURCE MULTI-RUNTIME ENGINE",
       titleA: "让故事",
       titleB: "再次抵达你",
-      text: "Aether 以 Godot 为宿主、C++17 为核心，支持 KiriKiri2、ONS、WHITE ALBUM2、minori、SoftPal、Artemis、CatSystem2、Qlie 八大运行时，让经典视觉小说自然抵达今天的每一块屏幕。",
+      text: "Aether 以 Godot 为宿主，汇集 KiriKiri2、ONS、Ren’Py、Siglus、AliceSoft 等多种引擎，并集成 Flash 与 TyranoScript 播放，让经典视觉小说自然抵达今天的每一块屏幕。",
       contact: "在 GitHub 联系我们",
       preview: "下载 Aether",
       platforms: ["macOS", "iOS / iPadOS", "Android", "Web", "Linux", "Windows"],
@@ -85,7 +64,9 @@ const copy = {
     },
     runtime: {
       title: "多 Runtime",
-      desc: "八大引擎统一调度，游戏自动选择最佳运行时",
+      desc: `${runtimes.length} 种运行时与播放器，连接原生引擎、Flash 与网页项目`,
+      note: "按主仓库最新支持范围整理，实际可用功能以所安装版本和平台为准。",
+      source: "查看支持范围",
     },
     render: {
       title: "渲染高性能",
@@ -93,9 +74,10 @@ const copy = {
     },
     games: {
       title: "已验证游戏",
-      desc: "74 款游戏人工烟测与流程验证，覆盖主流 Galgame",
+      desc: "75 款游戏的人工烟测与流程验证记录，具体范围见兼容性清单",
       verified: "Flow 验证",
       smoke: "Smoke 验证",
+      more: "查看完整兼容性清单",
     },
     about: {
       title: "什么是 Aether？",
@@ -111,12 +93,11 @@ const copy = {
     panel: {
       eyebrow: "WHAT'S NEW",
       title: "版本更新",
-      intro: "根据官方 Release 整理，了解稳定版改进与预览版新进展。",
+      intro: "按时间保留历次正式版的更新摘要，完整变更可查看各版本发布说明。",
       close: "关闭更新内容",
       openRelease: "查看完整发布说明",
-      latest: "最新稳定版",
-      stable: "稳定版",
-      preview: "预览版",
+      latest: "最新正式版",
+      stable: "正式版",
     },
     footer: {
       line: "A Godot-hosted multi-runtime engine.",
@@ -124,10 +105,9 @@ const copy = {
       releases: "Releases",
       license: "GPL-3.0-or-later",
     },
-    marquee: ["KiriKiri2", "ONScripterYuri", "WHITE ALBUM2", "minori", "SoftPal", "Artemis", "CatSystem2", "Qlie"],
     stats: [
-      ["8", "Runtime"],
-      ["74", "已验证游戏"],
+      [String(runtimes.length), "运行时与播放器"],
+      ["75", "已验证游戏"],
       ["C++17", "引擎核心"],
       ["GPL-3.0", "开源协议"],
     ],
@@ -146,7 +126,7 @@ const copy = {
       eyebrow: "OPEN-SOURCE MULTI-RUNTIME ENGINE",
       titleA: "Let stories",
       titleB: "find you again",
-      text: "Aether is hosted by Godot with a C++17 core, supporting 8 runtimes: KiriKiri2, ONS, WHITE ALBUM2, minori, SoftPal, Artemis, CatSystem2, Qlie—bringing classic visual novels naturally to today’s screens.",
+      text: "Hosted by Godot, Aether brings together KiriKiri2, ONS, Ren’Py, Siglus, AliceSoft and more, alongside Flash and TyranoScript playback, bringing classic visual novels to today’s screens.",
       contact: "Find us on GitHub",
       preview: "Download Aether",
       platforms: ["macOS", "iOS / iPadOS", "Android", "Web", "Linux", "Windows"],
@@ -162,7 +142,9 @@ const copy = {
     },
     runtime: {
       title: "Multi-Runtime",
-      desc: "8 engines unified dispatch, automatic runtime selection",
+      desc: `${runtimes.length} runtimes and players for native engines, Flash and browser projects`,
+      note: "Based on the main repository’s latest support scope. Availability depends on your installed version and platform.",
+      source: "View support details",
     },
     render: {
       title: "High-Performance Rendering",
@@ -170,9 +152,10 @@ const copy = {
     },
     games: {
       title: "Verified Games",
-      desc: "74 games manually smoke & flow tested, covering mainstream Galgame",
+      desc: "Manual smoke and flow checks for 75 games; see the compatibility list for the tested scope",
       verified: "Flow Verified",
       smoke: "Smoke Verified",
+      more: "View the full compatibility list",
     },
     about: {
       title: "What is Aether?",
@@ -188,12 +171,11 @@ const copy = {
     panel: {
       eyebrow: "WHAT’S NEW",
       title: "Release highlights",
-      intro: "Highlights from the official releases: stable improvements and a look at the latest preview.",
+      intro: "A history of stable release highlights, with the full changes linked for every version.",
       close: "Close release highlights",
       openRelease: "Read the full release notes",
       latest: "LATEST STABLE",
       stable: "STABLE",
-      preview: "PREVIEW",
     },
     footer: {
       line: "A Godot-hosted multi-runtime engine.",
@@ -201,10 +183,9 @@ const copy = {
       releases: "Releases",
       license: "GPL-3.0-or-later",
     },
-    marquee: ["KiriKiri2", "ONScripterYuri", "WHITE ALBUM2", "minori", "SoftPal", "Artemis", "CatSystem2", "Qlie"],
     stats: [
-      ["8", "Runtime"],
-      ["74", "Verified Games"],
+      [String(runtimes.length), "Runtimes & Players"],
+      ["75", "Verified Games"],
       ["C++17", "Engine Core"],
       ["GPL-3.0", "License"],
     ],
@@ -289,7 +270,7 @@ function CountUp({ value }: { value: string }) {
 /* ------------------------------------------------------------------ */
 function Marquee({ items, reverse = false }: { items: readonly string[]; reverse?: boolean }) {
   return (
-    <div className={reverse ? "marquee is-reverse" : "marquee"} aria-hidden="true">
+    <div className={reverse ? "marquee is-reverse" : "marquee"} aria-hidden="true" style={{ "--marquee-duration": `${items.length * 5}s` } as CSSProperties}>
       <div className="marquee-track">
         {[0, 1].map((pass) => (
           <div className="marquee-group" key={pass}>
@@ -512,7 +493,7 @@ export function AetherSite() {
           </a>
         </section>
 
-        <Marquee items={t.marquee} />
+        <Marquee items={runtimeNames} />
 
         {/* --------------------------------------------------------- ABOUT */}
         <section className="about-section" id="about">
@@ -538,11 +519,12 @@ export function AetherSite() {
         <section className="runtime-section" id="runtime">
           <div className="section-inner">
             <SectionHead index="02" kicker="RUNTIMES" title={t.runtime.title} desc={t.runtime.desc} />
+            <p className="runtime-note">{t.runtime.note} <a href={`${github}/blob/main/${language === "zh" ? "README.zh-CN.md" : "README.md"}`} target="_blank" rel="noreferrer">{t.runtime.source} ↗</a></p>
             <div className="runtime-grid">
-              {RUNTIMES.map((r, index) => (
+              {runtimes.map((r, index) => (
                 <article
                   className={index === 0 ? "runtime-card is-primary" : "runtime-card"}
-                  key={r.n}
+                  key={r.name}
                   data-reveal
                   style={{ "--delay": `${(index % 4) * 70}ms` } as CSSProperties}
                   {...tilt(index === 0 ? 4 : 7)}
@@ -550,13 +532,13 @@ export function AetherSite() {
                   <span className="card-glow" aria-hidden="true" />
                   <span className="card-border" aria-hidden="true" />
                   <div className="runtime-top">
-                    <span className="runtime-tag">{r.t}</span>
-                    <span className={r.s === "Internal" ? "runtime-status is-internal" : r.s === "Stable" ? "runtime-status is-stable" : "runtime-status"}>
-                      <i aria-hidden="true" />{r.s}
+                    <span className="runtime-tag">{r.tag}</span>
+                    <span className={`runtime-status is-${r.status}`}>
+                      <i aria-hidden="true" />{runtimeStatus[r.status][language]}
                     </span>
                   </div>
-                  <h3>{r.n}</h3>
-                  <p>{r.d}</p>
+                  <h3>{r.name}</h3>
+                  <p>{r.description[language]}</p>
                   <span className="runtime-num" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
                   {index === 0 ? (
                     <div className="runtime-orbit" aria-hidden="true">
@@ -625,12 +607,12 @@ export function AetherSite() {
               ))}
             </div>
             <a className="games-note" href={verifiedGames} target="_blank" rel="noreferrer" data-reveal>
-              完整 74 款见仓库 doc/verified_games.md<i aria-hidden="true">↗</i>
+              {t.games.more}<i aria-hidden="true">↗</i>
             </a>
           </div>
         </section>
 
-        <Marquee items={t.marquee} reverse />
+        <Marquee items={runtimeNames} reverse />
 
         {/* ------------------------------------------------ CONTACT + QQ */}
         <section className="contact-section" id="contact">
@@ -723,10 +705,10 @@ export function AetherSite() {
             </div>
             <ol className="version-list">
               {releaseVersions.map((version, index) => (
-                <li className="version-card" key={version.tag} style={{ "--i": index } as CSSProperties}>
+                <li className="version-card" key={version.tag} style={{ "--i": Math.min(index, 3) } as CSSProperties}>
                   <span className="version-node" aria-hidden="true" />
                   <div className="version-meta">
-                    <span className={index === 0 ? "version-label is-latest" : "version-label"}>{index === 0 ? t.panel.latest : version.prerelease ? t.panel.preview : t.panel.stable}</span>
+                    <span className={index === 0 ? "version-label is-latest" : "version-label"}>{index === 0 ? t.panel.latest : t.panel.stable}</span>
                     <time dateTime={version.publishedAt}>{releaseDate(version.publishedAt, language)}</time>
                   </div>
                   <strong className="version-tag">{version.tag}</strong>
