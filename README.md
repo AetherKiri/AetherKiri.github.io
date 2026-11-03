@@ -71,9 +71,10 @@ The 75-game count follows the main repository's verified-game list dated
 ## Patch page
 
 The `/patch/` page lists game companies, engines, game titles, and downloadable
-scripts. Add entries to `app/patches.ts` and put each game's script in its own
-directory under `public/patch/`. Download links preserve the `xp3filter.tjs`
-filename. Keep script bytes and encoding unchanged when copying files.
+scripts and archives. Add entries to `app/patches.ts` and put each game's file
+in its own directory under `public/patch/`. The `script` field points to the
+downloadable file; links preserve its actual filename, such as `xp3filter.tjs`
+or `aether.zip`. Keep original bytes and encoding unchanged when copying files.
 
 Both the vinext app and the static GitHub Pages build include this page.
 

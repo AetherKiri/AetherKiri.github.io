@@ -31,4 +31,12 @@ export const patches = [
     chineseTitle: "天神乱漫",
     script: "/patch/tenshin-ranman/xp3filter.tjs",
   },
+  {
+    id: "yorite-konoha-wa-kurenai-ni",
+    company: "Lump of Sugar",
+    engine: "BGI",
+    title: "縁りて此の葉は紅に",
+    chineseTitle: "缘染此叶、化作恋红",
+    script: "/patch/yorite-konoha-wa-kurenai-ni/aether.zip",
+  },
 ] as const;

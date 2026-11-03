@@ -44,7 +44,7 @@ export function AetherPatch() {
           <div>
             <p className="dl-eyebrow"><span aria-hidden="true" />PATCH LIBRARY</p>
             <h1>{zh ? "游戏补丁" : "Game patches"}</h1>
-            <p className="patch-description">{zh ? "按游戏查找并下载对应脚本。" : "Find and download the script for your game."}</p>
+            <p className="patch-description">{zh ? "按游戏查找并下载对应脚本或补丁包。" : "Find and download scripts or patch archives for your game."}</p>
           </div>
           <span className="dl-intro-note">AETHER / PATCH</span>
         </div>
@@ -52,44 +52,47 @@ export function AetherPatch() {
         <section className="patch-library" aria-labelledby="patch-list-title">
           <div className="patch-list-heading">
             <h2 id="patch-list-title">{zh ? "补丁列表" : "Available patches"}</h2>
-            <span>{patches.length} {zh ? "个脚本" : "scripts"}</span>
+            <span>{patches.length} {zh ? "个补丁" : "patches"}</span>
           </div>
           <p className="patch-scroll-hint" id="patch-scroll-hint">{zh ? "左右滑动查看完整列表及下载按钮。" : "Scroll horizontally to see all columns and download links."}</p>
           <div className="patch-table-scroll" role="region" aria-labelledby="patch-list-title" aria-describedby="patch-scroll-hint" tabIndex={0}>
             <table className="patch-table">
-              <caption className="patch-caption">{zh ? "游戏补丁脚本下载" : "Game patch script downloads"}</caption>
+              <caption className="patch-caption">{zh ? "游戏脚本与补丁包下载" : "Game script and patch archive downloads"}</caption>
               <thead>
                 <tr>
                   <th scope="col">{zh ? "游戏公司" : "Game company"}</th>
                   <th scope="col">{zh ? "引擎" : "Engine"}</th>
                   <th scope="col">{zh ? "游戏名" : "Game title"}</th>
-                  <th scope="col">{zh ? "脚本" : "Script"}</th>
+                  <th scope="col">{zh ? "脚本 / 补丁" : "Script / Patch"}</th>
                 </tr>
               </thead>
               <tbody>
-                {patches.map((patch) => (
-                  <tr key={patch.id}>
-                    <td className="patch-company">{patch.company}</td>
-                    <td><span className="patch-engine">{patch.engine}</span></td>
-                    <th scope="row" className="patch-game">
-                      <span lang="ja">{patch.title}</span>
-                      <small lang="zh-CN">（{patch.chineseTitle}）</small>
-                    </th>
-                    <td>
-                      <a className="patch-download" href={patch.script} download="xp3filter.tjs" aria-label={`${zh ? "下载" : "Download"} ${patch.title} xp3filter.tjs`}>
-                        <span><strong>{zh ? "下载脚本" : "Download"}</strong><code>xp3filter.tjs</code></span>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                          <path d="M12 3v12m-4-4 4 4 4-4M5 17v4h14v-4" />
-                        </svg>
-                      </a>
-                    </td>
-                  </tr>
-                ))}
+                {patches.map((patch) => {
+                  const filename = patch.script.slice(patch.script.lastIndexOf("/") + 1);
+                  return (
+                    <tr key={patch.id}>
+                      <td className="patch-company">{patch.company}</td>
+                      <td><span className="patch-engine">{patch.engine}</span></td>
+                      <th scope="row" className="patch-game">
+                        <span lang="ja">{patch.title}</span>
+                        <small lang="zh-CN">（{patch.chineseTitle}）</small>
+                      </th>
+                      <td>
+                        <a className="patch-download" href={patch.script} download={filename} aria-label={`${zh ? "下载" : "Download"} ${patch.title} ${filename}`}>
+                          <span><strong>{zh ? "下载补丁" : "Download"}</strong><code>{filename}</code></span>
+                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                            <path d="M12 3v12m-4-4 4 4 4-4M5 17v4h14v-4" />
+                          </svg>
+                        </a>
+                      </td>
+                    </tr>
+                  );
+                })}
               </tbody>
             </table>
           </div>
           <div className="patch-list-footer">
-            <span>{zh ? "每款游戏对应独立脚本，请按游戏名下载。" : "Each game has its own script. Choose the matching title."}</span>
+            <span>{zh ? "每款游戏对应独立补丁，请按游戏名下载。" : "Each game has its own patch. Choose the matching title."}</span>
             <a href={zh ? "/qq/" : "/qq/?lang=en"}>{zh ? "需要帮助？" : "Need help?"}<span aria-hidden="true">↗</span></a>
           </div>
         </section>
