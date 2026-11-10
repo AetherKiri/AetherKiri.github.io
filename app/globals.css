@@ -845,7 +845,12 @@ main > section:not(.hero) { position: relative; padding: 128px 0; }
 .qq-content { position: relative; }
 .qq-content .section-kicker { margin-bottom: 14px; }
 .qq-content h2 { margin: 0; font: 500 clamp(32px, 3.6vw, 48px)/1.1 var(--serif); font-variant-numeric: tabular-nums; }
-.qq-content p:last-child { margin: 12px 0 0; color: var(--ink-2); font-size: 15px; }
+.qq-content p:last-child, .qq-content h2 + p { margin: 12px 0 0; color: var(--ink-2); font-size: 15px; }
+.qq-content .qq-direct-links { display: flex; flex-wrap: wrap; gap: 6px 18px; margin-top: 14px; font: 500 12.5px/1.5 var(--mono); }
+.qq-direct-links a { color: var(--ice); word-break: break-all; transition: color .3s ease; }
+.qq-direct-links a:hover { color: #fff; text-decoration: underline; }
+.qq-channel + .qq-channel { margin-top: 22px; }
+.qq-channel .qq-link { margin-top: 14px; }
 .qq-actions { position: relative; display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 10px; }
 
 /* ================================================================ */

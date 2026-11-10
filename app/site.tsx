@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { CSSProperties, PointerEvent as ReactPointerEvent, ReactNode } from "react";
-import { GROUP_NUMBER, QQ_PAGE, SHARE_URL } from "./community";
+import { DISCORD_URL, GROUP_NUMBER, QQ_PAGE, SHARE_URL, TELEGRAM_URL } from "./community";
 import { Cosmos, Cursor, SplitText, copyText, magnetic, reducedMotion, spotlight, tilt, useRevealAll, useScrollMotion } from "./effects";
 import release from "./download-release.json";
 import releaseHighlights from "./release-highlights.json";
@@ -133,10 +133,10 @@ const copy = {
     },
     qq: {
       eyebrow: "Join Community",
-      title: "QQ Group 1108465212",
+      title: "Telegram & Discord",
       desc: "Game adaptation, runtime progress, build & integration support",
-      joinBtn: "Join Now",
-      webBtn: "Web Join",
+      joinBtn: "Join Telegram",
+      webBtn: "Join Discord",
       copyBtn: "Copy Number",
       copied: "Copied",
     },
@@ -647,7 +647,23 @@ export function AetherSite() {
                 <p className="section-kicker"><i />{t.qq.eyebrow}</p>
                 <h2>{t.qq.title}</h2>
                 <p>{t.qq.desc}</p>
+                {language === "en" && (
+                  <p className="qq-direct-links">
+                    <a href={TELEGRAM_URL} target="_blank" rel="noreferrer">{TELEGRAM_URL.replace("https://", "")}</a>
+                    <a href={DISCORD_URL} target="_blank" rel="noreferrer">{DISCORD_URL.replace("https://", "")}</a>
+                  </p>
+                )}
               </div>
+              {language === "en" ? (
+              <div className="qq-actions">
+                <a className="button button-primary" href={TELEGRAM_URL} target="_blank" rel="noreferrer" {...magnetic}>
+                  <span className="button-label">{t.qq.joinBtn}</span><span className="button-icon" aria-hidden="true">↗</span>
+                </a>
+                <a className="button button-glass" href={DISCORD_URL} target="_blank" rel="noreferrer" {...magnetic}>
+                  <span className="button-label">{t.qq.webBtn}</span><span className="button-icon" aria-hidden="true">↗</span>
+                </a>
+              </div>
+              ) : (
               <div className="qq-actions">
                 <a className="button button-primary" href={QQ_PAGE} {...magnetic}>
                   <span className="button-label">{t.qq.joinBtn}</span><span className="button-icon" aria-hidden="true">↗</span>
@@ -660,6 +676,7 @@ export function AetherSite() {
                   <span className="button-icon" aria-hidden="true">{qCopied ? "✓" : "⧉"}</span>
                 </button>
               </div>
+              )}
             </div>
           </div>
         </section>

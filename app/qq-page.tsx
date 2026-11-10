@@ -4,7 +4,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import type { CSSProperties } from "react";
-import { GROUP_NUMBER, QQ_APP_URL, SHARE_URL } from "./community";
+import { DISCORD_URL, GROUP_NUMBER, QQ_APP_URL, SHARE_URL, TELEGRAM_URL } from "./community";
 import { Cosmos, Cursor, SplitText, copyText, magnetic, spotlight, tilt, useScrollMotion } from "./effects";
 
 type Language = "zh" | "en";
@@ -33,6 +33,10 @@ const copy = {
     toastFail: "复制失败，请手动选择群号",
     guideTitle: "打不开链接？",
     guide: ["复制群号 1108465212", "打开 QQ，点击右上角「＋」→「加好友/群」", "粘贴群号搜索，申请加入即可"],
+    joinTelegram: "加入 Telegram",
+    joinDiscord: "加入 Discord",
+    telegramLabel: "Telegram 链接",
+    discordLabel: "Discord 链接",
     footer: "Stories, across every screen.",
   },
   en: {
@@ -42,8 +46,8 @@ const copy = {
     titleB: "Aether community",
     desc: "Game adaptation, runtime progress, build & integration support",
     highlights: ["Game adaptation", "Runtime progress", "Build & integration"],
-    groupName: "Aether用户群",
-    groupMeta: "QQ Group · Official",
+    groupName: "Aether Community",
+    groupMeta: "Telegram & Discord · Official",
     official: "OFFICIAL",
     numberLabel: "Group number",
     tapToCopy: "Tap to copy",
@@ -57,7 +61,11 @@ const copy = {
     toastJump: "Number copied — opening QQ…",
     toastFail: "Copy failed — please select the number manually",
     guideTitle: "Link won’t open?",
-    guide: ["Copy the group number 1108465212", "Open QQ, tap “+” → “Add friends/groups”", "Paste the number, search, and request to join"],
+    guide: ["Copy the Telegram or Discord invite link above", "Open the Telegram or Discord app", "Paste the link into the app (or your browser) to join"],
+    joinTelegram: "Join on Telegram",
+    joinDiscord: "Join on Discord",
+    telegramLabel: "Telegram link",
+    discordLabel: "Discord link",
     footer: "Stories, across every screen.",
   },
 } as const;
@@ -89,6 +97,7 @@ export function AetherQQ() {
   const [toast, setToast] = useState<{ id: number; text: string; ok: boolean } | null>(null);
   const [burst, setBurst] = useState(0);
   const toastTimer = useRef(0);
+  const toastSeq = useRef(0);
   const scrolled = useScrollMotion();
   const t = copy[language];
 
@@ -107,7 +116,8 @@ export function AetherQQ() {
 
   const notify = (text: string, ok = true) => {
     window.clearTimeout(toastTimer.current);
-    setToast({ id: Date.now(), text, ok });
+    toastSeq.current += 1;
+    setToast({ id: toastSeq.current, text, ok });
     toastTimer.current = window.setTimeout(() => setToast(null), 2400);
   };
 
@@ -116,8 +126,8 @@ export function AetherQQ() {
     if (ok) setBurst((n) => n + 1);
     notify(ok ? t.toastNumber : t.toastFail, ok);
   };
-  const copyLink = async () => {
-    const ok = await copyText(SHARE_URL);
+  const copyLink = async (url: string = SHARE_URL) => {
+    const ok = await copyText(url);
     notify(ok ? t.toastLink : t.toastFail, ok);
   };
   const copyAndJump = () => {
@@ -203,6 +213,33 @@ export function AetherQQ() {
               <span className="qq-official"><i aria-hidden="true" />{t.official}</span>
             </div>
 
+            {language === "en" ? (
+              <>
+                {[
+                  { url: TELEGRAM_URL, host: "t.me", rest: TELEGRAM_URL.replace("https://t.me", ""), join: t.joinTelegram, label: t.telegramLabel, primary: true },
+                  { url: DISCORD_URL, host: "discord.gg", rest: DISCORD_URL.replace("https://discord.gg", ""), join: t.joinDiscord, label: t.discordLabel, primary: false },
+                ].map((channel) => (
+                  <div className="qq-channel" key={channel.url}>
+                    <div className="qq-buttons">
+                      <a className={channel.primary ? "button button-primary qq-join" : "button button-glass qq-join qq-jump"} href={channel.url} target="_blank" rel="noreferrer" {...magnetic}>
+                        <span className="button-label">{channel.join}</span>
+                        <span className="button-icon" aria-hidden="true">↗</span>
+                      </a>
+                    </div>
+                    <div className="qq-link">
+                      <span className="qq-link-label">{channel.label}</span>
+                      <div className="qq-link-field">
+                        <a href={channel.url} target="_blank" rel="noreferrer" title={channel.url}>
+                          <b>{channel.host}</b>{channel.rest}
+                        </a>
+                        <button onClick={() => copyLink(channel.url)}>{t.copyLink}</button>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </>
+            ) : (
+            <>
             <button className="qq-number" onClick={copyNumber} onPointerMove={spotlight} aria-label={`${t.copyNumber} ${GROUP_NUMBER}`}>
               <span className="qq-number-head">
                 <span>{t.numberLabel}</span>
@@ -247,9 +284,11 @@ export function AetherQQ() {
                 <a href={SHARE_URL} target="_blank" rel="noreferrer" title={SHARE_URL}>
                   <b>qun.qq.com</b>/universal-share/share?ac=1&amp;authKey=qzBhrmLZl3…
                 </a>
-                <button onClick={copyLink}>{t.copyLink}</button>
+                <button onClick={() => copyLink()}>{t.copyLink}</button>
               </div>
             </div>
+            </>
+            )}
           </article>
         </section>
 
