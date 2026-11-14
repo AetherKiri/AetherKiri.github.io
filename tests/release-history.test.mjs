@@ -8,7 +8,7 @@ const latest = highlights[0];
 
 test("keeps the published stable archive with bilingual summaries and official links", () => {
   const tags = highlights.map((version) => version.tag);
-  const archivedTags = ["1.0.10", "1.0.9", "1.0.8", "1.0.7", "1.0.6", "1.0.5", "1.0.4", "1.0.3", "1.0.2", "1.0.1", "1.0.0", "0.5.0", "0.4.4", "0.4.3", "0.4.2", "0.4.1", "0.4.0", "0.3.0", "0.2.4", "0.2.3", "0.2.2", "0.2.1", "0.2.0"];
+  const archivedTags = ["1.1.1", "1.1.0", "1.0.10", "1.0.9", "1.0.8", "1.0.7", "1.0.6", "1.0.5", "1.0.4", "1.0.3", "1.0.2", "1.0.1", "1.0.0", "0.5.0", "0.4.4", "0.4.3", "0.4.2", "0.4.1", "0.4.0", "0.3.0", "0.2.4", "0.2.3", "0.2.2", "0.2.1", "0.2.0"];
   for (const tag of archivedTags) assert.ok(tags.includes(tag), `Missing archived release ${tag}`);
   assert.equal(new Set(tags).size, tags.length);
   for (const version of highlights) {

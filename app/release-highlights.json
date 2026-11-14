@@ -1,5 +1,57 @@
 [
   {
+    "tag": "1.1.1",
+    "publishedAt": "2026-11-10T16:05:35Z",
+    "url": "https://github.com/AetherKiri/Aether/releases/tag/1.1.1",
+    "prerelease": false,
+    "title": {
+      "zh": "CMVS、画中画与 MetalFX 缩放",
+      "en": "CMVS, Picture in Picture and MetalFX scaling"
+    },
+    "items": {
+      "zh": [
+        "新增 CMVS，覆盖 macOS、iOS、Android 和 Linux，并在应用界面接入独立 Leaf TtT 运行时。",
+        "新增移动端系统画中画与 iOS 可选实时画中画，完善 iOS 全屏、通过分享导入游戏文件夹和整目录删除操作。",
+        "macOS 和 iOS 新增 MetalFX Spatial 画面缩放，不支持时自动回退至 Bicubic。",
+        "修复 Android 音频与调试控制面板启动崩溃，恢复缺失运行时，并改善性能、画面和输入。",
+        "改善 BGI、CatSystem2、EntisGLS 与 ADVHD 兼容，修复存档界面、角色转场、SoftPal 汉化与场景回想，并降低 YU-RIS 快进时的内存增长。"
+      ],
+      "en": [
+        "Added CMVS on macOS, iOS, Android and Linux, and integrated the standalone Leaf TtT runtime into the app UI.",
+        "Added mobile system Picture in Picture and optional live PiP on iOS, plus improved iOS fullscreen, shared-folder imports and complete-folder deletion.",
+        "Added MetalFX Spatial scaling on macOS and iOS, with automatic Bicubic fallback when unsupported.",
+        "Fixed Android audio and debug control-pad startup crashes, restored missing runtimes, and improved performance, rendering and input.",
+        "Improved BGI, CatSystem2, EntisGLS and ADVHD compatibility; fixed save UI, character transitions, SoftPal translations and scene replay; and reduced YU-RIS memory growth during fast-forward."
+      ]
+    }
+  },
+  {
+    "tag": "1.1.0",
+    "publishedAt": "2026-11-03T08:27:42Z",
+    "url": "https://github.com/AetherKiri/Aether/releases/tag/1.1.0",
+    "prerelease": false,
+    "title": {
+      "zh": "新引擎、Lua 补丁与兼容改进",
+      "en": "New engines, Lua patches and compatibility fixes"
+    },
+    "items": {
+      "zh": [
+        "新增 Escu:de / ACPX、保留原版界面的 SystemC，以及使用游戏目录存档的公开 EntisGLS 运行时。",
+        "加入共享 Lua 资源接口与原生翻译支持，统一多运行时文字编码设置，并扩展至 Escu:de、SystemC 和 EntisGLS。",
+        "修复 KiriKiri 补丁重放、启动选择、标题界面、CG、动效与对话渲染。",
+        "改善 BGI 汉化、YU-RIS 启动和角色转场、CatSystem2 打包程序启动及 NEKOPARA 存档与显示，并修复 ADVHD、Artemis 和 Escu:de 兼容。",
+        "修复 Ren’Py 移植游戏加载、本地存档与翻译优先级，恢复 Android System4 会话并改善共享虚拟控制面板。"
+      ],
+      "en": [
+        "Added Escu:de / ACPX, SystemC with its original UI, and the public EntisGLS runtime with game-local saves.",
+        "Added shared Lua resource hooks and native translation support, unified text-encoding settings across runtimes, and extended hooks to Escu:de, SystemC and EntisGLS.",
+        "Fixed KiriKiri patch replay, launch selection, title screens, CGs, motion and dialogue rendering.",
+        "Improved BGI translations, YU-RIS startup and character transitions, and CatSystem2 packed-executable startup and NEKOPARA saves and rendering, alongside ADVHD, Artemis and Escu:de compatibility fixes.",
+        "Fixed Ren’Py port loading, local saves and translation priority, restored Android System4 sessions, and improved the shared virtual Control Pad."
+      ]
+    }
+  },
+  {
     "tag": "1.0.10",
     "publishedAt": "2026-10-27T05:12:24Z",
     "url": "https://github.com/AetherKiri/Aether/releases/tag/1.0.10",

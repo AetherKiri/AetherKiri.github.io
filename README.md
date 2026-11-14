@@ -46,8 +46,8 @@ The homepage announcement uses the same stable release metadata. Bilingual
 release summaries are maintained in `app/release-highlights.json`, with each
 official release's date, URL, and Chinese / English highlights. Only published
 stable releases belong in this history; exclude drafts and prereleases. Append
-new stable summaries without replacing or removing earlier entries. The initial
-archive covers all 23 stable releases from 0.2.0 through 1.0.10.
+new stable summaries without replacing or removing earlier entries. The archive
+covers all 25 stable releases from 0.2.0 through 1.1.1.
 If a new stable release arrives before its summary is written, the homepage
 links to its official notes while retaining the complete authored history.
 `app/release-history.mjs` merges the latest metadata, filters out previews and
@@ -73,8 +73,10 @@ The 75-game count follows the main repository's verified-game list dated
 The `/patch/` page lists game companies, engines, game titles, and downloadable
 scripts and archives. Add entries to `app/patches.ts` and put each game's file
 in its own directory under `public/patch/`. The `script` field points to the
-downloadable file; links preserve its actual filename, such as `xp3filter.tjs`
-or `aether.zip`. Keep original bytes and encoding unchanged when copying files.
+downloadable file; links preserve its actual filename, such as `xp3filter.tjs`,
+`aether.lua` or `aether.zip`. Keep original bytes and encoding unchanged when
+copying files. Chinese subtitles are optional; set `titleLanguage` for titles
+that are not Japanese.
 
 Both the vinext app and the static GitHub Pages build include this page.
 

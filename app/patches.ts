@@ -1,4 +1,14 @@
-export const patches = [
+type Patch = {
+  id: string;
+  company: string;
+  engine: string;
+  title: string;
+  titleLanguage?: "ja" | "en";
+  chineseTitle?: string;
+  script: string;
+};
+
+export const patches: readonly Patch[] = [
   {
     id: "tasogare-no-sinsemilla",
     company: "あっぷりけ",
@@ -39,4 +49,12 @@ export const patches = [
     chineseTitle: "缘染此叶、化作恋红",
     script: "/patch/yorite-konoha-wa-kurenai-ni/aether.zip",
   },
-] as const;
+  {
+    id: "making-lovers",
+    company: "SMEE",
+    engine: "BGI",
+    title: "Making Lovers",
+    titleLanguage: "en",
+    script: "/patch/making-lovers/aether.lua",
+  },
+];

@@ -1,3 +1,4 @@
 # Preserve downloadable scripts exactly, including their original line endings.
 public/patch/**/*.tjs -text
+public/patch/**/*.lua -text
 public/patch/**/*.zip binary

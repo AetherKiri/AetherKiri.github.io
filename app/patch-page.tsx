@@ -74,8 +74,8 @@ export function AetherPatch() {
                       <td className="patch-company">{patch.company}</td>
                       <td><span className="patch-engine">{patch.engine}</span></td>
                       <th scope="row" className="patch-game">
-                        <span lang="ja">{patch.title}</span>
-                        <small lang="zh-CN">（{patch.chineseTitle}）</small>
+                        <span lang={patch.titleLanguage ?? "ja"}>{patch.title}</span>
+                        {patch.chineseTitle && <small lang="zh-CN">（{patch.chineseTitle}）</small>}
                       </th>
                       <td>
                         <a className="patch-download" href={patch.script} download={filename} aria-label={`${zh ? "下载" : "Download"} ${patch.title} ${filename}`}>
