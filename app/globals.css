@@ -1175,7 +1175,7 @@ main > section:not(.hero) { position: relative; padding: 128px 0; }
 .qq-guide li span { flex: none; color: var(--ice); font: 500 11px/1.9 var(--mono); }
 
 /* Invite card */
-.qq-stage { perspective: 1400px; animation: cardRise 1.4s var(--ease) .35s both; }
+.qq-stage { display: grid; gap: clamp(20px, 3vw, 32px); perspective: 1400px; animation: cardRise 1.4s var(--ease) .35s both; }
 .qq-invite {
   --rx: 0deg;
   --ry: 0deg;
@@ -1337,10 +1337,10 @@ main > section:not(.hero) { position: relative; padding: 128px 0; }
   .qq-invite { padding: 20px; border-radius: 26px; }
   .qq-avatar { width: 58px; height: 58px; }
   .qq-avatar img { border-radius: 18px; }
-  .qq-name h2 { font-size: 23px; white-space: nowrap; }
+  .qq-name h2 { font-size: 23px; }
   .qq-official { padding: 5px 8px; font-size: 9px; letter-spacing: .1em; }
   .qq-number { padding: 18px; }
-  .qq-digits { font-size: clamp(34px, 10.4vw, 48px); }
+  .qq-digits { font-size: clamp(28px, 9vw, 48px); }
   .qq-button-row { grid-template-columns: 1fr; }
   .qq-footer { flex-direction: column; gap: 8px; padding: 20px 16px 28px; }
 }
