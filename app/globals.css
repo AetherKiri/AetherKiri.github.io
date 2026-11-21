@@ -1175,7 +1175,7 @@ main > section:not(.hero) { position: relative; padding: 128px 0; }
 .qq-guide li span { flex: none; color: var(--ice); font: 500 11px/1.9 var(--mono); }
 
 /* Invite card */
-.qq-stage { display: grid; gap: clamp(20px, 3vw, 32px); perspective: 1400px; animation: cardRise 1.4s var(--ease) .35s both; }
+.qq-stage { display: grid; grid-template-columns: minmax(0, 1fr); gap: clamp(20px, 3vw, 32px); perspective: 1400px; animation: cardRise 1.4s var(--ease) .35s both; }
 .qq-invite {
   --rx: 0deg;
   --ry: 0deg;
