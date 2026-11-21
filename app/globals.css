@@ -1275,6 +1275,7 @@ main > section:not(.hero) { position: relative; padding: 128px 0; }
 .qq-jump:hover .button-icon { transform: translateX(3px); }
 
 .qq-link { margin-top: 22px; padding-top: 20px; border-top: 1px dashed var(--line-2); transform: translateZ(14px); }
+.qq-manual-note { margin: 20px 0 0; color: var(--ink-2); font-size: 14px; line-height: 1.6; }
 .qq-link-label { display: block; margin-bottom: 10px; color: var(--ink-3); font: 500 11px/1 var(--mono); letter-spacing: .2em; text-transform: uppercase; }
 .qq-link-field { display: flex; align-items: center; gap: 8px; padding: 6px 6px 6px 14px; border-radius: 14px; border: 1px solid var(--line); background: rgba(3, 4, 13, .45); }
 .qq-link-field a { min-width: 0; flex: 1; overflow: hidden; color: var(--ink-3); font: 500 12px/1.4 var(--mono); white-space: nowrap; text-overflow: ellipsis; transition: color .3s ease; }

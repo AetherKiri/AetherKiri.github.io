@@ -4,7 +4,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import type { CSSProperties, ReactNode } from "react";
-import { DISCORD_URL, GROUP_2_NUMBER, GROUP_2_SHARE_URL, GROUP_NUMBER, SHARE_URL, TELEGRAM_URL } from "./community";
+import { DISCORD_URL, GROUP_2_NUMBER, GROUP_NUMBER, SHARE_URL, TELEGRAM_URL } from "./community";
 import { Cosmos, Cursor, SplitText, copyText, magnetic, spotlight, tilt, useScrollMotion } from "./effects";
 
 type Language = "zh" | "en";
@@ -119,17 +119,15 @@ function InviteCard({ name, t, children }: { name: string; t: CommunityCopy; chi
   );
 }
 
-function QQGroupCard({ name, number, inviteUrl, joinLabel, notify }: {
+function QQGroupCard({ name, number, inviteUrl, notify }: {
   name: string;
   number: string;
-  inviteUrl: string;
-  joinLabel: string;
+  inviteUrl?: string;
   notify: Notify;
 }) {
   const t = copy.zh;
   const [burst, setBurst] = useState(0);
-  const { host: inviteHost, pathname, search } = new URL(inviteUrl);
-  const displayPath = pathname + (search ? search.slice(0, 24) + "…" : "");
+  const invite = inviteUrl ? new URL(inviteUrl) : null;
 
   const copyNumber = async () => {
     const ok = await copyText(number);
@@ -137,10 +135,12 @@ function QQGroupCard({ name, number, inviteUrl, joinLabel, notify }: {
     notify(ok ? t.toastNumber : t.toastFail, ok);
   };
   const copyLink = async () => {
+    if (!inviteUrl) return;
     const ok = await copyText(inviteUrl);
     notify(ok ? t.toastLink : t.toastFail, ok);
   };
   const copyAndJump = () => {
+    if (!inviteUrl) return;
     /* Start the copy inside the click, then navigate without waiting so popups are not blocked. */
     const copied = copyText(number);
     openQQ(number, inviteUrl);
@@ -173,32 +173,38 @@ function QQGroupCard({ name, number, inviteUrl, joinLabel, notify }: {
         )}
       </button>
 
-      <div className="qq-buttons">
-        <a className="button button-primary qq-join" href={inviteUrl} target="_blank" rel="noreferrer" {...magnetic}>
-          <span className="button-label">{joinLabel}</span>
-          <span className="button-icon" aria-hidden="true">↗</span>
-        </a>
-        <div className="qq-button-row">
-          <button className="button button-glass qq-jump" onClick={copyAndJump} {...magnetic}>
-            <span className="button-label">{t.copyJump}</span>
-            <span className="button-icon" aria-hidden="true">→</span>
-          </button>
-          <button className="button button-glass" onClick={copyNumber} {...magnetic}>
-            <span className="button-label">{t.copyNumber}</span>
-            <span className="button-icon" aria-hidden="true">⧉</span>
-          </button>
-        </div>
-      </div>
+      {invite ? (
+        <>
+          <div className="qq-buttons">
+            <a className="button button-primary qq-join" href={invite.href} target="_blank" rel="noreferrer" {...magnetic}>
+              <span className="button-label">{t.join}</span>
+              <span className="button-icon" aria-hidden="true">↗</span>
+            </a>
+            <div className="qq-button-row">
+              <button className="button button-glass qq-jump" onClick={copyAndJump} {...magnetic}>
+                <span className="button-label">{t.copyJump}</span>
+                <span className="button-icon" aria-hidden="true">→</span>
+              </button>
+              <button className="button button-glass" onClick={copyNumber} {...magnetic}>
+                <span className="button-label">{t.copyNumber}</span>
+                <span className="button-icon" aria-hidden="true">⧉</span>
+              </button>
+            </div>
+          </div>
 
-      <div className="qq-link">
-        <span className="qq-link-label">{t.linkLabel}</span>
-        <div className="qq-link-field">
-          <a href={inviteUrl} target="_blank" rel="noreferrer" title={inviteUrl}>
-            <b>{inviteHost}</b>{displayPath}
-          </a>
-          <button onClick={copyLink}>{t.copyLink}</button>
-        </div>
-      </div>
+          <div className="qq-link">
+            <span className="qq-link-label">{t.linkLabel}</span>
+            <div className="qq-link-field">
+              <a href={inviteUrl} target="_blank" rel="noreferrer" title={invite.href}>
+                <b>{invite.host}</b>{invite.pathname}{invite.search.slice(0, 24)}{invite.search.length > 24 ? "…" : ""}
+              </a>
+              <button onClick={copyLink}>{t.copyLink}</button>
+            </div>
+          </div>
+        </>
+      ) : (
+        <p className="qq-manual-note">复制群号后，在 QQ 的「加好友/群」中搜索并申请加入。</p>
+      )}
     </InviteCard>
   );
 }
@@ -323,14 +329,11 @@ export function AetherQQ() {
                 name="Aether 用户一群"
                 number={GROUP_NUMBER}
                 inviteUrl={SHARE_URL}
-                joinLabel={t.join}
                 notify={notify}
               />
               <QQGroupCard
                 name="Aether 用户二群"
                 number={GROUP_2_NUMBER}
-                inviteUrl={GROUP_2_SHARE_URL}
-                joinLabel="点击链接加入群聊【Aether】"
                 notify={notify}
               />
             </>
