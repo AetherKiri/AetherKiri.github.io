@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   applicationName: "Aether",
   keywords: ["Aether", "AetherKiri", "KiriKiri2", "ONScripter", "Ren’Py", "Siglus", "AliceSoft", "Godot", "visual novel", "open source"],
   icons: {
-    icon: "/app-icon.png",
+    icon: { url: "/favicon.png", type: "image/png", sizes: "32x32" },
     apple: "/app-icon.png",
   },
   openGraph: {

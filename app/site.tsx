@@ -55,7 +55,7 @@ const copy = {
     },
     qq: {
       eyebrow: "加入社群",
-      title: "QQ 群 1108465212",
+      title: `QQ 二群 ${GROUP_NUMBER}`,
       desc: "新游适配、运行时进展、构建与联调问题直接群内响应",
       joinBtn: "一键加群",
       webBtn: "网页加群",
@@ -672,7 +672,7 @@ export function AetherSite() {
                   <span className="button-label">{t.qq.webBtn}</span><span className="button-icon" aria-hidden="true">↗</span>
                 </a>
                 <button className={qCopied ? "button button-glass is-copied" : "button button-glass"} onClick={copyQQ} {...magnetic}>
-                  <span className="button-label" key={String(qCopied)}>{qCopied ? t.qq.copied : `${t.qq.copyBtn} 1108465212`}</span>
+                  <span className="button-label" key={String(qCopied)}>{qCopied ? t.qq.copied : `${t.qq.copyBtn} ${GROUP_NUMBER}`}</span>
                   <span className="button-icon" aria-hidden="true">{qCopied ? "✓" : "⧉"}</span>
                 </button>
               </div>

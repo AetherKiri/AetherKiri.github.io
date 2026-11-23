@@ -95,5 +95,7 @@ are based on the public
 [verified-game list](https://github.com/AetherKiri/Aether/blob/main/doc/verified_games.md),
 and [official releases](https://github.com/AetherKiri/Aether/releases).
 
-The app icon is reused from the main project. The rest of the site design and
-visual system are purpose-built for the organization website.
+The website icon and favicon use the rounded PNG exports from
+[Aether-Branding](https://github.com/AetherKiri/Aether-Branding/tree/main/Aether-Icon/png/app-rounded).
+The rest of the site design and visual system are purpose-built for the
+organization website.
