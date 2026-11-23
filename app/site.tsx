@@ -55,7 +55,7 @@ const copy = {
     },
     qq: {
       eyebrow: "加入社群",
-      title: `QQ 二群 ${GROUP_NUMBER}`,
+      title: `QQ 用户群 ${GROUP_NUMBER}`,
       desc: "新游适配、运行时进展、构建与联调问题直接群内响应",
       joinBtn: "一键加群",
       webBtn: "网页加群",

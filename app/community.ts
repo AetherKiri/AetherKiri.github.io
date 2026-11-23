@@ -1,4 +1,4 @@
-/* Aether QQ user group 2 — shared by the home page and /qq/. */
+/* Aether QQ user group — shared by the home page and /qq/. */
 export const GROUP_NUMBER = "493244394";
 export const SHARE_URL = "https://qm.qq.com/q/rUfcKMS6T8";
 export const QQ_PAGE = "/qq/";
