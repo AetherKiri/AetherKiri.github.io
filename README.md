@@ -37,10 +37,10 @@ every hour, then validates, builds, and deploys the site automatically. Version
 numbers, dates, asset links, sizes, and checksums require no manual edits.
 GitHub may delay scheduled runs. A `repository_dispatch` event with type
 `stable-release-published` can also trigger an immediate refresh.
-Drafts, previews, and historical releases are not included. Android and desktop
-files are downloaded directly from official GitHub Releases assets. iOS uses
-`https://apps.apple.com/app/id6796580469`, without a pinned storefront or language;
-installation, availability, versions, and updates are managed by the App Store.
+Drafts, previews, and historical releases are not included. The iOS and macOS
+tabs link to the [China mainland App Store](https://apps.apple.com/cn/app/aether-all-in-one-player/id6796580469)
+for installation and updates. The other platform tabs use official GitHub
+Release assets.
 
 The homepage announcement uses the same stable release metadata. Bilingual
 release summaries are maintained in `app/release-highlights.json`, with each

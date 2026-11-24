@@ -1,2 +1,1 @@
-// Let Apple resolve the storefront; do not pin a country or display language.
-export const IOS_APP_STORE_URL = "https://apps.apple.com/app/id6796580469";
+export const APP_STORE_URL = "https://apps.apple.com/cn/app/aether-all-in-one-player/id6796580469";

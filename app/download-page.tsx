@@ -4,13 +4,16 @@
 
 import { useEffect, useState } from "react";
 import release from "./download-release.json";
-import { IOS_APP_STORE_URL } from "./download-links";
+import { APP_STORE_URL } from "./download-links";
 import { copyText, spotlight } from "./effects";
 import "./download.css";
 
 type Language = "zh" | "en";
 type Asset = (typeof release.assets)[number];
-const platforms = [...new Set([...release.assets.map(asset => asset.platform), "iOS"])].sort((a, b) => ["Android", "iOS", "Linux", "macOS", "Windows", "Web", "Other"].indexOf(a) - ["Android", "iOS", "Linux", "macOS", "Windows", "Web", "Other"].indexOf(b));
+const appStoreDevices: Partial<Record<string, string>> = { iOS: "iPhone / iPad", macOS: "Mac" };
+const platformOrder = ["Android", "iOS", "Linux", "macOS", "Windows", "Web", "Other"];
+const platforms = [...new Set([...release.assets.map(asset => asset.platform), ...Object.keys(appStoreDevices)])]
+  .sort((a, b) => platformOrder.indexOf(a) - platformOrder.indexOf(b));
 
 function PlatformIcon({ platform }: { platform: string }) {
   return <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -32,14 +35,13 @@ function assetTitle(asset: Asset, zh: boolean) {
   if (asset.name.includes("arm64")) return "ARM64";
   if (asset.name.includes("x86_64")) return "x86_64";
   if (asset.platform === "Android") return zh ? "Android 安装包" : "Android package";
-  if (asset.platform === "macOS") return zh ? "macOS 应用程序" : "macOS application";
   return asset.platform;
 }
 
 const requirements: Record<string, [string, string]> = {
   Android: ["Android 8.0 及以上 · ARM64", "Android 8.0 or later · ARM64"],
   iOS: ["iOS / iPadOS 16.0+ · A12 或更新芯片", "iOS / iPadOS 16.0+ · A12 or later"],
-  macOS: ["macOS 13.0 及以上", "macOS 13.0 or later"],
+  macOS: ["macOS 13.0+ · Apple M1 或更新芯片", "macOS 13.0+ · Apple M1 or newer"],
   Linux: ["ARM64 / x86_64", "ARM64 / x86_64"],
 };
 
@@ -48,7 +50,14 @@ export function AetherDownload() {
   const [platform, setPlatform] = useState(platforms[0]);
   const [copied, setCopied] = useState("");
   const zh = language === "zh";
-  const assets = release.assets.filter(asset => asset.platform === platform).sort((a, b) => Number(a.name.includes("app-store")) - Number(b.name.includes("app-store")));
+  const appStoreDevice = appStoreDevices[platform];
+  const assets = appStoreDevice ? [] : release.assets.filter(asset => asset.platform === platform)
+    .sort((a, b) => Number(a.name.includes("app-store")) - Number(b.name.includes("app-store")));
+  const installNote = appStoreDevice
+    ? (zh ? "设备要求和可用版本请查看中国区 App Store。" : "See the China mainland App Store for device requirements and available versions.")
+    : platform === "Linux"
+      ? (zh ? "选择与你的设备架构一致的文件，解压后运行。" : "Choose the matching architecture, extract the archive, and run the app.")
+      : (zh ? "下载 APK 后，在设备上打开文件并按提示安装。" : "Open the downloaded APK on your device and follow the installation steps.");
 
   useEffect(() => {
     const agent = navigator.userAgent;
@@ -93,9 +102,12 @@ export function AetherDownload() {
           </div>
           <div className="dl-platform-meta"><span><i />{platform}</span><span>{requirements[platform]?.[zh ? 0 : 1]}</span></div>
           <div className="dl-assets" aria-live="polite" key={platform}>
-            {platform === "iOS" ? <article className="dl-asset dl-store is-primary" onPointerMove={spotlight}>
-              <div className="dl-asset-top"><span className="dl-file-icon"><PlatformIcon platform="iOS" /></span><span className="dl-file-label">{zh ? "官方商店" : "OFFICIAL STORE"}</span><span className="dl-file-extension">APP STORE</span></div>
-              <div className="dl-asset-body"><div><h3>Aether</h3><p>All-in-One Player</p><span className="dl-store-meta">iPhone / iPad</span></div><a className="dl-download" href={IOS_APP_STORE_URL}><span>{zh ? "前往下载" : "Get the app"}<small>App Store</small></span><Arrow diagonal /></a></div>
+            {appStoreDevice ? <article className="dl-asset dl-store is-primary" onPointerMove={spotlight}>
+              <div className="dl-asset-top"><span className="dl-file-icon"><PlatformIcon platform={platform} /></span><span className="dl-file-label">{zh ? "官方商店" : "OFFICIAL STORE"}</span><span className="dl-file-extension">APP STORE</span></div>
+              <div className="dl-asset-body">
+                <div><h3>Aether</h3><p>All-in-One Player</p><span className="dl-store-meta">{appStoreDevice}</span></div>
+                <a className="dl-download" href={APP_STORE_URL}><span>{zh ? "前往 App Store" : "Open App Store"}</span><Arrow diagonal /></a>
+              </div>
               <div className="dl-store-caption"><span>{zh ? "从 App Store 安装，后续更新由商店管理。" : "Install from the App Store and receive updates through the store."}</span></div>
             </article> : assets.map((asset, index) => {
               const distribution = asset.name.includes("app-store");
@@ -107,8 +119,8 @@ export function AetherDownload() {
               </article>;
             })}
           </div>
-          <div className="dl-install-note"><span aria-hidden="true">ⓘ</span><p>{platform === "iOS" ? (zh ? "链接不限定地区，Apple 将引导你前往适用商店。可用地区、版本和设备要求以 App Store 为准。" : "This link is not tied to a region. Apple directs you to the applicable store. Availability, version and device requirements are determined by the App Store.") : platform === "macOS" ? (zh ? "ZIP 为应用程序包；App Store 分发包仅供开发者上传商店。" : "The ZIP contains the app. App Store packages are for developer distribution.") : platform === "Linux" ? (zh ? "选择与你的设备架构一致的文件，解压后运行。" : "Choose the matching architecture, extract the archive, and run the app.") : (zh ? "下载 APK 后，在设备上打开文件并按提示安装。" : "Open the downloaded APK on your device and follow the installation steps.")}</p></div>
-          <div className="dl-package-footer"><span><svg viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor"><path d="m8 1 6 2v5c0 4-6 7-6 7S2 12 2 8V3z" /><path d="m5 8 2 2 4-4" /></svg>{platform === "iOS" ? (zh ? "官方 App Store 下载" : "Official App Store download") : (zh ? "官方 GitHub Releases 下载" : "Official GitHub Releases")}</span><a href="/qq/">{zh ? "需要帮助？" : "Need help?"}<span aria-hidden="true">↗</span></a></div>
+          <div className="dl-install-note"><span aria-hidden="true">ⓘ</span><p>{installNote}</p></div>
+          <div className="dl-package-footer"><span><svg viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor"><path d="m8 1 6 2v5c0 4-6 7-6 7S2 12 2 8V3z" /><path d="m5 8 2 2 4-4" /></svg>{appStoreDevice ? (zh ? "官方 App Store 下载" : "Official App Store download") : (zh ? "官方 GitHub Releases 下载" : "Official GitHub Releases")}</span><a href="/qq/">{zh ? "需要帮助？" : "Need help?"}<span aria-hidden="true">↗</span></a></div>
           <p className="dl-status" role="status">{copied === "failed" ? (zh ? "复制失败，请手动选择校验值复制。" : "Copy failed. Select and copy the checksum manually.") : ""}</p>
         </section>
       </div>
